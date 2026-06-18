@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /iframe
+Disallow: /iframe/
+Disallow: /simulateur
+
+Sitemap: https://renohab.fr/sitemap.xml
+Sitemap: https://renohab.fr/api/sitemap

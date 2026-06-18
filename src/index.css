@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Décale les ancres sous le header sticky (h-16/h-20) */
+    scroll-padding-top: 6rem;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system,
+      'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #1f2937;
+    background-color: #ffffff;
+  }
+
+  /* Titres : Poppins, interlettrage resserré pour un rendu plus net */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.015em;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  /* Sélection de texte aux couleurs de la marque */
+  ::selection {
+    background-color: rgba(16, 185, 129, 0.22);
+    color: #064e3b;
+  }
+
+  /* Anneau de focus accessible et homogène */
+  :focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Barre de défilement discrète et moderne */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #a7f3d0 transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

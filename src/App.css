@@ -1,0 +1,260 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Style de la barre AdresseSearchBar PPF-like + RenoHab PREMIUM */
+/* AdresseSearchBar PREMIUM + Responsive RenoHab */
+/* AdresseSearchBar ULTRA PREMIUM + Responsive RenoHab */
+
+.adresse-search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 9999px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  padding: 0;
+}
+
+.adresse-search-wrapper:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+}
+
+.adresse-search-input {
+  flex: 1;
+  padding: 18px 24px;
+  font-size: 1.2rem;
+  color: #374151;
+  border: none;
+  border-radius: 9999px 0 0 9999px;
+  outline: none;
+  background-color: white;
+  transition: box-shadow 0.3s ease, border 0.3s ease, font-size 0.3s ease;
+}
+
+.adresse-search-input::placeholder {
+  color: #9ca3af; /* gris doux */
+  opacity: 1;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.adresse-search-input:focus::placeholder {
+  transform: translateY(-2px);
+  opacity: 0.7;
+}
+
+.adresse-search-input:focus {
+  box-shadow: inset 0 0 0 2px #14b8a6;
+}
+
+.adresse-search-button {
+  background-image: linear-gradient(to right, #22c55e, #14b8a6);
+  color: white;
+  font-weight: 600;
+  padding: 18px 28px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0 9999px 9999px 0;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-image 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adresse-search-button:hover {
+  opacity: 0.95;
+  transform: scale(1.02); /* léger "pulse" du bouton */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive mobile (< 640px) */
+
+@media (max-width: 640px) {
+  .adresse-search-wrapper {
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: none;
+  }
+
+  .adresse-search-input {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    padding: 16px 20px;
+  }
+
+  .adresse-search-button {
+    width: 100%;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+  }
+}
+
+.adresse-search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.adresse-search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #ffffff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ==== Personnalisation du Widget Kelvin + Bouton PPF style ==== */
+
+/* Container du widget */
+#kelvin-address-search-content {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+/* Champ input */
+#kelvin-address-search-content .kelvin-address-search-input {
+  display: inline-block;
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 1.2rem;
+  color: #374151;
+  border-radius: 9999px;
+  border: 2px solid #14b8a6;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#kelvin-address-search-content .kelvin-address-search-input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
+}
+
+/* Résultats dropdown */
+#kelvin-address-search-content .kelvin-address-search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 10;
+  margin-top: 6px;
+}
+
+#kelvin-address-search-content .kelvin-address-search-results .kelvin-address-search-row a {
+  display: block;
+  padding: 14px 20px;
+  color: #333;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#kelvin-address-search-content .kelvin-address-search-results .kelvin-address-search-row a:hover {
+  background-color: #f0fdf4; /* vert pale */
+  color: #14b8a6;
+  cursor: pointer;
+}
+
+/* Bouton Lancer ma simulation */
+#launch-simulation-button {
+  margin-top: 16px;
+  padding: 16px 32px;
+  background-image: linear-gradient(to right, #22c55e, #14b8a6);
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-image 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+#launch-simulation-button:hover {
+  transform: scale(1.05);
+  background-image: linear-gradient(to right, #14b8a6, #22c55e);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  #kelvin-address-search-content .kelvin-address-search-input {
+    font-size: 1rem;
+    padding: 16px 20px;
+  }
+
+  #launch-simulation-button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 14px 20px;
+  }
+}
