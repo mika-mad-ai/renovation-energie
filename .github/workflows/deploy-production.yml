@@ -1,0 +1,48 @@
+name: Déploiement production (Vercel)
+
+# Se déclenche à chaque fusion sur main (= ton « clic OK » sur la PR),
+# et peut aussi être lancé à la main depuis l'onglet Actions.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: team_KJKya64OkM1vfW6GGfNNQUFT
+      VERCEL_PROJECT_ID: prj_uXtaG5QG5bfqaktcJkbUx0q9dGtx
+      # Évite que react-snap tente de télécharger son vieux Chromium :
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Chrome (pour le pré-rendu react-snap)
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Récupérer la config Vercel
+        run: npx vercel@48 pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build + pré-rendu SEO (react-snap)
+        env:
+          PUPPETEER_EXECUTABLE_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: npx vercel@48 build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Déployer en production
+        run: npx vercel@48 deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
