@@ -7,6 +7,7 @@ import LandingPAC from './pompe-a-chaleur';
 import LandingPACV2 from './pompe-a-chaleur.v2';
 import ProductPage from './ProductPage';
 import ArticleValorisationImmobiliere from './Article-valorisation-immobiliere';
+import ArticleAuditEnergetiqueObligatoireVente from './Article-audit-energetique-obligatoire-vente';
 import './App.css';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
       <Route path="/pompe-a-chaleur-classique" element={<LandingPAC />} />
       <Route path="/pompe-a-chaleur/:slug" element={<ProductPage />} />
       <Route path="/blog/valorisation-immobiliere-renovation-energetique" element={<ArticleValorisationImmobiliere />} />
+      <Route path="/blog/audit-energetique-obligatoire-vente-2026" element={<ArticleAuditEnergetiqueObligatoireVente />} />
     </Routes>
   );
 }

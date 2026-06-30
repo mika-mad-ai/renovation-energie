@@ -33,4 +33,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : audit énergétique obligatoire à la vente en 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/audit-energetique-obligatoire-vente-2026</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
