@@ -33,4 +33,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : réforme MaPrimeRénov' 2026, travaux exclus des aides -->
+  <url>
+    <loc>https://renohab.fr/blog/maprimerenov-travaux-exclus-2026</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

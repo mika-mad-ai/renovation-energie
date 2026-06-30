@@ -1129,36 +1129,68 @@ console.log("✅ form_lead_sent envoyé à GA4");
                         Nos guides pour comprendre la rénovation énergétique et valoriser votre bien.
                     </p>
 
-                    <Link
-                        to="/blog/valorisation-immobiliere-renovation-energetique"
-                        className="group block bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out md:grid md:grid-cols-5"
-                    >
-                        <div className="md:col-span-2 overflow-hidden">
-                            <img
-                                src="/DALL-E-2-maison.webp"
-                                alt="Maison rénovée et valorisée"
-                                loading="lazy"
-                                className="w-full h-52 md:h-full object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                            />
-                        </div>
-                        <div className="md:col-span-3 p-6 md:p-8 flex flex-col">
-                            <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                Conseils patrimoine · 18 juin 2026
-                            </span>
-                            <h3 className="text-xl md:text-2xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                Valoriser son patrimoine immobilier en 2026 : la rénovation énergétique comme levier
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                En 2026, la performance énergétique n'est plus un détail : c'est l'un des principaux
-                                critères de valeur d'un logement. Tour d'horizon des leviers pour valoriser un bien
-                                et diversifier son patrimoine.
-                            </p>
-                            <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                Lire l'article
-                                <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                            </span>
-                        </div>
-                    </Link>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <Link
+                            to="/blog/valorisation-immobiliere-renovation-energetique"
+                            className="group block bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/DALL-E-2-maison.webp"
+                                    alt="Maison rénovée et valorisée"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 md:p-8 flex flex-col">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Conseils patrimoine · 18 juin 2026
+                                </span>
+                                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    Valoriser son patrimoine immobilier en 2026 : la rénovation énergétique comme levier
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                    En 2026, la performance énergétique n'est plus un détail : c'est l'un des principaux
+                                    critères de valeur d'un logement. Tour d'horizon des leviers pour valoriser un bien
+                                    et diversifier son patrimoine.
+                                </p>
+                                <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                    Lire l'article
+                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+
+                        <Link
+                            to="/blog/maprimerenov-travaux-exclus-2026"
+                            className="group block bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/DALL-E-2-maison.webp"
+                                    alt="Travaux d'isolation et de rénovation énergétique d'une maison"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 md:p-8 flex flex-col">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Aides &amp; réglementation · 30 juin 2026
+                                </span>
+                                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    MaPrimeRénov' 2026 : les travaux qui sortent des aides en septembre
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                    Isolation, fenêtres, poêle à bois, VMC : un nouveau recentrage de MaPrimeRénov' est
+                                    annoncé pour septembre 2026. Ce qui change et comment anticiper votre projet.
+                                </p>
+                                <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                    Lire l'article
+                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+                    </div>
                  </motion.section>
 
             </main>
