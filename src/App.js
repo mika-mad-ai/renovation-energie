@@ -8,6 +8,7 @@ import LandingPACV2 from './pompe-a-chaleur.v2';
 import ProductPage from './ProductPage';
 import ArticleValorisationImmobiliere from './Article-valorisation-immobiliere';
 import ArticlePompeAChaleurAirEau from './Article-pompe-a-chaleur-air-eau-prix-aides-2026';
+import ArticleCaniculeClimatisation from './Article-canicule-aides-climatisation-2026';
 import './App.css';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
       <Route path="/pompe-a-chaleur/:slug" element={<ProductPage />} />
       <Route path="/blog/valorisation-immobiliere-renovation-energetique" element={<ArticleValorisationImmobiliere />} />
       <Route path="/blog/pompe-a-chaleur-air-eau-prix-aides-2026" element={<ArticlePompeAChaleurAirEau />} />
+      <Route path="/blog/canicule-aides-climatisation-2026" element={<ArticleCaniculeClimatisation />} />
     </Routes>
   );
 }
