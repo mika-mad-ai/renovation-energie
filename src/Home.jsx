@@ -276,22 +276,25 @@ console.log("✅ form_lead_sent envoyé à GA4");
       
 
     // --- Animation Variants ---
-    const cardHoverEffect = { scale: 1.03, transition: { duration: 0.3 } };
+    // Courbes d'easing fortes (cf. Emil Kowalski) : plus de punch que les easings CSS natifs.
+    const EASE_OUT = [0.23, 1, 0.32, 1];      // entrées : rapide puis se pose
+    const EASE_IN_OUT = [0.77, 0, 0.175, 1];  // mouvements sur écran
+    const cardHoverEffect = { y: -4, transition: { duration: 0.2, ease: EASE_OUT } };
     const fadeInUp = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+        hidden: { opacity: 0, y: 24 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE_OUT } }
     };
     const staggerContainer = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+            transition: { staggerChildren: 0.08, delayChildren: 0.1 }
         }
     };
     const mobileMenuVariant = {
         hidden: { opacity: 0, y: "-100%" },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeInOut" } },
-        exit: { opacity: 0, y: "-100%", transition: { duration: 0.3, ease: "easeInOut" } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: EASE_OUT } },
+        exit: { opacity: 0, y: "-100%", transition: { duration: 0.2, ease: EASE_IN_OUT } }
     };
     const detailsFadeIn = {
         hidden: { opacity: 0, height: 0 },
@@ -350,8 +353,8 @@ console.log("✅ form_lead_sent envoyé à GA4");
             <img src="/RenoHabLogo.webp" alt="RenoHab Logo" className="h-60 md:h-72 w-auto drop-shadow-lg" />
 <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
   {/* Ancres vers sections de la home */}
-  {['Simulateur', 'Réglementation 2026', 'Aides', 'Accompagnement', 'Travaux'].map((item, index) => {
-    const targetIds = ['simulator', 'reglementation-2026', 'financial-aids', 'project-steps', 'renovation-types'];
+  {['Simulateur', 'Réglementation 2026', 'Travaux', 'Aides', 'Accompagnement', 'Ressources'].map((item, index) => {
+    const targetIds = ['simulator', 'reglementation-2026', 'renovation-types', 'financial-aids', 'project-steps', 'ressources'];
     const targetId = targetIds[index];
     return (
       <a
@@ -392,16 +395,16 @@ console.log("✅ form_lead_sent envoyé à GA4");
                 Atteignez la performance énergétique, augmentez la valeur de votre bien et réduisez vos factures avec RenoHab, votre Accompagnateur Rénov' agréé.
             </p>
             <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.6, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
             >
                 <a
                     href="#audit-request"
                     onClick={(e) => handleSmoothScroll(e, 'audit-request')}
-                    className="inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 border border-transparent text-base md:text-lg font-semibold rounded-full text-gray-900 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black/50 focus:ring-emerald-400 shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"
+                    className="group inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 border border-transparent text-base md:text-lg font-semibold rounded-full text-gray-900 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black/50 focus:ring-emerald-400 shadow-lg transform-gpu hover:scale-[1.03] active:scale-[0.97] transition duration-200 ease-out"
                 >
-                    Démarrer Mon Projet <FiArrowRight className="ml-2 h-5 w-5" />
+                    Démarrer Mon Projet <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
                 </a>
             </motion.div>
         </div>
@@ -419,8 +422,8 @@ console.log("✅ form_lead_sent envoyé à GA4");
 </a>
 <nav className="hidden md:flex items-center">
   <ul className="flex items-center space-x-6 lg:space-x-8 text-base font-medium text-gray-700">
-    {['Simulateur', 'Réglementation 2026', 'Aides', 'Accompagnement', 'Travaux'].map((item, index) => {
-      const targetIds = ['simulator', 'reglementation-2026', 'financial-aids', 'project-steps', 'renovation-types'];
+    {['Simulateur', 'Réglementation 2026', 'Travaux', 'Aides', 'Accompagnement', 'Ressources'].map((item, index) => {
+      const targetIds = ['simulator', 'reglementation-2026', 'renovation-types', 'financial-aids', 'project-steps', 'ressources'];
       const targetId = targetIds[index];
       return (
         <li key={item}>
@@ -467,8 +470,8 @@ console.log("✅ form_lead_sent envoyé à GA4");
                             <FiX size={35} />
                         </button>
 <ul className="flex flex-col space-y-10 text-center">
-  {['Simulateur', 'Réglementation 2026', 'Aides', 'Accompagnement', 'Travaux'].map((item, index) => {
-    const targetIds = ['simulator', 'reglementation-2026', 'financial-aids', 'project-steps', 'renovation-types'];
+  {['Simulateur', 'Réglementation 2026', 'Travaux', 'Aides', 'Accompagnement', 'Ressources'].map((item, index) => {
+    const targetIds = ['simulator', 'reglementation-2026', 'renovation-types', 'financial-aids', 'project-steps', 'ressources'];
     const targetId = targetIds[index];
     return (
       <motion.li
@@ -698,7 +701,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
       <a
         href="#kelvin"
         onClick={(e) => handleSmoothScroll(e, 'kelvin')}
-        className="px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out"
+        className="px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-md hover:shadow-lg transform-gpu hover:-translate-y-0.5 active:scale-[0.97] transition duration-200 ease-out"
       >
         Tester mon éligibilité
       </a>
@@ -764,7 +767,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
 
       <div className="flex justify-start mt-4 ml-11">
         <a href="#audit-request" onClick={(e) => handleSmoothScroll(e, 'audit-request')}
-          className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-full text-gray-900 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-emerald-400 shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+          className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-full text-gray-900 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-emerald-400 shadow-lg transform-gpu hover:scale-[1.03] active:scale-[0.97] transition duration-200 ease-out">
           Je démarre mon audit DPE
         </a>
       </div>
@@ -888,7 +891,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
     <button
       type="submit"
       disabled={formSubmitting}
-      className="w-full flex items-center justify-center bg-white hover:bg-gray-100 text-emerald-600 px-8 py-3 rounded-full font-semibold transition duration-300 ease-in-out shadow-md hover:shadow-lg text-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-emerald-600 focus:ring-white disabled:opacity-60 disabled:cursor-not-allowed"
+      className="w-full flex items-center justify-center bg-white hover:bg-gray-100 text-emerald-600 px-8 py-3 rounded-full font-semibold transform-gpu active:scale-[0.98] transition duration-200 ease-out shadow-md hover:shadow-lg text-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-emerald-600 focus:ring-white disabled:opacity-60 disabled:cursor-not-allowed"
     >
       {formSubmitting ? (
         <>
@@ -974,7 +977,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
 
   <motion.div className="space-y-6" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
     {/* MPR par gestes */}
-    <motion.div variants={fadeInUp} className="bg-emerald-50/50 p-5 rounded-xl border-l-4 border-emerald-400 shadow-sm">
+    <motion.div variants={fadeInUp} className="bg-emerald-50/50 p-5 rounded-xl border border-emerald-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
         <FiAward className="w-7 h-7 text-emerald-600 mr-4 flex-shrink-0 mt-1 sm:mt-0" />
         <h3 className="text-lg md:text-xl font-semibold text-emerald-800 font-display">MaPrimeRénov’ – par gestes</h3>
@@ -987,7 +990,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
     </motion.div>
 
     {/* MPR rénovation d'ampleur */}
-    <motion.div variants={fadeInUp} className="bg-sky-50/50 p-5 rounded-xl border-l-4 border-sky-400 shadow-sm">
+    <motion.div variants={fadeInUp} className="bg-sky-50/50 p-5 rounded-xl border border-sky-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
         <FiClipboard className="w-7 h-7 text-sky-600 mr-4 flex-shrink-0 mt-1 sm:mt-0" />
         <h3 className="text-lg md:text-xl font-semibold text-sky-800 font-display">MaPrimeRénov’ – rénovation d’ampleur (Parcours accompagné)</h3>
@@ -1003,7 +1006,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
     </motion.div>
 
     {/* CEE */}
-    <motion.div variants={fadeInUp} className="bg-yellow-50/50 p-5 rounded-xl border-l-4 border-yellow-400 shadow-sm">
+    <motion.div variants={fadeInUp} className="bg-yellow-50/50 p-5 rounded-xl border border-yellow-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
         <FiDollarSign className="w-7 h-7 text-yellow-600 mr-4 flex-shrink-0 mt-1 sm:mt-0" />
         <h3 className="text-lg md:text-xl font-semibold text-yellow-800 font-display">Certificats d’Économies d’Énergie (CEE)</h3>
@@ -1014,7 +1017,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
     </motion.div>
 
     {/* Eco-PTZ */}
-    <motion.div variants={fadeInUp} className="bg-purple-50/50 p-5 rounded-xl border-l-4 border-purple-400 shadow-sm">
+    <motion.div variants={fadeInUp} className="bg-purple-50/50 p-5 rounded-xl border border-purple-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
         <FiPercent className="w-7 h-7 text-purple-600 mr-4 flex-shrink-0 mt-1 sm:mt-0" />
         <h3 className="text-lg md:text-xl font-semibold text-purple-800 font-display">Éco-Prêt à Taux Zéro (Éco-PTZ)</h3>
@@ -1025,7 +1028,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
     </motion.div>
 
     {/* TVA */}
-    <motion.div variants={fadeInUp} className="bg-gray-50/70 p-5 rounded-xl border-l-4 border-gray-400 shadow-sm">
+    <motion.div variants={fadeInUp} className="bg-gray-50/70 p-5 rounded-xl border border-gray-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
         <FiInfo className="w-7 h-7 text-gray-700 mr-4 flex-shrink-0 mt-1 sm:mt-0" />
         <h3 className="text-lg md:text-xl font-semibold text-gray-900 font-display">TVA travaux (2026)</h3>
@@ -1037,7 +1040,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
     </motion.div>
 
     {/* Loc / DPE */}
-    <motion.div variants={fadeInUp} className="bg-rose-50/60 p-5 rounded-xl border-l-4 border-rose-400 shadow-sm">
+    <motion.div variants={fadeInUp} className="bg-rose-50/60 p-5 rounded-xl border border-rose-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
         <FiMapPin className="w-7 h-7 text-rose-600 mr-4 flex-shrink-0 mt-1 sm:mt-0" />
         <h3 className="text-lg md:text-xl font-semibold text-rose-800 font-display">Réglementation DPE & location</h3>
@@ -1049,7 +1052,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
     </motion.div>
 
     {/* Aides locales */}
-    <motion.div variants={fadeInUp} className="bg-teal-50/50 p-5 rounded-xl border-l-4 border-teal-400 shadow-sm">
+    <motion.div variants={fadeInUp} className="bg-teal-50/50 p-5 rounded-xl border border-teal-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
         <FiBarChart2 className="w-7 h-7 text-teal-700 mr-4 flex-shrink-0 mt-1 sm:mt-0" />
         <h3 className="text-lg md:text-xl font-semibold text-teal-800 font-display">Aides locales</h3>
@@ -1073,7 +1076,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
       Tester mon éligibilité
     </a>
     <Link to="/pompe-a-chaleur"
-      className="px-6 py-3 rounded-full border border-emerald-400 text-emerald-600 font-semibold hover:bg-emerald-50 transition-all duration-300 ease-in-out"
+      className="px-6 py-3 rounded-full border border-emerald-400 text-emerald-600 font-semibold hover:bg-emerald-50 transform-gpu active:scale-[0.97] transition duration-200 ease-out"
     >
       Obtenir mon étude PAC
     </Link>
@@ -1095,12 +1098,13 @@ console.log("✅ form_lead_sent envoyé à GA4");
                         {projectSteps.map((step, index) => (
                             <motion.div
                                 key={index}
-                                className="flex-1 bg-white rounded-xl shadow-lg p-6 text-center border border-gray-200/50 flex flex-col items-center transform transition-all duration-300 hover:shadow-soft hover:scale-105 z-10" // Added z-10
+                                className="flex-1 bg-white rounded-xl shadow-lg p-6 text-center border border-gray-200/50 flex flex-col items-center transform-gpu transition duration-200 ease-out hover:shadow-soft hover:-translate-y-1 z-10" // Added z-10
                                 variants={fadeInUp}
                             >
                                 <motion.div
-                                     whileHover={{ scale: 1.1, rotate: -5 }}
-                                     className={`p-3 bg-gradient-to-br from-${["emerald", "teal", "sky", "indigo", "purple"][index]}-100 to-${["emerald", "teal", "sky", "indigo", "purple"][index]}-200 text-${["emerald", "teal", "sky", "indigo", "purple"][index]}-600 rounded-full mb-5 inline-block shadow-inner`}
+                                     whileHover={{ scale: 1.08 }}
+                                     transition={{ duration: 0.2, ease: EASE_OUT }}
+                                     className="p-3 bg-gradient-to-br from-emerald-100 to-teal-100 text-emerald-600 rounded-full mb-5 inline-block shadow-inner"
                                  >
                                     <step.icon className="w-8 h-8 md:w-9 md:h-9" />
                                 </motion.div>
@@ -1111,6 +1115,50 @@ console.log("✅ form_lead_sent envoyé à GA4");
                         {/* Example of a simple dashed line connecting them on larger screens */}
                          <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-300 to-transparent hidden md:block -translate-y-1/2 z-0" aria-hidden="true"></div>
                      </div>
+                 </motion.section>
+
+                 {/* --- Section: Ressources / Articles --- */}
+                 <motion.section
+                    id="ressources"
+                    variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+                 >
+                    <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3 tracking-tight font-display">
+                        Ressources &amp; conseils
+                    </h2>
+                    <p className="text-center text-gray-600 mb-10 md:mb-12 max-w-2xl mx-auto text-lg">
+                        Nos guides pour comprendre la rénovation énergétique et valoriser votre bien.
+                    </p>
+
+                    <Link
+                        to="/blog/valorisation-immobiliere-renovation-energetique"
+                        className="group block bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out md:grid md:grid-cols-5"
+                    >
+                        <div className="md:col-span-2 overflow-hidden">
+                            <img
+                                src="/DALL-E-2-maison.webp"
+                                alt="Maison rénovée et valorisée"
+                                loading="lazy"
+                                className="w-full h-52 md:h-full object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                            />
+                        </div>
+                        <div className="md:col-span-3 p-6 md:p-8 flex flex-col">
+                            <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                Conseils patrimoine · 18 juin 2026
+                            </span>
+                            <h3 className="text-xl md:text-2xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                Valoriser son patrimoine immobilier en 2026 : la rénovation énergétique comme levier
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                En 2026, la performance énergétique n'est plus un détail : c'est l'un des principaux
+                                critères de valeur d'un logement. Tour d'horizon des leviers pour valoriser un bien
+                                et diversifier son patrimoine.
+                            </p>
+                            <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                Lire l'article
+                                <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                            </span>
+                        </div>
+                    </Link>
                  </motion.section>
 
             </main>
@@ -1155,6 +1203,20 @@ console.log("✅ form_lead_sent envoyé à GA4");
 
                 .font-body { font-family: 'Inter', sans-serif; } /* Apply base font */
                 .font-display { font-family: 'Poppins', sans-serif; } /* Apply display font for headings */
+
+                /* Titres : lignes équilibrées (évite les veuves/orphelines) */
+                h1, h2, h3 { text-wrap: balance; }
+
+                /* Accessibilité : respect de prefers-reduced-motion (cf. Emil Kowalski).
+                   On neutralise les mouvements tout en gardant les fondus de compréhension. */
+                @media (prefers-reduced-motion: reduce) {
+                  *, *::before, *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                    scroll-behavior: auto !important;
+                  }
+                }
 
                 /* Modern Form Input Styles */
                 .form-select-modern {

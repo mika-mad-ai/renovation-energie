@@ -49,14 +49,22 @@ import { BrowserRouter } from 'react-router-dom';
 })();
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const rootElement = document.getElementById('root');
+const app = (
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// react-snap pré-rend chaque route en HTML statique au build.
+// Si le DOM est déjà rempli (page pré-rendue), on hydrate ; sinon on monte normalement.
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrateRoot(rootElement, app);
+} else {
+  ReactDOM.createRoot(rootElement).render(app);
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

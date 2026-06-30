@@ -26,3 +26,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .vercel
+
+# artefacts d'automatisation & captures de vérification
+.playwright-mcp/
+/*.jpeg
+skills-lock.json
