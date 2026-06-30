@@ -1191,6 +1191,36 @@ console.log("✅ form_lead_sent envoyé à GA4");
                         </Link>
 
                         <Link
+                            to="/blog/maprimerenov-reforme-travaux-par-geste-2026"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/isolation.webp"
+                                    alt="Travaux d'isolation thermique concernés par la réforme MaPrimeRénov'"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Aides &amp; réglementation · 30 juin 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    MaPrimeRénov' 2026 : isolation, fenêtres et chauffage bois bientôt exclus des aides « par geste »
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                    Un décret est présenté le 2 juillet 2026 pour resserrer les travaux finançables
+                                    isolément dès septembre. Ce qui change, ce qui reste aidé, et comment réagir.
+                                </p>
+                                <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                    Lire l'article
+                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+
+                        <Link
                             to="/blog/valorisation-immobiliere-renovation-energetique"
                             className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
                         >
@@ -1211,7 +1241,8 @@ console.log("✅ form_lead_sent envoyé à GA4");
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
                                     En 2026, la performance énergétique n'est plus un détail : c'est l'un des principaux
-                                    critères de valeur d'un logement. Tour d'horizon des leviers pour valoriser un bien.
+                                    critères de valeur d'un logement. Tour d'horizon des leviers pour valoriser un bien
+                                    et diversifier son patrimoine.
                                 </p>
                                 <span className="inline-flex items-center text-emerald-700 font-semibold">
                                     Lire l'article
