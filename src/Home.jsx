@@ -1129,36 +1129,67 @@ console.log("✅ form_lead_sent envoyé à GA4");
                         Nos guides pour comprendre la rénovation énergétique et valoriser votre bien.
                     </p>
 
-                    <Link
-                        to="/blog/valorisation-immobiliere-renovation-energetique"
-                        className="group block bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out md:grid md:grid-cols-5"
-                    >
-                        <div className="md:col-span-2 overflow-hidden">
-                            <img
-                                src="/DALL-E-2-maison.webp"
-                                alt="Maison rénovée et valorisée"
-                                loading="lazy"
-                                className="w-full h-52 md:h-full object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                            />
-                        </div>
-                        <div className="md:col-span-3 p-6 md:p-8 flex flex-col">
-                            <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                Conseils patrimoine · 18 juin 2026
-                            </span>
-                            <h3 className="text-xl md:text-2xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                Valoriser son patrimoine immobilier en 2026 : la rénovation énergétique comme levier
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                En 2026, la performance énergétique n'est plus un détail : c'est l'un des principaux
-                                critères de valeur d'un logement. Tour d'horizon des leviers pour valoriser un bien
-                                et diversifier son patrimoine.
-                            </p>
-                            <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                Lire l'article
-                                <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                            </span>
-                        </div>
-                    </Link>
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                        <Link
+                            to="/blog/pompe-a-chaleur-air-eau-prix-aides-2026"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/blog/pompe-a-chaleur-air-eau-prix-aides-2026.jpg"
+                                    alt="Pompe à chaleur air/eau devant une maison"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Chauffage &amp; aides · 30 juin 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    Pompe à chaleur air/eau en 2026 : prix, aides et rentabilité
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                    Combien coûte une PAC air/eau en 2026 ? Prix, MaPrimeRénov', CEE, TVA à 5,5 %
+                                    et reste à charge : le point pour calculer la rentabilité de votre projet.
+                                </p>
+                                <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                    Lire l'article
+                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+
+                        <Link
+                            to="/blog/valorisation-immobiliere-renovation-energetique"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/DALL-E-2-maison.webp"
+                                    alt="Maison rénovée et valorisée"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Conseils patrimoine · 18 juin 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    Valoriser son patrimoine immobilier en 2026 : la rénovation énergétique comme levier
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                    En 2026, la performance énergétique n'est plus un détail : c'est l'un des principaux
+                                    critères de valeur d'un logement. Tour d'horizon des leviers pour valoriser un bien.
+                                </p>
+                                <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                    Lire l'article
+                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+                    </div>
                  </motion.section>
 
             </main>
