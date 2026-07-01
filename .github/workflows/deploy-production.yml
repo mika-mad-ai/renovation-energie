@@ -39,6 +39,11 @@ jobs:
       - name: Récupérer la config Vercel
         run: npx vercel@48 pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
+      - name: Récupérer les vraies photos Pexels (réseau OK en CI)
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: node scripts/fetch-blog-images.mjs
+
       - name: Build + pré-rendu SEO (react-snap)
         env:
           PUPPETEER_EXECUTABLE_PATH: ${{ steps.chrome.outputs.chrome-path }}
