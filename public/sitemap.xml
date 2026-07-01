@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : audit énergétique obligatoire 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/audit-energetique-obligatoire-2026</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
