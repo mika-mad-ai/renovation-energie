@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : réforme DPE 2026 — nouveau coefficient électrique -->
+  <url>
+    <loc>https://renohab.fr/blog/reforme-dpe-2026-coefficient-electrique</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
