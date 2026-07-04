@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : loi Relance logement 2026 — passoires thermiques et location -->
+  <url>
+    <loc>https://renohab.fr/blog/loi-relance-logement-2026-passoires-location</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
