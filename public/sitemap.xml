@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : éco-PTZ 2026, financer sa rénovation énergétique -->
+  <url>
+    <loc>https://renohab.fr/blog/eco-ptz-2026-financer-renovation</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
