@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : isolation des combles 2026 — aides, prix, MaPrimeRénov' -->
+  <url>
+    <loc>https://renohab.fr/blog/isolation-combles-2026-aides-prix</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
