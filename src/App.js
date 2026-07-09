@@ -9,6 +9,7 @@ import ProductPage from './ProductPage';
 import ArticleValorisationImmobiliere from './Article-valorisation-immobiliere';
 import ArticlePompeAChaleurAirEau from './Article-pompe-a-chaleur-air-eau-prix-aides-2026';
 import ArticleCaniculeClimatisation from './Article-canicule-aides-climatisation-2026';
+import ArticleIsolationCombles2026 from './Article-isolation-combles-2026-aides-prix';
 import './App.css';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
       <Route path="/blog/valorisation-immobiliere-renovation-energetique" element={<ArticleValorisationImmobiliere />} />
       <Route path="/blog/pompe-a-chaleur-air-eau-prix-aides-2026" element={<ArticlePompeAChaleurAirEau />} />
       <Route path="/blog/canicule-aides-climatisation-2026" element={<ArticleCaniculeClimatisation />} />
+      <Route path="/blog/isolation-combles-2026-aides-prix" element={<ArticleIsolationCombles2026 />} />
     </Routes>
   );
 }
