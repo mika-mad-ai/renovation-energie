@@ -9,15 +9,16 @@ import ProductPage from './ProductPage';
 import ArticleValorisationImmobiliere from './Article-valorisation-immobiliere';
 import ArticlePompeAChaleurAirEau from './Article-pompe-a-chaleur-air-eau-prix-aides-2026';
 import ArticleCaniculeClimatisation from './Article-canicule-aides-climatisation-2026';
+import ArticleTva55TravauxRenovation from './Article-tva-5-5-travaux-renovation-energetique-2026';
 import './App.css';
 
 function App() {
-  // Filtre global des erreurs cross-origin (“Script error.”) en DEV
+  // Filtre global des erreurs cross-origin ("Script error.") en DEV
   useEffect(() => {
     if (process.env.NODE_ENV !== 'development') return;
 
     const onError = (event) => {
-      // Empêche l’overlay rouge quand le navigateur remonte “Script error.”
+      // Empêche l'overlay rouge quand le navigateur remonte "Script error."
       if (event?.message === 'Script error.') {
         event.preventDefault?.();
         return true;
@@ -51,6 +52,7 @@ function App() {
       <Route path="/blog/valorisation-immobiliere-renovation-energetique" element={<ArticleValorisationImmobiliere />} />
       <Route path="/blog/pompe-a-chaleur-air-eau-prix-aides-2026" element={<ArticlePompeAChaleurAirEau />} />
       <Route path="/blog/canicule-aides-climatisation-2026" element={<ArticleCaniculeClimatisation />} />
+      <Route path="/blog/tva-5-5-travaux-renovation-energetique-2026" element={<ArticleTva55TravauxRenovation />} />
     </Routes>
   );
 }
