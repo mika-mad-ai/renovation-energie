@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : panneaux solaires photovoltaïques & autoconsommation 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/panneaux-solaires-photovoltaiques-autoconsommation-2026</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
