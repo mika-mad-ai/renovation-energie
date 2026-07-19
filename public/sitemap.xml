@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Mon Accompagnateur Rénov' 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/accompagnateur-renov-2026-guide</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
