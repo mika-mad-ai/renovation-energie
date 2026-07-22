@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : sortir du fioul 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/sortir-du-fioul-2026-aides-alternatives</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
