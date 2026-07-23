@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Prêt Avance Rénovation (PAR) 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/pret-avance-renovation-par-2026</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
