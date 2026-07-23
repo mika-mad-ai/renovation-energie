@@ -1131,6 +1131,36 @@ console.log("✅ form_lead_sent envoyé à GA4");
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         <Link
+                            to="/blog/pret-avance-renovation-par-2026"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/blog/pret-avance-renovation-par-2026.jpg"
+                                    alt="Financement rénovation énergétique sans avance de fonds"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Financement &amp; aides · 23 juillet 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    Prêt Avance Rénovation (PAR) 2026 — rénover sans avancer un euro
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                    Pas de liquidités pour rénover ? Le PAR vous permet d'emprunter jusqu'à 50 000 €
+                                    et de ne rembourser le capital qu'à la vente de votre bien. Guide complet.
+                                </p>
+                                <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                    Lire l'article
+                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+
+                        <Link
                             to="/blog/canicule-aides-climatisation-2026"
                             className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
                         >
