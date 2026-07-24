@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : artisan RGE en 2026 — guide complet -->
+  <url>
+    <loc>https://renohab.fr/blog/artisan-rge-2026-guide-complet</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
