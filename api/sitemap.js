@@ -6,6 +6,9 @@ const STATIC_URLS = [
   { loc: 'https://renohab.fr/pompe-a-chaleur', priority: '0.9', changefreq: 'weekly' },
   { loc: 'https://renohab.fr/dpe-gratuit', priority: '0.8', changefreq: 'monthly' },
   { loc: 'https://renohab.fr/blog/valorisation-immobiliere-renovation-energetique', priority: '0.6', changefreq: 'monthly' },
+  { loc: 'https://renohab.fr/blog/pompe-a-chaleur-air-eau-prix-aides-2026', priority: '0.6', changefreq: 'monthly' },
+  { loc: 'https://renohab.fr/blog/canicule-aides-climatisation-2026', priority: '0.6', changefreq: 'monthly' },
+  { loc: 'https://renohab.fr/blog/cumuler-aides-renovation-energetique-2026', priority: '0.6', changefreq: 'monthly' },
 ];
 
 const normalizeSlug = (str = '') =>
