@@ -49,4 +49,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : DPE 2026, passoires thermiques et location -->
+  <url>
+    <loc>https://renohab.fr/blog/dpe-2026-passoires-thermiques-location</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
