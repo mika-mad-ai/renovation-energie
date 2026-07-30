@@ -1161,6 +1161,36 @@ console.log("✅ form_lead_sent envoyé à GA4");
                         </Link>
 
                         <Link
+                            to="/blog/dpe-2026-passoires-thermiques-location"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/blog/dpe-2026-passoires-thermiques-location.jpg"
+                                    alt="DPE 2026 — passoires thermiques et location"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    DPE &amp; réglementation · 30 juil. 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    DPE 2026 : 850 000 logements reclassés et nouvelles règles de location
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                    Coefficient électricité abaissé, projet de loi Lecornu sur les passoires F et G,
+                                    audit obligatoire à la vente : tout ce qui change pour les propriétaires en 2026.
+                                </p>
+                                <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                    Lire l'article
+                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+
+                        <Link
                             to="/blog/canicule-aides-climatisation-2026"
                             className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
                         >
