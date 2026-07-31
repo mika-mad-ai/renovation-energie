@@ -11,6 +11,7 @@ import ArticlePompeAChaleurAirEau from './Article-pompe-a-chaleur-air-eau-prix-a
 import ArticleCaniculeClimatisation from './Article-canicule-aides-climatisation-2026';
 import ArticleCESI from './Article-chauffe-eau-solaire-cesi-aides-2026';
 import ArticleDpe2026PassoiresThermiques from './Article-dpe-2026-passoires-thermiques-location';
+import ArticleCee2026PrimeEnergie from './Article-cee-2026-prime-energie-comment-en-profiter';
 import './App.css';
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
       <Route path="/blog/canicule-aides-climatisation-2026" element={<ArticleCaniculeClimatisation />} />
       <Route path="/blog/chauffe-eau-solaire-cesi-aides-2026" element={<ArticleCESI />} />
       <Route path="/blog/dpe-2026-passoires-thermiques-location" element={<ArticleDpe2026PassoiresThermiques />} />
+      <Route path="/blog/cee-2026-prime-energie-comment-en-profiter" element={<ArticleCee2026PrimeEnergie />} />
     </Routes>
   );
 }
