@@ -65,4 +65,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Éco-PTZ 2026, prêt à taux zéro pour la rénovation énergétique -->
+  <url>
+    <loc>https://renohab.fr/blog/eco-ptz-2026-pret-taux-zero-renovation</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
