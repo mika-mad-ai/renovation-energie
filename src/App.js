@@ -12,6 +12,7 @@ import ArticleCaniculeClimatisation from './Article-canicule-aides-climatisation
 import ArticleDpe2026PassoiresThermiques from './Article-dpe-2026-passoires-thermiques-location';
 import ArticleCee2026PrimeEnergie from './Article-cee-2026-prime-energie-comment-en-profiter';
 import ArticleEcoPtz2026 from './Article-eco-ptz-2026-pret-taux-zero-renovation';
+import ArticleMaPrimeRenovSeptembre2026 from './Article-maprimerenov-septembre-2026-gestes-suppression';
 import './App.css';
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
       <Route path="/blog/dpe-2026-passoires-thermiques-location" element={<ArticleDpe2026PassoiresThermiques />} />
       <Route path="/blog/cee-2026-prime-energie-comment-en-profiter" element={<ArticleCee2026PrimeEnergie />} />
       <Route path="/blog/eco-ptz-2026-pret-taux-zero-renovation" element={<ArticleEcoPtz2026 />} />
+      <Route path="/blog/maprimerenov-septembre-2026-gestes-suppression" element={<ArticleMaPrimeRenovSeptembre2026 />} />
     </Routes>
   );
 }
