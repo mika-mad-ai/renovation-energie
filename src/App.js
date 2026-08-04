@@ -14,6 +14,7 @@ import ArticleCee2026PrimeEnergie from './Article-cee-2026-prime-energie-comment
 import ArticleEcoPtz2026 from './Article-eco-ptz-2026-pret-taux-zero-renovation';
 import ArticleMaPrimeRenovSeptembre2026 from './Article-maprimerenov-septembre-2026-gestes-suppression';
 import ArticleAuditEnergetiqueObligatoire from './Article-audit-energetique-obligatoire-vente-2026';
+import ArticleRenovationAmpleur2026 from './Article-renovation-ampleur-2026-accompagnateur-renov';
 import './App.css';
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
       <Route path="/blog/eco-ptz-2026-pret-taux-zero-renovation" element={<ArticleEcoPtz2026 />} />
       <Route path="/blog/maprimerenov-septembre-2026-gestes-suppression" element={<ArticleMaPrimeRenovSeptembre2026 />} />
       <Route path="/blog/audit-energetique-obligatoire-vente-2026" element={<ArticleAuditEnergetiqueObligatoire />} />
+      <Route path="/blog/renovation-ampleur-2026-accompagnateur-renov" element={<ArticleRenovationAmpleur2026 />} />
     </Routes>
   );
 }

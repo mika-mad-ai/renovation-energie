@@ -89,4 +89,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Rénovation d'ampleur 2026 — jusqu'à 80 % de travaux financés -->
+  <url>
+    <loc>https://renohab.fr/blog/renovation-ampleur-2026-accompagnateur-renov</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
