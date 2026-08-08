@@ -18,6 +18,7 @@ import ArticleRenovationAmpleur2026 from './Article-renovation-ampleur-2026-acco
 import ArticleAidesRegionalesRenovation2026 from './Article-aides-regionales-renovation-energetique-2026';
 import ArticleTva55RenovationEnergetique2026 from './Article-tva-5-5-renovation-energetique-2026';
 import ArticleCETAides2026 from './Article-chauffe-eau-thermodynamique-aides-2026';
+import ArticleOrdreTravauxRenovation2026 from './Article-ordre-travaux-renovation-energetique-2026';
 import './App.css';
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
       <Route path="/blog/aides-regionales-renovation-energetique-2026" element={<ArticleAidesRegionalesRenovation2026 />} />
       <Route path="/blog/tva-5-5-renovation-energetique-2026" element={<ArticleTva55RenovationEnergetique2026 />} />
       <Route path="/blog/chauffe-eau-thermodynamique-aides-2026" element={<ArticleCETAides2026 />} />
+      <Route path="/blog/ordre-travaux-renovation-energetique-2026" element={<ArticleOrdreTravauxRenovation2026 />} />
     </Routes>
   );
 }
