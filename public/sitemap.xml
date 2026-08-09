@@ -129,4 +129,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Isolation des combles perdus 2026 — aides, prix et urgence avant septembre -->
+  <url>
+    <loc>https://renohab.fr/blog/isolation-combles-perdus-2026</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
