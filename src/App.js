@@ -20,6 +20,7 @@ import ArticleTva55RenovationEnergetique2026 from './Article-tva-5-5-renovation-
 import ArticleCETAides2026 from './Article-chauffe-eau-thermodynamique-aides-2026';
 import ArticleOrdreTravauxRenovation2026 from './Article-ordre-travaux-renovation-energetique-2026';
 import ArticleIsolationComblesPerdus2026 from './Article-isolation-combles-perdus-2026';
+import ArticleSortirDuFioul2026 from './Article-sortir-du-fioul-2026-alternatives-aides';
 import './App.css';
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
       <Route path="/blog/chauffe-eau-thermodynamique-aides-2026" element={<ArticleCETAides2026 />} />
       <Route path="/blog/ordre-travaux-renovation-energetique-2026" element={<ArticleOrdreTravauxRenovation2026 />} />
       <Route path="/blog/isolation-combles-perdus-2026" element={<ArticleIsolationComblesPerdus2026 />} />
+      <Route path="/blog/sortir-du-fioul-2026-alternatives-aides" element={<ArticleSortirDuFioul2026 />} />
     </Routes>
   );
 }
