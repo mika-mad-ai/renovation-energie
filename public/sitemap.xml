@@ -145,4 +145,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Isolation des murs par l'extérieur (ITE) 2026 — prix, aides et démarches -->
+  <url>
+    <loc>https://renohab.fr/blog/isolation-murs-exterieure-ite-2026</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
