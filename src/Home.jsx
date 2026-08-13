@@ -1131,6 +1131,36 @@ console.log("✅ form_lead_sent envoyé à GA4");
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         <Link
+                            to="/blog/renovation-maison-ancienne-2026"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/blog/renovation-maison-ancienne-2026.jpg"
+                                    alt="Maison ancienne en pierre — rénovation énergétique 2026"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Bâti ancien · 13 août 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    Rénover une maison ancienne en 2026 : guide pratique, pièges et aides
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                    Isolation respirante, gestion de l'humidité, MaPrimeRénov'… Les maisons d'avant 1975
+                                    obéissent à des règles spécifiques. Découvrez les techniques adaptées au bâti ancien
+                                    et les aides pour financer votre rénovation en 2026.
+                                </p>
+                                <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                    Lire l'article
+                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+                        <Link
                             to="/blog/vmc-double-flux-aides-2026"
                             className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
                         >

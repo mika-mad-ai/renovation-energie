@@ -23,6 +23,7 @@ import ArticleIsolationComblesPerdus2026 from './Article-isolation-combles-perdu
 import ArticleSortirDuFioul2026 from './Article-sortir-du-fioul-2026-alternatives-aides';
 import ArticleIsolationMursExterieure2026 from './Article-isolation-murs-exterieure-ite-2026';
 import ArticleVmcDoubleFlux2026 from './Article-vmc-double-flux-aides-2026';
+import ArticleRenovationMaisonAncienne2026 from './Article-renovation-maison-ancienne-2026';
 import './App.css';
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
       <Route path="/blog/sortir-du-fioul-2026-alternatives-aides" element={<ArticleSortirDuFioul2026 />} />
       <Route path="/blog/isolation-murs-exterieure-ite-2026" element={<ArticleIsolationMursExterieure2026 />} />
       <Route path="/blog/vmc-double-flux-aides-2026" element={<ArticleVmcDoubleFlux2026 />} />
+      <Route path="/blog/renovation-maison-ancienne-2026" element={<ArticleRenovationMaisonAncienne2026 />} />
     </Routes>
   );
 }
