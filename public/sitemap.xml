@@ -169,4 +169,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Panneaux solaires photovoltaïques 2026 — aides après suppression de la prime à l'autoconsommation -->
+  <url>
+    <loc>https://renohab.fr/blog/panneaux-solaires-photovoltaiques-aides-2026</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
