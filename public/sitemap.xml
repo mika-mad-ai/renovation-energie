@@ -177,4 +177,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Remplacement des fenêtres en 2026 — aides MaPrimeRénov, CEE, TVA 5,5 % -->
+  <url>
+    <loc>https://renohab.fr/blog/fenetres-remplacement-aides-2026</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
