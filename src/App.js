@@ -26,6 +26,7 @@ import ArticleVmcDoubleFlux2026 from './Article-vmc-double-flux-aides-2026';
 import ArticleRenovationMaisonAncienne2026 from './Article-renovation-maison-ancienne-2026';
 import ArticlePanneauxSolaires2026 from './Article-panneaux-solaires-photovoltaiques-aides-2026';
 import ArticleFenetresRemplacement2026 from './Article-fenetres-remplacement-aides-2026';
+import ArticleNouveauCalculDpe2026 from './Article-nouveau-calcul-dpe-2026-reclassement';
 import './App.css';
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
       <Route path="/blog/renovation-maison-ancienne-2026" element={<ArticleRenovationMaisonAncienne2026 />} />
       <Route path="/blog/panneaux-solaires-photovoltaiques-aides-2026" element={<ArticlePanneauxSolaires2026 />} />
       <Route path="/blog/fenetres-remplacement-aides-2026" element={<ArticleFenetresRemplacement2026 />} />
+      <Route path="/blog/nouveau-calcul-dpe-2026-reclassement" element={<ArticleNouveauCalculDpe2026 />} />
     </Routes>
   );
 }

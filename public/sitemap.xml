@@ -185,4 +185,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Nouveau calcul DPE 2026 — 850 000 logements changent de classe sans travaux -->
+  <url>
+    <loc>https://renohab.fr/blog/nouveau-calcul-dpe-2026-reclassement</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
