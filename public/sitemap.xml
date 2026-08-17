@@ -193,4 +193,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : MaPrimeRénov' Copropriétés 2026 — jusqu'à 25 000 € par logement pour rénover votre immeuble -->
+  <url>
+    <loc>https://renohab.fr/blog/maprimerenov-coproprietes-2026</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
