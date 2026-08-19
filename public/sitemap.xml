@@ -209,4 +209,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Cumuler MaPrimeRénov', CEE et Éco-PTZ en 2026 — mode d'emploi complet -->
+  <url>
+    <loc>https://renohab.fr/blog/cumul-aides-renovation-maprimerenov-cee-eco-ptz</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

@@ -29,6 +29,7 @@ import ArticleFenetresRemplacement2026 from './Article-fenetres-remplacement-aid
 import ArticleNouveauCalculDpe2026 from './Article-nouveau-calcul-dpe-2026-reclassement';
 import ArticleMaPrimeRenovCoproprietes2026 from './Article-maprimerenov-coproprietes-2026';
 import ArticleIsolationPlancherBas2026 from './Article-isolation-plancher-bas-vide-sanitaire-2026';
+import ArticleCumulAidesRenovation from './Article-cumul-aides-renovation-maprimerenov-cee-eco-ptz';
 import './App.css';
 
 function App() {
@@ -91,6 +92,7 @@ function App() {
       <Route path="/blog/nouveau-calcul-dpe-2026-reclassement" element={<ArticleNouveauCalculDpe2026 />} />
       <Route path="/blog/maprimerenov-coproprietes-2026" element={<ArticleMaPrimeRenovCoproprietes2026 />} />
       <Route path="/blog/isolation-plancher-bas-vide-sanitaire-2026" element={<ArticleIsolationPlancherBas2026 />} />
+      <Route path="/blog/cumul-aides-renovation-maprimerenov-cee-eco-ptz" element={<ArticleCumulAidesRenovation />} />
     </Routes>
   );
 }
