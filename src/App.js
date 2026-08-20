@@ -30,6 +30,7 @@ import ArticleNouveauCalculDpe2026 from './Article-nouveau-calcul-dpe-2026-recla
 import ArticleMaPrimeRenovCoproprietes2026 from './Article-maprimerenov-coproprietes-2026';
 import ArticleIsolationPlancherBas2026 from './Article-isolation-plancher-bas-vide-sanitaire-2026';
 import ArticleCumulAidesRenovation from './Article-cumul-aides-renovation-maprimerenov-cee-eco-ptz';
+import ArticleITI2026 from './Article-isolation-thermique-interieure-iti-2026';
 import './App.css';
 
 function App() {
@@ -93,6 +94,7 @@ function App() {
       <Route path="/blog/maprimerenov-coproprietes-2026" element={<ArticleMaPrimeRenovCoproprietes2026 />} />
       <Route path="/blog/isolation-plancher-bas-vide-sanitaire-2026" element={<ArticleIsolationPlancherBas2026 />} />
       <Route path="/blog/cumul-aides-renovation-maprimerenov-cee-eco-ptz" element={<ArticleCumulAidesRenovation />} />
+      <Route path="/blog/isolation-thermique-interieure-iti-2026" element={<ArticleITI2026 />} />
     </Routes>
   );
 }
