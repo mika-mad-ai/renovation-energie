@@ -225,4 +225,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Nouveau compte FranceRénov' : toutes les aides Anah centralisées depuis août 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/france-renov-compte-unique-aides-anah-2026</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

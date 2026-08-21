@@ -31,6 +31,7 @@ import ArticleMaPrimeRenovCoproprietes2026 from './Article-maprimerenov-copropri
 import ArticleIsolationPlancherBas2026 from './Article-isolation-plancher-bas-vide-sanitaire-2026';
 import ArticleCumulAidesRenovation from './Article-cumul-aides-renovation-maprimerenov-cee-eco-ptz';
 import ArticleITI2026 from './Article-isolation-thermique-interieure-iti-2026';
+import ArticleFranceRenovCompteUnique2026 from './Article-france-renov-compte-unique-aides-anah-2026';
 import './App.css';
 
 function App() {
@@ -95,6 +96,7 @@ function App() {
       <Route path="/blog/isolation-plancher-bas-vide-sanitaire-2026" element={<ArticleIsolationPlancherBas2026 />} />
       <Route path="/blog/cumul-aides-renovation-maprimerenov-cee-eco-ptz" element={<ArticleCumulAidesRenovation />} />
       <Route path="/blog/isolation-thermique-interieure-iti-2026" element={<ArticleITI2026 />} />
+      <Route path="/blog/france-renov-compte-unique-aides-anah-2026" element={<ArticleFranceRenovCompteUnique2026 />} />
     </Routes>
   );
 }
