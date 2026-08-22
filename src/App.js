@@ -32,6 +32,7 @@ import ArticleIsolationPlancherBas2026 from './Article-isolation-plancher-bas-vi
 import ArticleCumulAidesRenovation from './Article-cumul-aides-renovation-maprimerenov-cee-eco-ptz';
 import ArticleITI2026 from './Article-isolation-thermique-interieure-iti-2026';
 import ArticleFranceRenovCompteUnique2026 from './Article-france-renov-compte-unique-aides-anah-2026';
+import ArticleMaPrimeRenovAmpleurFinGaz2026 from './Article-maprimerenov-ampleur-fin-gaz-septembre-2026';
 import './App.css';
 
 function App() {
@@ -97,6 +98,7 @@ function App() {
       <Route path="/blog/cumul-aides-renovation-maprimerenov-cee-eco-ptz" element={<ArticleCumulAidesRenovation />} />
       <Route path="/blog/isolation-thermique-interieure-iti-2026" element={<ArticleITI2026 />} />
       <Route path="/blog/france-renov-compte-unique-aides-anah-2026" element={<ArticleFranceRenovCompteUnique2026 />} />
+      <Route path="/blog/maprimerenov-ampleur-fin-gaz-septembre-2026" element={<ArticleMaPrimeRenovAmpleurFinGaz2026 />} />
     </Routes>
   );
 }
