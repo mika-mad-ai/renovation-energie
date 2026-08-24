@@ -34,6 +34,7 @@ import ArticleITI2026 from './Article-isolation-thermique-interieure-iti-2026';
 import ArticleFranceRenovCompteUnique2026 from './Article-france-renov-compte-unique-aides-anah-2026';
 import ArticleMaPrimeRenovAmpleurFinGaz2026 from './Article-maprimerenov-ampleur-fin-gaz-septembre-2026';
 import ArticleChaudiereGranulesBois2026 from './Article-chaudiere-granules-bois-aides-2026';
+import ArticleMaPrimeAdapt2026 from './Article-maprimeadapt-2026-aide-adaptation-logement-seniors';
 import './App.css';
 
 function App() {
@@ -101,6 +102,7 @@ function App() {
       <Route path="/blog/france-renov-compte-unique-aides-anah-2026" element={<ArticleFranceRenovCompteUnique2026 />} />
       <Route path="/blog/maprimerenov-ampleur-fin-gaz-septembre-2026" element={<ArticleMaPrimeRenovAmpleurFinGaz2026 />} />
       <Route path="/blog/chaudiere-granules-bois-aides-2026" element={<ArticleChaudiereGranulesBois2026 />} />
+      <Route path="/blog/maprimeadapt-2026-aide-adaptation-logement-seniors" element={<ArticleMaPrimeAdapt2026 />} />
     </Routes>
   );
 }

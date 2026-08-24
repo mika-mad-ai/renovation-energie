@@ -249,4 +249,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : MaPrimeAdapt' 2026 : adapter son logement au vieillissement ou au handicap -->
+  <url>
+    <loc>https://renohab.fr/blog/maprimeadapt-2026-aide-adaptation-logement-seniors</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
