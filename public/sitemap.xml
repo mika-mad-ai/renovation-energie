@@ -265,4 +265,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : CEE rénovation d'ampleur : seuls les logements E, F, G éligibles dès le 1er septembre 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/cee-renovation-ampleur-classes-efg-septembre-2026</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
