@@ -9,6 +9,7 @@ import ProductPage from './ProductPage';
 import ArticleValorisationImmobiliere from './Article-valorisation-immobiliere';
 import ArticlePompeAChaleurAirEau from './Article-pompe-a-chaleur-air-eau-prix-aides-2026';
 import ArticleCaniculeClimatisation from './Article-canicule-aides-climatisation-2026';
+import ArticleCESI from './Article-chauffe-eau-solaire-cesi-aides-2026';
 import ArticleDpe2026PassoiresThermiques from './Article-dpe-2026-passoires-thermiques-location';
 import ArticleCee2026PrimeEnergie from './Article-cee-2026-prime-energie-comment-en-profiter';
 import ArticleEcoPtz2026 from './Article-eco-ptz-2026-pret-taux-zero-renovation';
@@ -80,6 +81,7 @@ function App() {
       <Route path="/blog/valorisation-immobiliere-renovation-energetique" element={<ArticleValorisationImmobiliere />} />
       <Route path="/blog/pompe-a-chaleur-air-eau-prix-aides-2026" element={<ArticlePompeAChaleurAirEau />} />
       <Route path="/blog/canicule-aides-climatisation-2026" element={<ArticleCaniculeClimatisation />} />
+      <Route path="/blog/chauffe-eau-solaire-cesi-aides-2026" element={<ArticleCESI />} />
       <Route path="/blog/dpe-2026-passoires-thermiques-location" element={<ArticleDpe2026PassoiresThermiques />} />
       <Route path="/blog/cee-2026-prime-energie-comment-en-profiter" element={<ArticleCee2026PrimeEnergie />} />
       <Route path="/blog/eco-ptz-2026-pret-taux-zero-renovation" element={<ArticleEcoPtz2026 />} />
