@@ -37,6 +37,7 @@ import ArticleChaudiereGranulesBois2026 from './Article-chaudiere-granules-bois-
 import ArticleMaPrimeAdapt2026 from './Article-maprimeadapt-2026-aide-adaptation-logement-seniors';
 import ArticlePoeleABoisInsertChemine2026 from './Article-poele-a-bois-insert-chemine-aides-2026';
 import ArticleCEERenovationAmpleurClassesEFG2026 from './Article-cee-renovation-ampleur-classes-efg-septembre-2026';
+import ArticleRendezVousFranceRenov2026 from './Article-rendez-vous-france-renov-maprimerenov-2026';
 import './App.css';
 
 function App() {
@@ -107,6 +108,7 @@ function App() {
       <Route path="/blog/maprimeadapt-2026-aide-adaptation-logement-seniors" element={<ArticleMaPrimeAdapt2026 />} />
       <Route path="/blog/poele-a-bois-insert-chemine-aides-2026" element={<ArticlePoeleABoisInsertChemine2026 />} />
       <Route path="/blog/cee-renovation-ampleur-classes-efg-septembre-2026" element={<ArticleCEERenovationAmpleurClassesEFG2026 />} />
+      <Route path="/blog/rendez-vous-france-renov-maprimerenov-2026" element={<ArticleRendezVousFranceRenov2026 />} />
     </Routes>
   );
 }

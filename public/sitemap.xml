@@ -273,4 +273,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Rendez-vous France Rénov' obligatoire en 2026 : l'étape clé avant MaPrimeRénov' rénovation d'ampleur -->
+  <url>
+    <loc>https://renohab.fr/blog/rendez-vous-france-renov-maprimerenov-2026</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
