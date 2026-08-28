@@ -281,4 +281,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Attestation DPE ADEME 2026 : obtenez votre nouvelle étiquette gratuitement en 5 minutes -->
+  <url>
+    <loc>https://renohab.fr/blog/attestation-dpe-ademe-2026-etiquette-gratuite</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

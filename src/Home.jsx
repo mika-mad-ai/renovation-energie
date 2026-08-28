@@ -1131,6 +1131,35 @@ console.log("✅ form_lead_sent envoyé à GA4");
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         <Link
+                            to="/blog/attestation-dpe-ademe-2026-etiquette-gratuite"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/blog/attestation-dpe-ademe-2026-etiquette-gratuite.jpg"
+                                    alt="Attestation DPE ADEME 2026 : nouvelle étiquette gratuite en ligne"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    DPE · 28 août 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    Attestation DPE ADEME 2026 : nouvelle étiquette gratuite en 5 minutes
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
+                                    7 millions de logements gagnent une classe DPE depuis janvier 2026. Si votre diagnostic date de 2021 à 2025,
+                                    téléchargez gratuitement votre attestation officielle sur l'Observatoire ADEME — sans diagnostiqueur.
+                                </p>
+                                <span className="inline-flex items-center text-emerald-700 font-semibold">
+                                    Lire l'article
+                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+                                </span>
+                            </div>
+                        </Link>
+                        <Link
                             to="/blog/rendez-vous-france-renov-maprimerenov-2026"
                             className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
                         >

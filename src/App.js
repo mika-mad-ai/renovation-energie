@@ -38,6 +38,7 @@ import ArticleMaPrimeAdapt2026 from './Article-maprimeadapt-2026-aide-adaptation
 import ArticlePoeleABoisInsertChemine2026 from './Article-poele-a-bois-insert-chemine-aides-2026';
 import ArticleCEERenovationAmpleurClassesEFG2026 from './Article-cee-renovation-ampleur-classes-efg-septembre-2026';
 import ArticleRendezVousFranceRenov2026 from './Article-rendez-vous-france-renov-maprimerenov-2026';
+import ArticleAttestationDpeAdeme2026 from './Article-attestation-dpe-ademe-2026-etiquette-gratuite';
 import './App.css';
 
 function App() {
@@ -109,6 +110,7 @@ function App() {
       <Route path="/blog/poele-a-bois-insert-chemine-aides-2026" element={<ArticlePoeleABoisInsertChemine2026 />} />
       <Route path="/blog/cee-renovation-ampleur-classes-efg-septembre-2026" element={<ArticleCEERenovationAmpleurClassesEFG2026 />} />
       <Route path="/blog/rendez-vous-france-renov-maprimerenov-2026" element={<ArticleRendezVousFranceRenov2026 />} />
+      <Route path="/blog/attestation-dpe-ademe-2026-etiquette-gratuite" element={<ArticleAttestationDpeAdeme2026 />} />
     </Routes>
   );
 }
