@@ -41,6 +41,7 @@ import ArticleRendezVousFranceRenov2026 from './Article-rendez-vous-france-renov
 import ArticleAttestationDpeAdeme2026 from './Article-attestation-dpe-ademe-2026-etiquette-gratuite';
 import ArticleChoisirArtisanRge2026 from './Article-choisir-artisan-rge-2026';
 import ArticleIsolationComblesAmenagesSarking2026 from './Article-isolation-combles-amenages-sarking-2026';
+import ArticlePreparerLogementHiver2026 from './Article-preparer-logement-hiver-2026-checklist';
 import './App.css';
 
 function App() {
@@ -115,6 +116,7 @@ function App() {
       <Route path="/blog/attestation-dpe-ademe-2026-etiquette-gratuite" element={<ArticleAttestationDpeAdeme2026 />} />
       <Route path="/blog/choisir-artisan-rge-2026" element={<ArticleChoisirArtisanRge2026 />} />
       <Route path="/blog/isolation-combles-amenages-sarking-2026" element={<ArticleIsolationComblesAmenagesSarking2026 />} />
+      <Route path="/blog/preparer-logement-hiver-2026-checklist" element={<ArticlePreparerLogementHiver2026 />} />
     </Routes>
   );
 }

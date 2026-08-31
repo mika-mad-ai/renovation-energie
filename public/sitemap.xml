@@ -305,4 +305,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Préparer son logement pour l'hiver 2026 : checklist complète -->
+  <url>
+    <loc>https://renohab.fr/blog/preparer-logement-hiver-2026-checklist</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
