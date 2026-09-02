@@ -43,6 +43,7 @@ import ArticleChoisirArtisanRge2026 from './Article-choisir-artisan-rge-2026';
 import ArticleIsolationComblesAmenagesSarking2026 from './Article-isolation-combles-amenages-sarking-2026';
 import ArticlePreparerLogementHiver2026 from './Article-preparer-logement-hiver-2026-checklist';
 import ArticleDpeCollectifCopropriete2026 from './Article-dpe-collectif-copropriete-2026';
+import ArticlePompeAChaleurGeothermique2026 from './Article-pompe-a-chaleur-geothermique-sol-eau-2026';
 import './App.css';
 
 function App() {
@@ -119,6 +120,7 @@ function App() {
       <Route path="/blog/isolation-combles-amenages-sarking-2026" element={<ArticleIsolationComblesAmenagesSarking2026 />} />
       <Route path="/blog/preparer-logement-hiver-2026-checklist" element={<ArticlePreparerLogementHiver2026 />} />
       <Route path="/blog/dpe-collectif-copropriete-2026" element={<ArticleDpeCollectifCopropriete2026 />} />
+      <Route path="/blog/pompe-a-chaleur-geothermique-sol-eau-2026" element={<ArticlePompeAChaleurGeothermique2026 />} />
     </Routes>
   );
 }
