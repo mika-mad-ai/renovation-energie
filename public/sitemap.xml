@@ -329,4 +329,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : MaPrimeRénov' propriétaire bailleur 2026 : aides, conditions et démarches -->
+  <url>
+    <loc>https://renohab.fr/blog/maprimerenov-proprietaire-bailleur-2026</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

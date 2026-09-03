@@ -44,6 +44,7 @@ import ArticleIsolationComblesAmenagesSarking2026 from './Article-isolation-comb
 import ArticlePreparerLogementHiver2026 from './Article-preparer-logement-hiver-2026-checklist';
 import ArticleDpeCollectifCopropriete2026 from './Article-dpe-collectif-copropriete-2026';
 import ArticlePompeAChaleurGeothermique2026 from './Article-pompe-a-chaleur-geothermique-sol-eau-2026';
+import ArticleMaPrimeRenovProprietaireBailleur2026 from './Article-maprimerenov-proprietaire-bailleur-2026';
 import './App.css';
 
 function App() {
@@ -121,6 +122,7 @@ function App() {
       <Route path="/blog/preparer-logement-hiver-2026-checklist" element={<ArticlePreparerLogementHiver2026 />} />
       <Route path="/blog/dpe-collectif-copropriete-2026" element={<ArticleDpeCollectifCopropriete2026 />} />
       <Route path="/blog/pompe-a-chaleur-geothermique-sol-eau-2026" element={<ArticlePompeAChaleurGeothermique2026 />} />
+      <Route path="/blog/maprimerenov-proprietaire-bailleur-2026" element={<ArticleMaPrimeRenovProprietaireBailleur2026 />} />
     </Routes>
   );
 }
