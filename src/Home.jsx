@@ -1131,6 +1131,33 @@ console.log("✅ form_lead_sent envoyé à GA4");
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         <Link
+                            to="/blog/renovation-appartement-copropriete-travaux-privatifs-2026"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/blog/renovation-appartement-copropriete-travaux-privatifs-2026.jpg"
+                                    alt="Rénovation énergétique en appartement copropriété : travaux privatifs 2026"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Copropriété · 4 sept. 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    Appartement en copropriété : quels travaux sans vote en AG ?
+                                </h3>
+                                <p className="text-gray-600 text-sm flex-grow">
+                                    Isolation intérieure, chauffe-eau thermodynamique, VMC : ce que vous pouvez faire seul dans votre partie privative, les aides disponibles et ce qui nécessite un vote en assemblée générale.
+                                </p>
+                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
+                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
+                                </span>
+                            </div>
+                        </Link>
+                        <Link
                             to="/blog/maprimerenov-proprietaire-bailleur-2026"
                             className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
                         >
