@@ -46,6 +46,7 @@ import ArticleDpeCollectifCopropriete2026 from './Article-dpe-collectif-copropri
 import ArticlePompeAChaleurGeothermique2026 from './Article-pompe-a-chaleur-geothermique-sol-eau-2026';
 import ArticleMaPrimeRenovProprietaireBailleur2026 from './Article-maprimerenov-proprietaire-bailleur-2026';
 import ArticleRenovationAppartementCopropriete2026 from './Article-renovation-appartement-copropriete-travaux-privatifs-2026';
+import ArticlePassoireThermique2026 from './Article-passoire-thermique-vendre-ou-renover-2026';
 import './App.css';
 
 function App() {
@@ -125,6 +126,7 @@ function App() {
       <Route path="/blog/pompe-a-chaleur-geothermique-sol-eau-2026" element={<ArticlePompeAChaleurGeothermique2026 />} />
       <Route path="/blog/maprimerenov-proprietaire-bailleur-2026" element={<ArticleMaPrimeRenovProprietaireBailleur2026 />} />
       <Route path="/blog/renovation-appartement-copropriete-travaux-privatifs-2026" element={<ArticleRenovationAppartementCopropriete2026 />} />
+      <Route path="/blog/passoire-thermique-vendre-ou-renover-2026" element={<ArticlePassoireThermique2026 />} />
     </Routes>
   );
 }

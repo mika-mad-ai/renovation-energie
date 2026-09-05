@@ -1131,6 +1131,33 @@ console.log("✅ form_lead_sent envoyé à GA4");
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         <Link
+                            to="/blog/passoire-thermique-vendre-ou-renover-2026"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/blog/passoire-thermique-vendre-ou-renover-2026.jpg"
+                                    alt="Passoire thermique : faut-il vendre ou rénover en 2026 ?"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Stratégie patrimoine · 5 sept. 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    Passoire thermique : vendre ou rénover en 2026 ?
+                                </h3>
+                                <p className="text-gray-600 text-sm flex-grow">
+                                    Logement F ou G : décote à la vente, interdiction de louer, aides jusqu'à 40 000 €… On compare les deux options chiffres à l'appui pour vous aider à choisir.
+                                </p>
+                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
+                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
+                                </span>
+                            </div>
+                        </Link>
+                        <Link
                             to="/blog/renovation-appartement-copropriete-travaux-privatifs-2026"
                             className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
                         >

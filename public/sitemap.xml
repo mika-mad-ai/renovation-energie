@@ -345,4 +345,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Passoire thermique : faut-il vendre ou rénover en 2026 ? -->
+  <url>
+    <loc>https://renohab.fr/blog/passoire-thermique-vendre-ou-renover-2026</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
