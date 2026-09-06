@@ -1131,6 +1131,33 @@ console.log("✅ form_lead_sent envoyé à GA4");
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         <Link
+                            to="/blog/chauffe-eau-solaire-individuel-cesi-2026"
+                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                        >
+                            <div className="overflow-hidden">
+                                <img
+                                    src="/blog/chauffe-eau-solaire-individuel-cesi-2026.jpg"
+                                    alt="Chauffe-eau solaire individuel CESI : aides 2026"
+                                    loading="lazy"
+                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
+                                />
+                            </div>
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
+                                    Eau chaude sanitaire · 6 sept. 2026
+                                </span>
+                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
+                                    CESI en 2026 : quelles aides après la réforme de septembre ?
+                                </h3>
+                                <p className="text-gray-600 text-sm flex-grow">
+                                    MaPrimeRénov' par geste ne finance plus le chauffe-eau solaire depuis le 1er septembre 2026. CEE, TVA 5,5 %, Éco-PTZ : voici ce qui reste et si le CESI est encore rentable.
+                                </p>
+                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
+                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
+                                </span>
+                            </div>
+                        </Link>
+                        <Link
                             to="/blog/passoire-thermique-vendre-ou-renover-2026"
                             className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
                         >

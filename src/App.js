@@ -47,6 +47,7 @@ import ArticlePompeAChaleurGeothermique2026 from './Article-pompe-a-chaleur-geot
 import ArticleMaPrimeRenovProprietaireBailleur2026 from './Article-maprimerenov-proprietaire-bailleur-2026';
 import ArticleRenovationAppartementCopropriete2026 from './Article-renovation-appartement-copropriete-travaux-privatifs-2026';
 import ArticlePassoireThermique2026 from './Article-passoire-thermique-vendre-ou-renover-2026';
+import ArticleCesiSolaire2026 from './Article-chauffe-eau-solaire-individuel-cesi-2026';
 import './App.css';
 
 function App() {
@@ -127,6 +128,7 @@ function App() {
       <Route path="/blog/maprimerenov-proprietaire-bailleur-2026" element={<ArticleMaPrimeRenovProprietaireBailleur2026 />} />
       <Route path="/blog/renovation-appartement-copropriete-travaux-privatifs-2026" element={<ArticleRenovationAppartementCopropriete2026 />} />
       <Route path="/blog/passoire-thermique-vendre-ou-renover-2026" element={<ArticlePassoireThermique2026 />} />
+      <Route path="/blog/chauffe-eau-solaire-individuel-cesi-2026" element={<ArticleCesiSolaire2026 />} />
     </Routes>
   );
 }
