@@ -361,4 +361,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Pompe à chaleur air/air réversible : aides, prix et conditions en 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/pompe-a-chaleur-air-air-reversible-aides-2026</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
