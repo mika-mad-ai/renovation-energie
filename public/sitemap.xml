@@ -369,4 +369,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Thermostat programmable en 2026 : économies, obligation et aides CEE -->
+  <url>
+    <loc>https://renohab.fr/blog/thermostat-programmable-regulation-chauffage-2026</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

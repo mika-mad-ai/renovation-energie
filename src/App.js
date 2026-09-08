@@ -49,6 +49,7 @@ import ArticleRenovationAppartementCopropriete2026 from './Article-renovation-ap
 import ArticlePassoireThermique2026 from './Article-passoire-thermique-vendre-ou-renover-2026';
 import ArticleCesiSolaire2026 from './Article-chauffe-eau-solaire-individuel-cesi-2026';
 import ArticlePACairair2026 from './Article-pompe-a-chaleur-air-air-reversible-aides-2026';
+import ArticleThermostatProgrammable2026 from './Article-thermostat-programmable-regulation-chauffage-2026';
 import './App.css';
 
 function App() {
@@ -131,6 +132,7 @@ function App() {
       <Route path="/blog/passoire-thermique-vendre-ou-renover-2026" element={<ArticlePassoireThermique2026 />} />
       <Route path="/blog/chauffe-eau-solaire-individuel-cesi-2026" element={<ArticleCesiSolaire2026 />} />
       <Route path="/blog/pompe-a-chaleur-air-air-reversible-aides-2026" element={<ArticlePACairair2026 />} />
+      <Route path="/blog/thermostat-programmable-regulation-chauffage-2026" element={<ArticleThermostatProgrammable2026 />} />
     </Routes>
   );
 }
