@@ -52,6 +52,7 @@ import ArticlePACairair2026 from './Article-pompe-a-chaleur-air-air-reversible-a
 import ArticleThermostatProgrammable2026 from './Article-thermostat-programmable-regulation-chauffage-2026';
 import ArticlePretAvanceRenovationPar2026 from './Article-pret-avance-renovation-par-2026';
 import ArticleEntretienPompeAChaleur2026 from './Article-entretien-pompe-a-chaleur-pac-2026';
+import ArticleAgrementPacCEEBonifiee2026 from './Article-agrement-pac-prime-cee-bonifiee-septembre-2026';
 import './App.css';
 
 function App() {
@@ -137,6 +138,7 @@ function App() {
       <Route path="/blog/thermostat-programmable-regulation-chauffage-2026" element={<ArticleThermostatProgrammable2026 />} />
       <Route path="/blog/pret-avance-renovation-par-2026" element={<ArticlePretAvanceRenovationPar2026 />} />
       <Route path="/blog/entretien-pompe-a-chaleur-pac-2026" element={<ArticleEntretienPompeAChaleur2026 />} />
+      <Route path="/blog/agrement-pac-prime-cee-bonifiee-septembre-2026" element={<ArticleAgrementPacCEEBonifiee2026 />} />
     </Routes>
   );
 }
