@@ -57,12 +57,12 @@ import ArticleMaPrimeRenov2027DpeFG from './Article-maprimerenov-2027-maisons-dp
 import './App.css';
 
 function App() {
-  // Filtre global des erreurs cross-origin (“Script error.”) en DEV
+  // Filtre global des erreurs cross-origin ("Script error.") en DEV
   useEffect(() => {
     if (process.env.NODE_ENV !== 'development') return;
 
     const onError = (event) => {
-      // Empêche l’overlay rouge quand le navigateur remonte “Script error.”
+      // Empêche l'overlay rouge quand le navigateur remonte "Script error."
       if (event?.message === 'Script error.') {
         event.preventDefault?.();
         return true;
