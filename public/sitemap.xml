@@ -417,4 +417,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Plancher chauffant basse température et pompe à chaleur en 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/plancher-chauffant-pac-basse-temperature-2026</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
