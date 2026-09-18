@@ -425,4 +425,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Radiateurs à inertie – remplacer ses vieux convecteurs et toucher la prime CEE en 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/radiateurs-inertie-convecteurs-aides-2026</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
