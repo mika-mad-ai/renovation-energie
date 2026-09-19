@@ -55,6 +55,7 @@ import ArticleEntretienPompeAChaleur2026 from './Article-entretien-pompe-a-chale
 import ArticleAgrementPacCEEBonifiee2026 from './Article-agrement-pac-prime-cee-bonifiee-septembre-2026';
 import ArticleMaPrimeRenov2027DpeFG from './Article-maprimerenov-2027-maisons-dpe-fg-ce-qui-change';
 import ArticlePlancherChauffantPac2026 from './Article-plancher-chauffant-pac-basse-temperature-2026';
+import ArticleBatterieStockageSolaire2026 from './Article-batterie-stockage-solaire-autoconsommation-2026';
 import './App.css';
 
 function App() {
@@ -143,6 +144,7 @@ function App() {
       <Route path="/blog/agrement-pac-prime-cee-bonifiee-septembre-2026" element={<ArticleAgrementPacCEEBonifiee2026 />} />
       <Route path="/blog/maprimerenov-2027-maisons-dpe-fg-ce-qui-change" element={<ArticleMaPrimeRenov2027DpeFG />} />
       <Route path="/blog/plancher-chauffant-pac-basse-temperature-2026" element={<ArticlePlancherChauffantPac2026 />} />
+      <Route path="/blog/batterie-stockage-solaire-autoconsommation-2026" element={<ArticleBatterieStockageSolaire2026 />} />
     </Routes>
   );
 }
