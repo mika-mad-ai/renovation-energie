@@ -433,4 +433,12 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Isolation de la toiture-terrasse en 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/isolation-toiture-terrasse-2026</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
