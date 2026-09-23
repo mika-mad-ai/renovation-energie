@@ -57,6 +57,7 @@ import ArticleMaPrimeRenov2027DpeFG from './Article-maprimerenov-2027-maisons-dp
 import ArticlePlancherChauffantPac2026 from './Article-plancher-chauffant-pac-basse-temperature-2026';
 import ArticleIsolationToitureTerrasse2026 from './Article-isolation-toiture-terrasse-2026';
 import ArticleLoiRelanceLogement2026 from './Article-loi-relance-logement-passoires-thermiques-bailleurs-2026';
+import ArticleChaudiereGaz2026 from './Article-chaudiere-gaz-2026-remplacement-cout';
 import './App.css';
 
 function App() {
@@ -147,6 +148,7 @@ function App() {
       <Route path="/blog/plancher-chauffant-pac-basse-temperature-2026" element={<ArticlePlancherChauffantPac2026 />} />
       <Route path="/blog/isolation-toiture-terrasse-2026" element={<ArticleIsolationToitureTerrasse2026 />} />
       <Route path="/blog/loi-relance-logement-passoires-thermiques-bailleurs-2026" element={<ArticleLoiRelanceLogement2026 />} />
+      <Route path="/blog/chaudiere-gaz-2026-remplacement-cout" element={<ArticleChaudiereGaz2026 />} />
     </Routes>
   );
 }
