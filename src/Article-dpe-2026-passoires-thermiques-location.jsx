@@ -28,6 +28,11 @@ function ArticleFooter() {
         <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-28 w-auto mx-auto mb-3" loading="lazy" />
         <p className="text-gray-400">Votre Rénovation Énergétique, Simplifiée &amp; Financée.</p>
         <p className="mt-6 text-sm text-gray-500">© {new Date().getFullYear()} RenoHab. Tous droits réservés.</p>
+        <p className="mt-3 text-sm text-gray-500">
+          <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
+          <span className="mx-2 opacity-60">·</span>
+          <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
+        </p>
       </div>
     </footer>
   );
@@ -52,7 +57,7 @@ export default function ArticleDpe2026PassoiresThermiques() {
       description:
         "850 000 logements automatiquement reclassés depuis le 1er janvier 2026, projet de loi Lecornu sur la location des F et G, audit énergétique obligatoire : tout ce qui change pour les propriétaires en 2026.",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       image: 'https://renohab.fr/blog/dpe-2026-passoires-thermiques-location.jpg',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
@@ -73,7 +78,7 @@ export default function ArticleDpe2026PassoiresThermiques() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 30 juillet 2026 · DPE &amp; réglementation
+            Publié le 30 juillet 2026 · Mis à jour le 24 septembre 2026 · DPE &amp; réglementation
           </p>
 
           <h1>DPE 2026 : passoires thermiques, reclassification et nouvelles règles de location</h1>
@@ -92,6 +97,11 @@ export default function ArticleDpe2026PassoiresThermiques() {
             l'interdiction de location des passoires thermiques, sous conditions. Propriétaires
             bailleurs et vendeurs : voici ce que vous devez savoir.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Un arrêté publié au Journal officiel le 26 août 2026 abaisse le coefficient de conversion de l’électricité de 1,9 à 1,7 au 1er janvier 2027 : environ 300 000 logements supplémentaires sortiront des classes F et G, avec une attestation ADEME gratuite sans nouveau diagnostic. Par ailleurs, le projet de loi « relance et décentralisation du logement », voté au Sénat le 8 juillet 2026, permettrait de louer un logement F ou G sous engagement de travaux avant 2030 ; tant qu’il n’est pas promulgué, le calendrier d’interdiction (G depuis 2025, F en 2028, E en 2034) reste en vigueur.</p>
+          </div>
 
           <h2>La grande reclassification du 1er janvier 2026</h2>
           <p>

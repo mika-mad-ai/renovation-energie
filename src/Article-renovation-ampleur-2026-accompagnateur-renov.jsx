@@ -28,6 +28,11 @@ function ArticleFooter() {
         <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-28 w-auto mx-auto mb-3" loading="lazy" />
         <p className="text-gray-400">Votre Rénovation Énergétique, Simplifiée & Financée.</p>
         <p className="mt-6 text-sm text-gray-500">© {new Date().getFullYear()} RenoHab. Tous droits réservés.</p>
+        <p className="mt-3 text-sm text-gray-500">
+          <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
+          <span className="mx-2 opacity-60">·</span>
+          <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
+        </p>
       </div>
     </footer>
   );
@@ -52,7 +57,7 @@ export default function ArticleRenovationAmpleur2026() {
       description:
         "Tout savoir sur MaPrimeRénov' Rénovation d'ampleur en 2026 : conditions, taux d'aide selon vos revenus, rôle de l'Accompagnateur Rénov' et démarches.",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -77,7 +82,7 @@ export default function ArticleRenovationAmpleur2026() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 4 août 2026 · Aides &amp; financement
+            Publié le 4 août 2026 · Mis à jour le 24 septembre 2026 · Aides &amp; financement
           </p>
 
           <h1>Rénovation d'ampleur 2026 : jusqu'à 80 % de vos travaux financés avec Mon Accompagnateur Rénov'</h1>
@@ -97,6 +102,11 @@ export default function ArticleRenovationAmpleur2026() {
             les ménages les plus modestes. La clé : gagner au moins deux classes au DPE avec
             l'accompagnement d'un Accompagnateur Rénov' agréé.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Depuis le 1er septembre 2026, la rénovation d’ampleur reste réservée aux logements classés E, F ou G ; en maison individuelle, installer ou conserver un chauffage au gaz, au fioul ou au charbon rend le projet inéligible (décret n° 2026-822). Le rendez-vous France Rénov’ préalable est obligatoire depuis la réouverture du guichet le 23 février 2026. Taux inchangés : 80 % / 60 % / 45 % / 10 % du montant HT, plafonné à 30 000 € (gain de 2 classes) ou 40 000 € (3 classes et plus).</p>
+          </div>
 
           <h2>Qu'est-ce que la rénovation d'ampleur ?</h2>
           <p>
