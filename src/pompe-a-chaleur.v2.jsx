@@ -60,6 +60,9 @@ const META_PIXEL_ID = '1381414250297297';
 
 const initMetaPixel = () => {
   if (typeof window === 'undefined') return;
+  // Pas pendant le pré-rendu react-snap : la balise <script> injectée serait figée dans
+  // le HTML statique et s'exécuterait avant la définition de window.fbq ("fbq is not defined").
+  if (navigator.userAgent === 'ReactSnap') return;
   if (window.fbq) {
     if (!window.__metaPixelInitialized) {
       window.fbq('init', META_PIXEL_ID);
@@ -101,7 +104,7 @@ const trackMetaLead = (payload = {}) => {
 
 export default function LandingPACV2() {
   useSeo({
-    title: "Pompe à chaleur air/eau : devis & aides jusqu'à 14 999 € | RenoHab",
+    title: "Pompe à chaleur air/eau : devis & aides jusqu'à 10 800 € | RenoHab",
     description: "Installez une pompe à chaleur air/eau avec RenoHab : MaPrimeRénov' + CEE, TVA 5,5 %, pose par un artisan RGE QualiPAC. Devis gratuit et dossier d'aides monté pour vous.",
     path: "/pompe-a-chaleur",
     type: "website",
@@ -126,7 +129,7 @@ export default function LandingPACV2() {
   });
   const [shrink, setShrink] = useState(false);
   const [formModalOpen, setFormModalOpen] = useState(false);
-  const [formModalTitle, setFormModalTitle] = useState('Bénéficiez de jusqu’à 14 999€ d’aides');
+  const [formModalTitle, setFormModalTitle] = useState('Bénéficiez de jusqu’à 10 800 € d’aides');
   const [formProductRef, setFormProductRef] = useState('');
   const [formModalSingleStep, setFormModalSingleStep] = useState(false);
   const [kelvinModalOpen, setKelvinModalOpen] = useState(false);
@@ -140,14 +143,9 @@ export default function LandingPACV2() {
     { src: '/logo-qualibat.avif', alt: 'Label Qualibat' },
     { src: '/logo-RGE-artisant.avif', alt: 'Label RGE Artisan' },
   ];
-  const heroLogoMarqueeCss = `
-    @keyframes heroLogoMarquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-  `;
+  // Animation heroLogoMarquee : définie dans src/index.css (un <style> inline cassait l'hydratation react-snap).
   
-  const openFormModal = ({ title = 'Bénéficiez de jusqu’à 14 999€ d’aides', productRef = '', singleStep = false } = {}) => {
+  const openFormModal = ({ title = 'Bénéficiez de jusqu’à 10 800 € d’aides', productRef = '', singleStep = false } = {}) => {
     setFormModalTitle(title);
     setFormProductRef(productRef);
     setFormModalSingleStep(singleStep);
@@ -251,7 +249,7 @@ export default function LandingPACV2() {
       const titleParam = params.get('title');
       const productRefParam = params.get('productRef') || '';
       openFormModal({
-        title: titleParam || (modal === 'form' ? 'Bénéficiez de jusqu’à 14 999€ d’aides' : 'Obtenir Un Devis'),
+        title: titleParam || (modal === 'form' ? 'Bénéficiez de jusqu’à 10 800 € d’aides' : 'Obtenir Un Devis'),
         productRef: productRefParam,
         singleStep: modal === 'form',
       });
@@ -260,7 +258,6 @@ export default function LandingPACV2() {
 
   return (
     <>
-      <style>{heroLogoMarqueeCss}</style>
       <div className="font-sans text-gray-800 bg-gray-50 min-h-screen">
       <header
         className={`sticky top-0 z-40 border-b border-gray-200 bg-white/70 backdrop-blur transition-all duration-300 ${
@@ -297,7 +294,7 @@ export default function LandingPACV2() {
               <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 bg-clip-text text-transparent">
                 14 999 €
               </span>{' '}
-              d’aides publiques pour votre pompe à chaleur.
+              d’aides publiques (MaPrimeRénov’ + CEE) pour votre pompe à chaleur air/eau.
             </h1>
             <p className="text-base md:text-lg text-slate-600">
               RenoHab monte gratuitement votre dossier MaPrimeRénov’ + CEE, sélectionne un artisan RGE local et vous accompagne jusqu’à la pose.
@@ -438,7 +435,24 @@ export default function LandingPACV2() {
           <ConfianceRenoHab />
         </div>
       </main>
-      
+
+      <footer className="w-full bg-gray-900 text-white pb-24 md:pb-0">
+        <div className="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center">
+          <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-28 w-auto mx-auto mb-3" loading="lazy" width="112" height="112" />
+          <p className="text-gray-400">Votre Rénovation Énergétique, Simplifiée &amp; Financée.</p>
+          <p className="mt-4 text-sm text-gray-400">
+            <a href="/" className="hover:text-emerald-300 transition-colors">Accueil</a>
+            <span className="mx-2 opacity-60">·</span>
+            <a href="/blog" className="hover:text-emerald-300 transition-colors">Blog</a>
+            <span className="mx-2 opacity-60">·</span>
+            <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
+            <span className="mx-2 opacity-60">·</span>
+            <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
+          </p>
+          <p className="mt-6 text-sm text-gray-500">© {new Date().getFullYear()} RenoHab. Tous droits réservés.</p>
+        </div>
+      </footer>
+
       {/* Sticky Bottom CTA Mobile */}
       <div className="md:hidden fixed bottom-4 inset-x-0 px-4 z-30 pointer-events-none">
         <button
@@ -508,7 +522,7 @@ function FullscreenModal({ children, onClose }) {
   );
 }
 
-function Funnel({ titleText = 'Bénéficiez jusqu’à 14 999€ d’aides', productRef = '', contactOnly = false, isMobileModal = false }) {
+function Funnel({ titleText = 'Bénéficiez jusqu’à 10 800 € d’aides', productRef = '', contactOnly = false, isMobileModal = false }) {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
