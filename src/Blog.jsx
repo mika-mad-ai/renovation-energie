@@ -43,6 +43,11 @@ function BlogFooter() {
         <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-28 w-auto mx-auto mb-3" loading="lazy" width="112" height="112" />
         <p className="text-gray-400">Votre Rénovation Énergétique, Simplifiée &amp; Financée.</p>
         <p className="mt-6 text-sm text-gray-500">© {new Date().getFullYear()} RenoHab. Tous droits réservés.</p>
+        <p className="mt-3 text-sm text-gray-500">
+          <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
+          <span className="mx-2 opacity-60">·</span>
+          <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
+        </p>
       </div>
     </footer>
   );

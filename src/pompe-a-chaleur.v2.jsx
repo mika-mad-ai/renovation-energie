@@ -435,7 +435,24 @@ export default function LandingPACV2() {
           <ConfianceRenoHab />
         </div>
       </main>
-      
+
+      <footer className="w-full bg-gray-900 text-white pb-24 md:pb-0">
+        <div className="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center">
+          <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-28 w-auto mx-auto mb-3" loading="lazy" width="112" height="112" />
+          <p className="text-gray-400">Votre Rénovation Énergétique, Simplifiée &amp; Financée.</p>
+          <p className="mt-4 text-sm text-gray-400">
+            <a href="/" className="hover:text-emerald-300 transition-colors">Accueil</a>
+            <span className="mx-2 opacity-60">·</span>
+            <a href="/blog" className="hover:text-emerald-300 transition-colors">Blog</a>
+            <span className="mx-2 opacity-60">·</span>
+            <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
+            <span className="mx-2 opacity-60">·</span>
+            <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
+          </p>
+          <p className="mt-6 text-sm text-gray-500">© {new Date().getFullYear()} RenoHab. Tous droits réservés.</p>
+        </div>
+      </footer>
+
       {/* Sticky Bottom CTA Mobile */}
       <div className="md:hidden fixed bottom-4 inset-x-0 px-4 z-30 pointer-events-none">
         <button

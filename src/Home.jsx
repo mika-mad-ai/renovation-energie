@@ -83,7 +83,7 @@ const HERO_POSTER    = "/background-poster.webp?v=2";
 // --- Component ---
 const Home = () => {
     useSeo({
-        title: "Rénovation énergétique & DPE : jusqu'à 90 % d'aides | RenoHab",
+        title: "Rénovation énergétique & DPE : jusqu'à 80 % d'aides | RenoHab",
         description: "RenoHab, Accompagnateur Rénov' agréé : audit énergétique, DPE, MaPrimeRénov', CEE, éco-PTZ et pompe à chaleur. Aides à jour des règles du 1er septembre 2026 : on monte vos dossiers et coordonnons des artisans RGE, partout en France.",
         path: "/",
         type: "website",
@@ -1230,8 +1230,8 @@ console.log("✅ form_lead_sent envoyé à GA4");
                     <div className="space-x-4">
                         <Link to="/blog" className="hover:text-emerald-300 transition-colors">Tous nos articles</Link>
                         <a href="/blog/valorisation-immobiliere-renovation-energetique" className="hover:text-emerald-300 transition-colors">Valoriser son bien</a>
-                        <a href="/#" className="hover:text-emerald-300 transition-colors">Mentions Légales</a>
-                        <a href="/#" className="hover:text-emerald-300 transition-colors">Politique de Confidentialité</a>
+                        <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
+                        <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
                     </div>
                  </div>
              </footer>

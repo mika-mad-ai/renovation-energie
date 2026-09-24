@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import Blog from './Blog';
+import { MentionsLegales, Confidentialite } from './LegalPages';
 import DPEGratuit from './DPE-gratuit';
 import Simulateur from './Simulateur';
 import LandingPAC from './pompe-a-chaleur';
@@ -58,6 +59,7 @@ import ArticleMaPrimeRenov2027DpeFG from './Article-maprimerenov-2027-maisons-dp
 import ArticlePlancherChauffantPac2026 from './Article-plancher-chauffant-pac-basse-temperature-2026';
 import ArticleIsolationToitureTerrasse2026 from './Article-isolation-toiture-terrasse-2026';
 import ArticleChaudiereGaz2026 from './Article-chaudiere-gaz-2026-remplacement-cout';
+import ArticleResidenceSecondaire2026 from './Article-renovation-energetique-residence-secondaire-2026';
 import './App.css';
 
 function App() {
@@ -93,6 +95,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/mentions-legales" element={<MentionsLegales />} />
+      <Route path="/confidentialite" element={<Confidentialite />} />
       <Route path="/dpe-gratuit" element={<DPEGratuit />} />
       <Route path="/simulateur" element={<Simulateur />} />
       <Route path="/pompe-a-chaleur" element={<LandingPACV2 />} />
@@ -149,6 +153,7 @@ function App() {
       <Route path="/blog/plancher-chauffant-pac-basse-temperature-2026" element={<ArticlePlancherChauffantPac2026 />} />
       <Route path="/blog/isolation-toiture-terrasse-2026" element={<ArticleIsolationToitureTerrasse2026 />} />
       <Route path="/blog/chaudiere-gaz-2026-remplacement-cout" element={<ArticleChaudiereGaz2026 />} />
+      <Route path="/blog/renovation-energetique-residence-secondaire-2026" element={<ArticleResidenceSecondaire2026 />} />
     </Routes>
   );
 }

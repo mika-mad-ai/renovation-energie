@@ -30,6 +30,8 @@
     "include": [
       "/",
       "/blog",
+      "/mentions-legales",
+      "/confidentialite",
       "/dpe-gratuit",
       "/pompe-a-chaleur",
       "/pompe-a-chaleur-classique",

@@ -45,6 +45,15 @@ export const ARTICLES = [
     alt: "Plancher chauffant basse température et pompe à chaleur dans une maison rénovée",
   },
   {
+    slug: "renovation-energetique-residence-secondaire-2026",
+    title: "Résidence secondaire : quelles aides à la rénovation énergétique en 2026 ?",
+    excerpt: "MaPrimeRénov' est réservée aux résidences principales, mais CEE, éco-PTZ et TVA 5,5 % restent accessibles. Le point sur ce qui finance une maison de vacances.",
+    tag: "Aides",
+    date: "13 sept. 2026",
+    image: "/blog/renovation-energetique-residence-secondaire-2026.jpg",
+    alt: "Maison de vacances en France bénéficiant d'une rénovation énergétique",
+  },
+  {
     slug: "maprimerenov-2027-maisons-dpe-fg-ce-qui-change",
     title: "Maisons F ou G : l'échéance MaPrimeRénov' reportée au 1er janvier 2028",
     excerpt: "Le décret du 25 août 2026 laisse aux maisons F et G l'accès aux aides par geste jusqu'au 31 décembre 2027 (DPE exigé en 2028). Ce que ça change, et pourquoi agir maintenant.",
