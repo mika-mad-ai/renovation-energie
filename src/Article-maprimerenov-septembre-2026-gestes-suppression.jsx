@@ -52,7 +52,7 @@ export default function ArticleMaPrimeRenovSeptembre2026() {
       description:
         "Au 1er septembre 2026, cinq gestes quittent le parcours MaPrimeRénov' par geste : isolation des combles, fenêtres, VMC, chauffe-eau thermodynamique et poêles à granulés. Que faire avant la date limite ?",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -72,7 +72,7 @@ export default function ArticleMaPrimeRenovSeptembre2026() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 2 août 2026 · Aides &amp; financement
+            Publié le 2 août 2026 · Mis à jour le 24 septembre 2026 · Aides &amp; financement
           </p>
 
           <h1>MaPrimeRénov' : ce qui disparaît au 1er septembre 2026 — agissez avant la date limite</h1>
@@ -91,6 +91,11 @@ export default function ArticleMaPrimeRenovSeptembre2026() {
             projet sur l'un de ces postes, vous avez quelques semaines pour déposer votre dossier
             aux conditions actuelles.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Le décret n° 2026-822 du 25 août 2026 a confirmé cette réforme au 1er septembre 2026 et précisé le calendrier : les logements F et G gardent l’accès aux gestes restants jusqu’au 31 décembre 2027, et le DPE ne sera exigé pour les aides par geste qu’à partir du 1er janvier 2028.</p>
+          </div>
 
           <h2>Cinq gestes qui quittent le dispositif monogeste</h2>
           <p>

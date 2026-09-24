@@ -52,7 +52,7 @@ export default function ArticleIsolationComblesPerdus2026() {
       description:
         "Tout savoir sur l'isolation des combles perdus en 2026 : coût au m², montants MaPrimeRénov', prime CEE et TVA 5,5 %. Attention : MaPrimeRénov' monogeste disparaît en septembre 2026.",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -72,7 +72,7 @@ export default function ArticleIsolationComblesPerdus2026() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 9 août 2026 · Guide pratique
+            Publié le 9 août 2026 · Mis à jour le 24 septembre 2026 · Guide pratique
           </p>
 
           <h1>Isolation des combles perdus en 2026 : agissez avant septembre pour cumuler MaPrimeRénov' et CEE</h1>
@@ -91,6 +91,11 @@ export default function ArticleIsolationComblesPerdus2026() {
             mais cette possibilité <strong>disparaît dès le 1er septembre 2026</strong>.
             Si vous envisagez d'isoler vos combles perdus, c'est maintenant qu'il faut agir.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Depuis le 1er septembre 2026 (décret n° 2026-822 du 25 août 2026), ces travaux ne sont plus financés par MaPrimeRénov’ « par geste ». Ils restent finançables dans le cadre d’une rénovation d’ampleur MaPrimeRénov’ (logements classés E, F ou G, gain d’au moins deux classes), par les primes CEE et par l’éco-PTZ, avec la TVA à 5,5 %. Les montants MaPrimeRénov’ par geste cités dans cet article ne s’appliquent plus aux nouvelles demandes.</p>
+          </div>
 
           <h2>Pourquoi les combles perdus sont-ils une priorité ?</h2>
           <p>

@@ -56,7 +56,7 @@ export default function ArticlePompeAChaleurAirEau() {
         "Prix d'une pompe à chaleur air/eau en 2026, montants de MaPrimeRénov' et des CEE, TVA réduite et reste à charge : comment estimer la rentabilité de votre installation.",
       image: IMAGE,
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -84,7 +84,7 @@ export default function ArticlePompeAChaleurAirEau() {
 
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 30 juin 2026 · Chauffage &amp; aides
+            Publié le 30 juin 2026 · Mis à jour le 24 septembre 2026 · Chauffage &amp; aides
           </p>
 
           <h1>Pompe à chaleur air/eau en 2026 : prix, aides et rentabilité</h1>
@@ -96,6 +96,11 @@ export default function ArticlePompeAChaleurAirEau() {
             fioul. Reste la question qui décide tout : combien ça coûte vraiment en 2026, une fois
             les aides déduites ? Tour d'horizon.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Les montants MaPrimeRénov’ pour une PAC air/eau (5 000 € / 4 000 € / 3 000 € selon revenus) sont inchangés, avec MaPrimeRénov’ + CEE écrêtés à 90 % de 12 000 € (soit 10 800 €) pour les ménages très modestes. Depuis le 1er septembre 2026, la prime CEE « coup de pouce » bonifiée exige un modèle de PAC agréé (liste officielle) et, pour une rénovation d’ampleur, le rendez-vous France Rénov’ est obligatoire avant tout dépôt de dossier.</p>
+          </div>
 
           <h2>Combien coûte une pompe à chaleur air/eau en 2026 ?</h2>
           <p>

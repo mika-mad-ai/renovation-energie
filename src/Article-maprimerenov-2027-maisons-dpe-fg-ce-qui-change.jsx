@@ -38,7 +38,7 @@ const PATH = '/blog/maprimerenov-2027-maisons-dpe-fg-ce-qui-change';
 
 export default function ArticleMaPrimeRenov2027DpeFG() {
   useSeo({
-    title: "Maisons DPE F ou G : ce qui change avec MaPrimeRénov' au 1er janvier 2027 | RenoHab",
+    title: "Maisons DPE F ou G : l'échéance MaPrimeRénov' reportée au 1er janvier 2028 | RenoHab",
     description:
       "À partir du 1er janvier 2027, les maisons classées F ou G devront basculer vers la rénovation d'ampleur pour accéder à MaPrimeRénov'. Tout ce que les propriétaires doivent savoir et faire avant cette échéance.",
     path: PATH,
@@ -47,11 +47,11 @@ export default function ArticleMaPrimeRenov2027DpeFG() {
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'Article',
-      headline: "Maisons DPE F ou G : ce qui change avec MaPrimeRénov' au 1er janvier 2027",
+      headline: "Maisons DPE F ou G : l'échéance MaPrimeRénov' reportée au 1er janvier 2028",
       description:
         "À partir du 1er janvier 2027, les maisons classées F ou G devront basculer vers la rénovation d'ampleur pour accéder à MaPrimeRénov'. Tout ce que les propriétaires doivent savoir et faire avant cette échéance.",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -71,10 +71,10 @@ export default function ArticleMaPrimeRenov2027DpeFG() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 12 septembre 2026 · Aides & financement
+            Publié le 12 septembre 2026 · Mis à jour le 24 septembre 2026 · Aides & financement
           </p>
 
-          <h1>Maisons DPE F ou G : ce qui change avec MaPrimeRénov' au 1er janvier 2027</h1>
+          <h1>Maisons DPE F ou G : l'échéance MaPrimeRénov' reportée au 1er janvier 2028</h1>
 
           <img
             src="/blog/maprimerenov-2027-maisons-dpe-fg-ce-qui-change.jpg"
@@ -86,6 +86,11 @@ export default function ArticleMaPrimeRenov2027DpeFG() {
           <p className="lead">
             Si votre logement est classé <strong>F ou G au DPE</strong>, une échéance importante approche : le <strong>1er janvier 2027</strong>. À partir de cette date, les règles d'accès à MaPrimeRénov' changent significativement pour les propriétaires de maisons individuelles qualifiées de passoires thermiques. Comprendre ces évolutions maintenant vous permettra d'agir avant qu'il ne soit trop tard.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Correction : le décret n° 2026-822 du 25 août 2026 reporte les échéances annoncées. Les maisons classées F ou G conservent l’accès au parcours par geste (pompe à chaleur, réseau de chaleur, dépose de cuve) jusqu’au 31 décembre 2027, et le DPE ne devient obligatoire pour ces aides qu’au 1er janvier 2028. Les passages ci-dessous mentionnant le 1er janvier 2027 sont à lire avec cette nouvelle date ; la rénovation d’ampleur reste, elle, réservée aux logements E, F ou G.</p>
+          </div>
 
           <h2>Rappel : la réforme du 1er septembre 2026</h2>
           <p>

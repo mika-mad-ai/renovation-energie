@@ -55,7 +55,7 @@ export default function ArticleCaniculeClimatisation() {
         "Aides climatisation 2026 : ce que financent réellement les CEE et la TVA réduite, pourquoi MaPrimeRénov' ne couvre pas la clim seule, et les solutions subventionnées pour garder un logement frais.",
       image: IMAGE,
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -83,7 +83,7 @@ export default function ArticleCaniculeClimatisation() {
 
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 30 juin 2026 · Confort d'été &amp; aides
+            Publié le 30 juin 2026 · Mis à jour le 24 septembre 2026 · Confort d'été &amp; aides
           </p>
 
           <h1>Canicule 2026 : quelles aides pour climatiser (ou rafraîchir) son logement ?</h1>
@@ -96,6 +96,11 @@ export default function ArticleCaniculeClimatisation() {
             solutions qui rafraîchissent <em>et</em> font baisser vos factures, elles, le sont.
             Faisons le tri.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Depuis le 18 juillet 2026, la pompe à chaleur air/air réversible (climatisation performante, posée par un installateur RGE dans un logement de plus de deux ans) bénéficie de la TVA réduite à 5,5 % (loi de finances 2026 et arrêté du 13 juillet 2026). Elle reste hors MaPrimeRénov’, mais ouvre droit à une prime CEE.</p>
+          </div>
 
           <h2>La climatisation seule : pas de MaPrimeRénov'</h2>
           <p>

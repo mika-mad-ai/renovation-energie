@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Home';
+import Blog from './Blog';
 import DPEGratuit from './DPE-gratuit';
 import Simulateur from './Simulateur';
 import LandingPAC from './pompe-a-chaleur';
@@ -91,6 +92,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/blog" element={<Blog />} />
       <Route path="/dpe-gratuit" element={<DPEGratuit />} />
       <Route path="/simulateur" element={<Simulateur />} />
       <Route path="/pompe-a-chaleur" element={<LandingPACV2 />} />

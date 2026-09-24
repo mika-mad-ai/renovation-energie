@@ -51,7 +51,7 @@ export default function ArticleRenovationMaisonAncienne2026() {
       description:
         "Isolation, humidité, aides MaPrimeRénov' : tout ce qu'il faut savoir pour rénover efficacement une maison ancienne en 2026 sans créer de pathologies.",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -72,7 +72,7 @@ export default function ArticleRenovationMaisonAncienne2026() {
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
 
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 13 août 2026 · Rénovation & bâti ancien
+            Publié le 13 août 2026 · Mis à jour le 24 septembre 2026 · Rénovation & bâti ancien
           </p>
 
           <h1>Rénover une maison ancienne en 2026 : guide pratique, pièges et aides disponibles</h1>
@@ -91,6 +91,11 @@ export default function ArticleRenovationMaisonAncienne2026() {
             causer des dégâts structurels coûteux. Bien conduite, elle permet des économies substantielles et
             l'accès à de généreuses aides publiques en 2026.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Depuis le 1er septembre 2026 (décret n° 2026-822 du 25 août 2026), le parcours MaPrimeRénov’ « par geste » est limité au chauffage décarboné : pompe à chaleur air/eau ou géothermique, raccordement à un réseau de chaleur, dépose de cuve à fioul. Isolation, fenêtres, VMC, chauffe-eau et appareils bois se financent désormais via la rénovation d’ampleur (logements E, F ou G), les primes CEE (bonifiées jusqu’au 31 décembre 2026 pour le chauffe-eau thermodynamique et le solaire thermique) et l’éco-PTZ.</p>
+          </div>
 
           <h2>Pourquoi le bâti ancien est-il différent ?</h2>
           <p>

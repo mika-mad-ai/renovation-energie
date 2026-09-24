@@ -51,7 +51,7 @@ export default function ArticlePassoireThermique() {
       description:
         "Propriétaire d'un logement classé F ou G ? On compare les deux options — vendre avec décote ou rénover avec les aides 2026 — pour vous aider à décider.",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -71,7 +71,7 @@ export default function ArticlePassoireThermique() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 5 septembre 2026 · Stratégie patrimoniale
+            Publié le 5 septembre 2026 · Mis à jour le 24 septembre 2026 · Stratégie patrimoniale
           </p>
 
           <h1>Passoire thermique : faut-il vendre ou rénover en 2026 ?</h1>
@@ -89,6 +89,11 @@ export default function ArticlePassoireThermique() {
             vendre maintenant, ou investir dans une rénovation énergétique pour récupérer de la valeur ?
             Voici les éléments de réponse concrets pour trancher en 2026.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Un arrêté publié au Journal officiel le 26 août 2026 abaisse le coefficient de conversion de l’électricité de 1,9 à 1,7 au 1er janvier 2027 : environ 300 000 logements supplémentaires sortiront des classes F et G, avec une attestation ADEME gratuite sans nouveau diagnostic. Par ailleurs, le projet de loi « relance et décentralisation du logement », voté au Sénat le 8 juillet 2026, permettrait de louer un logement F ou G sous engagement de travaux avant 2030 ; tant qu’il n’est pas promulgué, le calendrier d’interdiction (G depuis 2025, F en 2028, E en 2034) reste en vigueur.</p>
+          </div>
 
           <h2>Ce que signifie concrètement posséder une passoire thermique en 2026</h2>
           <p>

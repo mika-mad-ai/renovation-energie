@@ -51,7 +51,7 @@ export default function ArticleIsolationMursExterieure2026() {
       description:
         "Tout savoir sur l'isolation thermique par l'extérieur (ITE) en 2026 : coût au m², aides MaPrimeRénov' et CEE disponibles, conditions d'éligibilité et étapes du chantier.",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -71,7 +71,7 @@ export default function ArticleIsolationMursExterieure2026() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 11 août 2026 · Isolation
+            Publié le 11 août 2026 · Mis à jour le 24 septembre 2026 · Isolation
           </p>
 
           <h1>Isolation des murs par l'extérieur (ITE) en 2026 : prix, aides et démarches</h1>
@@ -89,6 +89,11 @@ export default function ArticleIsolationMursExterieure2026() {
             pour les traiter sans empiéter sur la surface habitable. En 2026, les règles d'accès
             aux aides ont évolué : voici ce que vous devez savoir avant de lancer votre chantier.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Depuis le 1er septembre 2026 (décret n° 2026-822 du 25 août 2026), ces travaux ne sont plus financés par MaPrimeRénov’ « par geste ». Ils restent finançables dans le cadre d’une rénovation d’ampleur MaPrimeRénov’ (logements classés E, F ou G, gain d’au moins deux classes), par les primes CEE et par l’éco-PTZ, avec la TVA à 5,5 %. Les montants MaPrimeRénov’ par geste cités dans cet article ne s’appliquent plus aux nouvelles demandes.</p>
+          </div>
 
           <h2>Qu'est-ce que l'isolation thermique par l'extérieur (ITE) ?</h2>
           <p>

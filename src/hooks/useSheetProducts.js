@@ -65,6 +65,10 @@ export function useSheetProducts(sheetUrl) {
       setState({ products: [], loading: false, error: null });
       return;
     }
+    // Pré-rendu react-snap (UA "ReactSnap") : les requêtes tierces sont bloquées et
+    // l'état d'erreur finirait figé dans le HTML statique → mismatch d'hydratation.
+    // On reste sur l'état initial "loading", identique au premier rendu client.
+    if (typeof navigator !== "undefined" && navigator.userAgent === "ReactSnap") return;
 
     let isMounted = true;
     const controller = new AbortController();
