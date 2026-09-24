@@ -8,6 +8,19 @@ import {
 import AdresseAutocomplete from "./AdresseAutocomplete";
 import { Link } from 'react-router-dom';
 import useSeo from "./useSeo";
+import ArticleCard from "./ArticleCard";
+import { ARTICLES } from "./blog/articles";
+
+// react-snap pré-rend la page avec l'UA "ReactSnap" : on gèle alors les états
+// pilotés par des effets (mobile, iframe…) pour que le HTML statique corresponde
+// exactement au premier rendu client → hydratation sans erreur ni re-rendu complet.
+const IS_PRERENDER = typeof navigator !== "undefined" && navigator.userAgent === "ReactSnap";
+
+// Déclencheur d'apparition des sections : dès que la section entre dans les 85 %
+// hauts de l'écran, quelle que soit sa hauteur (un seuil en % de la section
+// bloquait les sections plus hautes que l'écran → contenu invisible).
+const SECTION_VIEWPORT = { once: true, margin: "0px 0px -15% 0px" };
+const HOME_ARTICLES_COUNT = 6;
 
 
 // --- Configuration & Data ---
@@ -18,11 +31,11 @@ const renovationData = {
       imageUrl: "/isolation.webp", // REMPLACEZ
       details: `
         <h3 class="text-lg font-semibold text-emerald-600 mt-4 mb-2">Isolation Thermique Avancée</h3>
-        <p class="text-gray-600 mb-3">ITI, ITE, combles, planchers bas : nous utilisons des matériaux écologiques haute performance (laine de bois, ouate, polyuréthane) pour des économies maximales.</p>
+        <p class="text-gray-600 mb-3">ITI, ITE, combles, planchers bas : nous utilisons des matériaux écologiques haute performance (laine de bois, ouate, polyuréthane) pour des économies maximales. Depuis le 1er septembre 2026, l’isolation se finance via la rénovation d’ampleur MaPrimeRénov’, les primes CEE et l’éco-PTZ (TVA 5,5 %).</p>
         <h3 class="text-lg font-semibold text-emerald-600 mt-4 mb-2">Fenêtres Haute Performance</h3>
-        <p class="text-gray-600 mb-3">Double/Triple vitrage (PVC, Alu, Bois) pour stopper les déperditions et améliorer le confort acoustique.</p>
+        <p class="text-gray-600 mb-3">Double/Triple vitrage (PVC, Alu, Bois) pour stopper les déperditions et améliorer le confort acoustique. Aides : primes CEE, éco-PTZ (jusqu’à 7 000 €) et TVA 5,5 % — hors MaPrimeRénov’ par geste depuis le 1er septembre 2026.</p>
         <h3 class="text-lg font-semibold text-emerald-600 mt-4 mb-2">Autoconsommation Solaire</h3>
-        <p class="text-gray-600">Produisez votre électricité verte avec des panneaux photovoltaïques. Réduisez vos factures et gagnez en autonomie.</p>
+        <p class="text-gray-600">Produisez votre électricité verte avec des panneaux photovoltaïques. Réduisez vos factures et gagnez en autonomie : TVA à 5,5 % jusqu’à 9 kWc depuis octobre 2025.</p>
       `
     },
     "Chauffage et eau chaude": { // Shortened title
@@ -30,11 +43,11 @@ const renovationData = {
       imageUrl: "/chauffage.webp", // REMPLACEZ
       details: `
         <h3 class="text-lg font-semibold text-sky-600 mt-4 mb-2">Pompes à Chaleur (PAC)</h3>
-        <p class="text-gray-600 mb-3">Air-Air, Air-Eau, Géothermique : utilisez les calories gratuites de l'environnement. Très faible coût d'usage.</p>
+        <p class="text-gray-600 mb-3">Air-Air, Air-Eau, Géothermique : utilisez les calories gratuites de l'environnement. Très faible coût d'usage. MaPrimeRénov’ jusqu’à 5 000 € (air/eau) ou 11 000 € (géothermie), cumulable avec une prime CEE bonifiée pour les modèles agréés depuis septembre 2026.</p>
         <h3 class="text-lg font-semibold text-sky-600 mt-4 mb-2">Chauffage Biomasse</h3>
-        <p class="text-gray-600 mb-3">Chaudières à granulés ou poêles à bois modernes pour un chauffage renouvelable et performant.</p>
+        <p class="text-gray-600 mb-3">Chaudières à granulés ou poêles à bois modernes pour un chauffage renouvelable et performant. Aides : primes CEE bonifiées et éco-PTZ (hors MaPrimeRénov’ par geste depuis 2026).</p>
         <h3 class="text-lg font-semibold text-sky-600 mt-4 mb-2">Eau Chaude Sanitaire (ECS) Optimisée</h3>
-        <p class="text-gray-600">Chauffe-eau thermodynamique ou solaire : des solutions écologiques pour réduire drastiquement votre consommation.</p>
+        <p class="text-gray-600">Chauffe-eau thermodynamique ou solaire : des solutions écologiques pour réduire drastiquement votre consommation. Prime CEE fortement bonifiée jusqu’au 31 décembre 2026 (compensation de leur sortie de MaPrimeRénov’).</p>
       `
     },
     "Ventilation et qualité d'air": { // Shortened title
@@ -58,11 +71,11 @@ const projectSteps = [
 ];
 
 const financialAidsBanner = [
-    "Débloquez jusqu'à 90% d'aides pour votre rénovation globale !",
-    "Primes CEE : Réduisez encore plus le coût de vos travaux.",
-    "Financez votre reste à charge à 0% avec l'Éco-Prêt à Taux Zéro.",
-    "TVA à 5,5% : Un avantage fiscal direct sur vos travaux.",
-    "RenoHab : Votre guide expert pour maximiser toutes les aides.",
+    "Rénovation d'ampleur : jusqu'à 80 % de vos travaux financés par MaPrimeRénov'.",
+    "Pompe à chaleur : MaPrimeRénov' + prime CEE, jusqu'à 90 % du coût pour les ménages très modestes.",
+    "Financez votre reste à charge à 0 % avec l'Éco-PTZ : jusqu'à 50 000 € sur 20 ans.",
+    "TVA à 5,5 % sur la rénovation énergétique, PAC air/air réversible incluse depuis juillet 2026.",
+    "RenoHab : votre Accompagnateur Rénov' agréé pour maximiser toutes les aides.",
 ];
 const HERO_VIDEO_SRC = "/hero-renohab-2025.mp4?v=2";
 const HERO_POSTER    = "/background-poster.webp?v=2";
@@ -70,8 +83,8 @@ const HERO_POSTER    = "/background-poster.webp?v=2";
 // --- Component ---
 const Home = () => {
     useSeo({
-        title: "Rénovation énergétique & DPE : jusqu'à 90 % d'aides | RenoHab",
-        description: "RenoHab, Accompagnateur Rénov' agréé : audit énergétique, DPE, MaPrimeRénov', CEE et pompe à chaleur. On monte vos dossiers d'aides et coordonne des artisans RGE, partout en France.",
+        title: "Rénovation énergétique & DPE : jusqu'à 80 % d'aides | RenoHab",
+        description: "RenoHab, Accompagnateur Rénov' agréé : audit énergétique, DPE, MaPrimeRénov', CEE, éco-PTZ et pompe à chaleur. Aides à jour des règles du 1er septembre 2026 : on monte vos dossiers et coordonnons des artisans RGE, partout en France.",
         path: "/",
         type: "website",
     });
@@ -98,8 +111,13 @@ const kelvinRef = useRef(null);
     const heroY = useTransform(scrollYProgressHero, [0, 1], ["0%", "30%"]); // Parallax effect for hero content
     
 const [isMobile, setIsMobile] = useState(false);
+// true une fois monté côté client (jamais pendant le pré-rendu) : permet d'afficher
+// la vidéo desktop uniquement après hydratation, avec un HTML initial identique partout.
+const [mounted, setMounted] = useState(false);
 
 useEffect(() => {
+  if (IS_PRERENDER) return;
+  setMounted(true);
   const checkMobile = () => {
     setIsMobile(window.innerWidth < 768);
   };
@@ -129,22 +147,10 @@ useEffect(() => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    useEffect(() => {
-  const obs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setShowKelvinIframe(true);
-          obs.disconnect(); // stoppe après 1er affichage
-        }
-      });
-    },
-    { root: null, rootMargin: "0px", threshold: 0.1 }
-  );
-
-  if (kelvinRef.current) obs.observe(kelvinRef.current);
-  return () => obs.disconnect();
-}, []);
+    // Le simulateur Kelvin (iframe tierce) se charge au clic, plus au défilement :
+    // en se chargeant, l'iframe prend le focus et ramenait brutalement la page vers
+    // lui (impossible d'atteindre le bas de page), et il pesait sur le chargement initial.
+    const launchKelvin = () => setShowKelvinIframe(true);
 
 
 useEffect(() => {
@@ -208,6 +214,7 @@ useEffect(() => {
     // --- Handlers ---
     const handleSmoothScroll = (e, targetId) => {
         e.preventDefault();
+        if (targetId === 'kelvin' || targetId === 'simulator') setShowKelvinIframe(true);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
             const stickyHeaderHeight = 80; // Adjust if header height changes
@@ -525,7 +532,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
                  <motion.section
                     id="simulator"
                     className="bg-white rounded-2xl shadow-soft overflow-hidden border border-gray-200/50 transform transition-all duration-300 hover:shadow-card"
-                    variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} whileHover={cardHoverEffect}
+                    variants={fadeInUp} initial="hidden" whileInView="visible" viewport={SECTION_VIEWPORT} whileHover={cardHoverEffect}
                  >
                     <div className="p-6 md:p-10">
                         <div className="flex items-center mb-4">
@@ -540,8 +547,26 @@ console.log("✅ form_lead_sent envoyé à GA4");
   className="w-full bg-gray-100 border-t border-gray-200/60 relative min-h-[700px]"
 >
   {!showKelvinIframe ? (
-    <div className="absolute inset-0 flex items-center justify-center text-gray-500 z-0">
-      Chargement du simulateur...
+    <div className="absolute inset-0 flex items-center justify-center p-6 z-0">
+      <div className="max-w-lg w-full text-center bg-white rounded-2xl border border-gray-200/70 shadow-soft px-6 py-8 md:px-10 md:py-10">
+        <div className="mx-auto mb-5 w-14 h-14 rounded-full bg-gradient-to-br from-emerald-100 to-teal-100 text-emerald-600 flex items-center justify-center shadow-inner">
+          <FiZap className="w-7 h-7" />
+        </div>
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 font-display mb-2">Simulez vos aides en 2 minutes</h3>
+        <p className="text-gray-600 mb-6">
+          Adresse, chauffage actuel, revenus : notre outil partenaire estime MaPrimeRénov', les primes CEE
+          et votre reste à charge. Gratuit et sans engagement.
+        </p>
+        <button
+          type="button"
+          onClick={launchKelvin}
+          className="group inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-md hover:shadow-lg transform-gpu hover:-translate-y-0.5 active:scale-[0.97] transition duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+        >
+          Lancer le simulateur
+          <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+        </button>
+        <p className="mt-4 text-xs text-gray-500">Le simulateur s'affiche ici même, sur cette page.</p>
+      </div>
     </div>
   ) : (
     <iframe
@@ -568,9 +593,9 @@ console.log("✅ form_lead_sent envoyé à GA4");
   variants={fadeInUp}
   initial="hidden"
   whileInView="visible"
-  viewport={{ once: true, amount: 0.2 }}
+  viewport={SECTION_VIEWPORT}
 >
-  {isMobile ? (
+  {!mounted || isMobile ? (
     showVideoMobile ? (
 <video
   key={HERO_VIDEO_SRC}
@@ -633,7 +658,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
   variants={fadeInUp}
   initial="hidden"
   whileInView="visible"
-  viewport={{ once: true, amount: 0.2 }}
+  viewport={SECTION_VIEWPORT}
 >
   <div className="p-6 md:p-10">
     <div className="flex items-center mb-6">
@@ -646,9 +671,10 @@ console.log("✅ form_lead_sent envoyé à GA4");
     </div>
 
     <p className="text-gray-700 ml-11 mb-8 text-lg leading-relaxed">
-      2026 confirme le cap de la rénovation énergétique : nouveau mode de calcul du DPE,
-      calendrier d’interdiction de location qui se durcit, audit énergétique élargi et
-      MaPrimeRénov’ recentrée sur le chauffage décarboné et les rénovations d’ampleur.
+      2026 marque un tournant : nouveau calcul du DPE (et une nouvelle baisse du coefficient
+      électricité au 1er janvier 2027), calendrier d’interdiction de location maintenu mais
+      débattu au Parlement, audit énergétique élargi, et MaPrimeRénov’ recentrée depuis le
+      1er septembre 2026 sur le chauffage décarboné et les rénovations d’ampleur.
     </p>
 
     <div className="grid md:grid-cols-2 gap-6 ml-11">
@@ -657,9 +683,11 @@ console.log("✅ form_lead_sent envoyé à GA4");
           Nouveau DPE depuis le 1er janvier 2026
         </h3>
         <p className="text-gray-700">
-          Le <strong>coefficient de conversion de l’électricité passe de 2,3 à 1,9</strong>.
-          Environ <strong>850 000 logements</strong> chauffés à l’électricité gagnent une classe et
-          peuvent sortir du statut de passoire. Aucune étiquette ne peut être dégradée par la réforme.
+          Le <strong>coefficient de conversion de l’électricité passe de 2,3 à 1,9</strong> :
+          environ <strong>850 000 logements</strong> chauffés à l’électricité gagnent une classe.
+          <strong>Prochaine étape au 1er janvier 2027 : coefficient 1,7</strong> (arrêté publié au
+          JO le 26 août 2026), soit près de 300 000 logements de plus qui sortent de F/G. Aucune
+          étiquette ne peut être dégradée ; l’attestation de nouvelle classe est gratuite sur le site de l’ADEME.
         </p>
       </div>
 
@@ -670,7 +698,9 @@ console.log("✅ form_lead_sent envoyé à GA4");
         <p className="text-gray-700">
           Les logements classés <strong>G</strong> sont interdits à la location depuis le
           <strong> 1er janvier 2025</strong>. Suivront les classes <strong>F au 1er janvier 2028</strong>
-          puis <strong>E au 1er janvier 2034</strong> (nouveaux baux et renouvellements).
+          puis <strong>E au 1er janvier 2034</strong> (nouveaux baux et renouvellements). Le projet de
+          loi « relance du logement », voté au Sénat le 8 juillet 2026, permettrait de relouer un F/G
+          sous engagement de travaux avant 2030 : non promulgué, il ne suspend pas l’interdiction.
         </p>
       </div>
 
@@ -691,8 +721,37 @@ console.log("✅ form_lead_sent envoyé à GA4");
         </h3>
         <p className="text-gray-700">
           Les <strong>pompes à chaleur air/eau</strong> conservent la <strong>TVA réduite à 5,5 %</strong>
-          (pose par un installateur RGE QualiPAC). Les <strong>chaudières fossiles</strong> sont au
-          taux normal de <strong>20 %</strong> depuis mars 2025 et sont exclues de MaPrimeRénov’ et des CEE.
+          (pose par un installateur RGE QualiPAC) et la <strong>PAC air/air réversible</strong> y a droit
+          depuis le <strong>18 juillet 2026</strong>. Les <strong>chaudières fossiles</strong> sont au taux
+          normal de <strong>20 %</strong> depuis mars 2025, exclues de MaPrimeRénov’, des CEE et de l’éco-PTZ ;
+          depuis le 1er septembre 2026, conserver un chauffage au gaz en maison individuelle ferme
+          l’accès à la rénovation d’ampleur.
+        </p>
+      </div>
+
+      <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">
+        <h3 className="text-lg font-semibold text-gray-900 mb-1">
+          MaPrimeRénov’ par geste recentrée (1er septembre 2026)
+        </h3>
+        <p className="text-gray-700">
+          Le décret n° 2026-822 limite les aides « par geste » au <strong>chauffage décarboné</strong> :
+          PAC air/eau (jusqu’à <strong>5 000 €</strong>), PAC géothermique (jusqu’à <strong>11 000 €</strong>),
+          réseau de chaleur, dépose de cuve à fioul. Isolation, fenêtres, VMC, chauffe-eau et appareils
+          bois passent par la <strong>rénovation d’ampleur</strong>, les <strong>CEE</strong> et l’<strong>éco-PTZ</strong>.
+          Logements F/G acceptés jusqu’au 31 décembre 2027 ; DPE exigé à partir du 1er janvier 2028.
+        </p>
+      </div>
+
+      <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">
+        <h3 className="text-lg font-semibold text-gray-900 mb-1">
+          Nouvelles étapes obligatoires
+        </h3>
+        <p className="text-gray-700">
+          Depuis la réouverture du guichet le <strong>23 février 2026</strong>, un
+          <strong> rendez-vous France Rénov’</strong> (gratuit) est obligatoire avant tout dossier de
+          rénovation d’ampleur, et <strong>Mon Accompagnateur Rénov’</strong> reste imposé. Pour la prime
+          CEE « coup de pouce » PAC, seuls les <strong>modèles agréés</strong> ouvrent droit à la bonification
+          depuis le 1er septembre 2026. Rénovation d’ampleur réservée aux logements <strong>E, F ou G</strong>.
         </p>
       </div>
     </div>
@@ -724,7 +783,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
   variants={fadeInUp}
   initial="hidden"
   whileInView="visible"
-  viewport={{ once: true, amount: 0.2 }}
+  viewport={SECTION_VIEWPORT}
 >
   <div className="p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
     <div>
@@ -738,15 +797,15 @@ console.log("✅ form_lead_sent envoyé à GA4");
       </div>
 
       <p className="text-gray-600 mb-4 ml-11 text-lg">
-        Le <strong>Diagnostic de Performance Énergétique (DPE)</strong> est le <strong>document clé</strong> qui conditionne l’accès aux aides à la rénovation (<strong>MaPrimeRénov’</strong>, <strong>CEE</strong>, <strong>Éco-PTZ</strong>...).
+        Le <strong>Diagnostic de Performance Énergétique (DPE)</strong> et l’<strong>audit énergétique</strong> sont les <strong>documents clés</strong> de votre projet : la rénovation d’ampleur <strong>MaPrimeRénov’</strong> est réservée aux logements classés <strong>E, F ou G</strong> et exige un audit ; pour les aides par geste, le DPE devient obligatoire au <strong>1er janvier 2028</strong>.
       </p>
 
       <p className="text-gray-600 mb-4 ml-11 text-lg">
-        Sans un DPE conforme réalisé par un <strong>Accompagnateur Rénov’ agréé</strong>, il est <strong>impossible d’obtenir les subventions de l’État</strong> pour financer vos travaux.
+        Un DPE fiable (diagnostiqueur certifié, enregistré à l’ADEME) et un audit de qualité déterminent <strong>le montant de vos aides</strong> et préparent le <strong>rendez-vous France Rénov’</strong>, désormais obligatoire avant tout dossier de rénovation d’ampleur.
       </p>
 
       <div className="bg-emerald-50/50 border border-emerald-200 p-4 rounded-lg mb-6 text-gray-700 font-medium ml-11">
-        🎯 <strong>Un DPE de qualité = le passeport pour débloquer jusqu’à 90% d’aides</strong> pour votre projet de rénovation !
+        🎯 <strong>Un DPE et un audit de qualité = le passeport pour débloquer jusqu’à 80 % d’aides</strong> (rénovation d’ampleur) sur votre projet !
       </div>
 
       <h3 className="text-xl font-semibold text-emerald-600 mb-2 ml-11">Quel est le coût d’un DPE ?</h3>
@@ -754,12 +813,12 @@ console.log("✅ form_lead_sent envoyé à GA4");
         L’<strong>audit énergétique complet avec DPE</strong> réalisé par un MAR agréé coûte généralement entre <strong>1500 € et 2500 €</strong>, selon la taille et la complexité du bien.
       </p>
       <p className="text-gray-600 mb-4 ml-11">
-        Cet investissement est <strong>largement rentabilisé</strong>, car il permet d’accéder aux <strong>aides couvrant jusqu'à 90% du montant des travaux</strong>.
+        Cet investissement est <strong>largement rentabilisé</strong>, car il permet d’accéder aux <strong>aides couvrant jusqu’à 80 % du montant HT des travaux</strong> (rénovation d’ampleur, ménages très modestes) et de sécuriser votre dossier.
       </p>
 
       <h3 className="text-xl font-semibold text-emerald-600 mb-2 ml-11">Pourquoi le DPE est-il si important ?</h3>
       <ul className="list-disc list-inside text-gray-600 mb-6 space-y-1 ml-11">
-        <li>Condition d’accès obligatoire aux <strong>aides financières</strong></li>
+        <li>Condition d’accès à la <strong>rénovation d’ampleur</strong> (logements E, F, G) et bientôt aux aides par geste</li>
         <li>Évaluation précise de la <strong>performance énergétique</strong></li>
         <li>Identification des <strong>travaux prioritaires</strong></li>
         <li>Valorisation du bien immobilier (vente / location)</li>
@@ -799,7 +858,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
                  <motion.section
                     id="audit-request"
                     className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-soft overflow-hidden p-6 md:p-10 text-white"
-                    variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+                    variants={fadeInUp} initial="hidden" whileInView="visible" viewport={SECTION_VIEWPORT}
                  >
                       {/* ... contenu du formulaire ... */}
                       <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 tracking-tight font-display drop-shadow-md">Prêt à Transformer Votre Habitat ?</h2>
@@ -913,7 +972,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
                  {/* --- Section: Types de Travaux --- */}
                  <motion.section
                     id="renovation-types"
-                    variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
+                    variants={staggerContainer} initial="hidden" whileInView="visible" viewport={SECTION_VIEWPORT}
                 >
                      {/* ... contenu des types de travaux ... */}
                      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 md:mb-16 tracking-tight font-display">Boostez Votre Score Énergétique : Les Travaux Clés</h2>
@@ -966,29 +1025,28 @@ console.log("✅ form_lead_sent envoyé à GA4");
   variants={fadeInUp}
   initial="hidden"
   whileInView="visible"
-  viewport={{ once: true, amount: 0.1 }}
+  viewport={SECTION_VIEWPORT}
 >
   <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-2 tracking-tight font-display">
     Financez malin : les aides 2026 (à jour)
   </h2>
   <p className="text-center text-xs text-gray-500 mb-8">
-    Mis à jour le 18/06/2026 — Synthèse indicative (soumise à conditions et évolutions réglementaires).
+    Mis à jour le 24/09/2026 — Synthèse indicative d’après le guide des aides Anah (septembre 2026) et le décret n° 2026-822 du 25 août 2026, soumise à conditions et évolutions réglementaires.
   </p>
 
-  <motion.div className="space-y-6" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
+  <motion.div className="space-y-6" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={SECTION_VIEWPORT}>
     {/* MPR par gestes */}
     <motion.div variants={fadeInUp} className="bg-emerald-50/50 p-5 rounded-xl border border-emerald-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
         <FiAward className="w-7 h-7 text-emerald-600 mr-4 flex-shrink-0 mt-1 sm:mt-0" />
-        <h3 className="text-lg md:text-xl font-semibold text-emerald-800 font-display">MaPrimeRénov’ – par gestes</h3>
+        <h3 className="text-lg md:text-xl font-semibold text-emerald-800 font-display">MaPrimeRénov’ – par geste (chauffage décarboné)</h3>
       </div>
       <ul className="ml-11 text-gray-700 text-sm leading-relaxed list-disc list-inside space-y-1">
-        <li>Prime pour des travaux unitaires (isolation, <strong>PAC</strong>, VMC, etc.).</li>
-        <li>Plafond MPR “gestes” par logement sur 5 ans (cumulable avec primes CEE, sous écrêtement global).</li>
-        <li>Dossiers et montants selon revenus (Bleu/Jaune/Violet/Rose) et type de geste.</li>
+        <li>Depuis le <strong>1er septembre 2026</strong> (décret n° 2026-822), le parcours par geste est recentré : <strong>PAC air/eau 5 000 € / 4 000 € / 3 000 €</strong> (ménages très modestes / modestes / intermédiaires), <strong>PAC géothermique 11 000 € / 9 000 € / 6 000 €</strong>, raccordement à un réseau de chaleur, dépose de cuve à fioul.</li>
+        <li><strong>Sortis du parcours par geste</strong> : isolation (murs depuis janvier ; combles, toiture, planchers depuis septembre), fenêtres, VMC, chauffe-eau thermodynamique et solaire, poêles et chaudières bois. Ils restent finançables via la rénovation d’ampleur, les <strong>CEE</strong> et l’<strong>éco-PTZ</strong>.</li>
+        <li>Revenus supérieurs non éligibles. Plafond de 20 000 € d’aides par logement sur 5 ans ; MPR + CEE écrêtés à <strong>90 % / 75 % / 60 %</strong> de la dépense éligible (PAC air/eau : jusqu’à <strong>10 800 €</strong> pour un ménage très modeste). Logements F/G acceptés jusqu’au 31/12/2027 ; DPE obligatoire au 1er janvier 2028.</li>
       </ul>
     </motion.div>
-
     {/* MPR rénovation d'ampleur */}
     <motion.div variants={fadeInUp} className="bg-sky-50/50 p-5 rounded-xl border border-sky-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
@@ -996,26 +1054,24 @@ console.log("✅ form_lead_sent envoyé à GA4");
         <h3 className="text-lg md:text-xl font-semibold text-sky-800 font-display">MaPrimeRénov’ – rénovation d’ampleur (Parcours accompagné)</h3>
       </div>
       <ul className="ml-11 text-gray-700 text-sm leading-relaxed list-disc list-inside space-y-1">
-        <li>Au moins <strong>2 gestes d’isolation</strong> et un <strong>gain ≥ 2 classes DPE</strong> ; <strong>chauffage décarboné obligatoire</strong> depuis le 1er janvier 2026.</li>
-        <li>Dépense plafonnée à <strong>30 000 €</strong> pour un gain de 2 classes et <strong>40 000 €</strong> pour 3 classes ou plus (depuis le 30/09/2025).</li>
-        <li>Prise en charge <strong>jusqu’à 80 %</strong> pour les ménages très modestes et modestes. <strong>Non cumulable</strong> avec les CEE sur ce parcours. <strong>Accompagnement Mon Accompagnateur Rénov’ obligatoire.</strong></li>
+        <li>Réservée aux logements classés <strong>E, F ou G</strong> de plus de 15 ans : audit énergétique, <strong>gain ≥ 2 classes DPE</strong>, au moins <strong>2 gestes d’isolation</strong> et <strong>chauffage décarboné</strong> (depuis le 1er septembre 2026, conserver une chaudière gaz ou fioul en maison individuelle rend inéligible).</li>
+        <li>Prise en charge de <strong>80 % / 60 % / 45 % / 10 %</strong> du montant HT (très modestes / modestes / intermédiaires / supérieurs), dépense plafonnée à <strong>30 000 €</strong> (gain de 2 classes) ou <strong>40 000 €</strong> (3 classes et plus). Le bonus « sortie de passoire » a disparu le 30/09/2025.</li>
+        <li><strong>Non cumulable avec les CEE</strong>. <strong>Mon Accompagnateur Rénov’ obligatoire</strong> (pris en charge jusqu’à 2 000 €, de 100 % à 20 % selon revenus) et <strong>rendez-vous France Rénov’ obligatoire</strong> avant le dépôt du dossier.</li>
       </ul>
       <div className="ml-11 mt-3 text-xs text-gray-600 italic">
-        Dispositif rouvert le 23/02/2026 après le vote de la loi de finances ; éligibilité calculée sur le revenu fiscal de référence 2025.
+        Guichet rouvert le 23/02/2026 (loi de finances 2026) ; règles ci-dessus applicables aux demandes déposées depuis le 1er septembre 2026 ; éligibilité calculée sur le revenu fiscal de référence 2025.
       </div>
     </motion.div>
-
     {/* CEE */}
     <motion.div variants={fadeInUp} className="bg-yellow-50/50 p-5 rounded-xl border border-yellow-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
         <FiDollarSign className="w-7 h-7 text-yellow-600 mr-4 flex-shrink-0 mt-1 sm:mt-0" />
-        <h3 className="text-lg md:text-xl font-semibold text-yellow-800 font-display">Certificats d’Économies d’Énergie (CEE)</h3>
+        <h3 className="text-lg md:text-xl font-semibold text-yellow-800 font-display">Certificats d’Économies d’Énergie (CEE) – 6e période 2026-2030</h3>
       </div>
       <p className="ml-11 text-gray-700 text-sm leading-relaxed">
-        Primes versées par les fournisseurs d’énergie, <strong>cumulables avec MPR par gestes</strong> (dans la limite d’écrêtement), variables selon travaux et zone.
+        Primes versées par les fournisseurs d’énergie, <strong>ouvertes à tous les revenus</strong> et <strong>cumulables avec MPR par geste</strong> (dans la limite d’écrêtement). « Coup de pouce » PAC air/eau bonifié (×5) lorsqu’elle remplace une chaudière gaz, fioul ou charbon ; depuis le <strong>1er septembre 2026</strong>, la bonification exige un <strong>modèle de PAC agréé</strong> (liste officielle). Du 1er septembre au 31 décembre 2026, primes fortement bonifiées pour le chauffe-eau thermodynamique et le solaire thermique, en compensation de leur sortie de MaPrimeRénov’.
       </p>
     </motion.div>
-
     {/* Eco-PTZ */}
     <motion.div variants={fadeInUp} className="bg-purple-50/50 p-5 rounded-xl border border-purple-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
@@ -1023,10 +1079,9 @@ console.log("✅ form_lead_sent envoyé à GA4");
         <h3 className="text-lg md:text-xl font-semibold text-purple-800 font-display">Éco-Prêt à Taux Zéro (Éco-PTZ)</h3>
       </div>
       <p className="ml-11 text-gray-700 text-sm leading-relaxed">
-        Prêt à 0 % pour financer le reste à charge. Des assouplissements de cumul avec MPR Parcours accompagné sont prévus (mise en œuvre selon décret).
+        Prêt à 0 % sans condition de ressources, <strong>prolongé jusqu’au 31/12/2027</strong> : de 7 000 € (fenêtres) à <strong>30 000 €</strong> (3 actions et plus) sur 15 ans, et jusqu’à <strong>50 000 € sur 20 ans</strong> pour une rénovation performante ou en complément de MaPrimeRénov’ (éco-PTZ « MaPrimeRénov’ » accordé sur simple notification de l’Anah). Isolation, fenêtres, VMC et chauffe-eau y restent éligibles ; chaudières gaz exclues depuis le 1er juillet 2025.
       </p>
     </motion.div>
-
     {/* TVA */}
     <motion.div variants={fadeInUp} className="bg-gray-50/70 p-5 rounded-xl border border-gray-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
@@ -1034,11 +1089,11 @@ console.log("✅ form_lead_sent envoyé à GA4");
         <h3 className="text-lg md:text-xl font-semibold text-gray-900 font-display">TVA travaux (2026)</h3>
       </div>
       <ul className="ml-11 text-gray-700 text-sm leading-relaxed list-disc list-inside space-y-1">
-        <li><strong>5,5 %</strong> sur les travaux de rénovation énergétique éligibles (isolation, PAC air/eau, VMC double flux, etc.) dans un logement de plus de 2 ans.</li>
-        <li><strong>Chaudières fossiles (gaz, fioul)</strong> : <strong>20 %</strong> depuis mars 2025 (fin du taux réduit).</li>
+        <li><strong>5,5 %</strong> sur la rénovation énergétique (isolation, PAC air/eau et géothermique, chauffe-eau thermodynamique, fenêtres performantes, VMC…) dans un logement de plus de 2 ans, travaux induits compris.</li>
+        <li><strong>Nouveau</strong> : la <strong>PAC air/air réversible</strong> passe à <strong>5,5 %</strong> depuis le <strong>18 juillet 2026</strong> (matériel performant, pose RGE). Panneaux photovoltaïques ≤ 9 kWc à 5,5 % depuis le 1er octobre 2025.</li>
+        <li><strong>Chaudières fossiles (gaz, fioul)</strong> : <strong>20 %</strong> depuis mars 2025, exclues de MaPrimeRénov’, des CEE bonifiés et de l’éco-PTZ.</li>
       </ul>
     </motion.div>
-
     {/* Loc / DPE */}
     <motion.div variants={fadeInUp} className="bg-rose-50/60 p-5 rounded-xl border border-rose-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
@@ -1046,11 +1101,10 @@ console.log("✅ form_lead_sent envoyé à GA4");
         <h3 className="text-lg md:text-xl font-semibold text-rose-800 font-display">Réglementation DPE & location</h3>
       </div>
       <ul className="ml-11 text-gray-700 text-sm leading-relaxed list-disc list-inside space-y-1">
-        <li><strong>Interdiction de louer les logements G</strong> depuis le 01/01/2025, puis <strong>F au 01/01/2028</strong> et <strong>E au 01/01/2034</strong>.</li>
-        <li>Nouveau DPE depuis le <strong>01/01/2026</strong> : coefficient électricité abaissé (2,3 → 1,9), de nombreux logements électriques gagnent une classe. Étiquettes <strong>A → G inchangées</strong>.</li>
+        <li><strong>Interdiction de louer les logements G</strong> depuis le 01/01/2025, puis <strong>F au 01/01/2028</strong> et <strong>E au 01/01/2034</strong>. Le projet de loi « relance du logement » (Sénat, 8 juillet 2026 ; Assemblée à l’automne) permettrait de louer un F/G sous engagement de travaux avant 2030 : tant qu’il n’est pas promulgué, l’interdiction s’applique.</li>
+        <li>Nouveau DPE depuis le <strong>01/01/2026</strong> : coefficient électricité 2,3 → 1,9 (≈ 850 000 logements sortis de F/G). <strong>Au 01/01/2027, il passe à 1,7</strong> (arrêté publié le 26 août 2026) : ≈ 300 000 logements supplémentaires gagnent une classe, attestation ADEME gratuite sans nouveau diagnostic. Audit obligatoire à la vente des maisons E, F, G (D en 2034).</li>
       </ul>
     </motion.div>
-
     {/* Aides locales */}
     <motion.div variants={fadeInUp} className="bg-teal-50/50 p-5 rounded-xl border border-teal-200 shadow-sm">
       <div className="flex items-start sm:items-center mb-2">
@@ -1088,7 +1142,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
                  {/* --- Section: Étapes du Projet --- */}
                  <motion.section
                     id="project-steps"
-                    variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
+                    variants={staggerContainer} initial="hidden" whileInView="visible" viewport={SECTION_VIEWPORT}
                 >
                     {/* ... contenu des étapes du projet ... */}
                      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12 md:mb-16 tracking-tight font-display">Votre Parcours Rénovation : 5 Étapes Clés</h2>
@@ -1120,7 +1174,7 @@ console.log("✅ form_lead_sent envoyé à GA4");
                  {/* --- Section: Ressources / Articles --- */}
                  <motion.section
                     id="ressources"
-                    variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+                    variants={fadeInUp} initial="hidden" whileInView="visible" viewport={SECTION_VIEWPORT}
                  >
                     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3 tracking-tight font-display">
                         Ressources &amp; conseils
@@ -1129,1449 +1183,21 @@ console.log("✅ form_lead_sent envoyé à GA4");
                         Nos guides pour comprendre la rénovation énergétique et valoriser votre bien.
                     </p>
 
+                    {/* Les cartes viennent de src/blog/articles.js (6 plus récents). Pour ajouter un
+                        article : ajouter une entrée EN TÊTE du tableau ARTICLES, pas ici. */}
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                        <Link
-                            to="/blog/loi-relance-logement-passoires-thermiques-bailleurs-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/loi-relance-logement-passoires-thermiques-bailleurs-2026.jpg"
-                                    alt="Étiquette DPE passoire thermique – loi relance logement 2026 et interdiction de location"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Bailleurs · 21 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Passoires thermiques : la Loi Relance Logement change-t-elle vraiment les règles ?
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Le Sénat a adopté en juillet 2026 un texte pour assouplir l'interdiction de louer les logements F et G. Ce qu'il prévoit, ce qui reste incertain, et pourquoi rénover maintenant reste la meilleure stratégie.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/plancher-chauffant-pac-basse-temperature-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/plancher-chauffant-pac-basse-temperature-2026.jpg"
-                                    alt="Plancher chauffant basse température et pompe à chaleur dans une maison rénovée"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Chauffage · 15 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Plancher chauffant + PAC : le duo gagnant pour réduire vos factures en 2026
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Associer une pompe à chaleur à un plancher chauffant basse température maximise le confort et le rendement. Fonctionnement, coûts et aides disponibles.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/maprimerenov-2027-maisons-dpe-fg-ce-qui-change"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/maprimerenov-2027-maisons-dpe-fg-ce-qui-change.jpg"
-                                    alt="Étiquette DPE F ou G sur une maison ancienne – réforme MaPrimeRénov' 2027"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides · 12 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Maisons F ou G : ce qui change avec MaPrimeRénov' en 2027
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Dès le 1er janvier 2027, les passoires thermiques devront basculer vers la rénovation d'ampleur. Ce que ça change concrètement, et pourquoi agir maintenant.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/agrement-pac-prime-cee-bonifiee-septembre-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/agrement-pac-prime-cee-bonifiee-septembre-2026.jpg"
-                                    alt="Agrément PAC prime CEE bonifiée : pompe à chaleur agréée ADEME depuis septembre 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides · 11 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Prime CEE PAC : l'agrément obligatoire depuis le 1er septembre 2026
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Depuis le 1er septembre, seules les PAC agréées donnent accès à la prime CEE bonifiée. Vérifiez votre modèle sur la liste ADEME avant de signer.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/entretien-pompe-a-chaleur-pac-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/entretien-pompe-a-chaleur-pac-2026.jpg"
-                                    alt="Entretien pompe à chaleur : technicien en maintenance PAC extérieure"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Maintenance · 10 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Entretien PAC 2026 : obligations, fréquence et prix
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    À quelle fréquence faire entretenir sa pompe à chaleur ? Quelles obligations F-Gaz ? Combien ça coûte ? Tout ce que vous devez savoir avant l'hiver.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/pret-avance-renovation-par-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/pret-avance-renovation-par-2026.jpg"
-                                    alt="Prêt Avance Rénovation PAR et PAR+ : financer sans avance de fonds"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Financement · 9 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    PAR et PAR+ 2026 : rénover sans avancer l'argent
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    0 % d'intérêt pendant 10 ans pour les ménages modestes, pas de mensualités pendant toute la détention du bien : le Prêt Avance Rénovation est une alternative méconnue à l'Éco-PTZ.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/thermostat-programmable-regulation-chauffage-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/thermostat-programmable-regulation-chauffage-2026.jpg"
-                                    alt="Thermostat programmable : économies, obligation et aides 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Régulation · 8 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Thermostat programmable en 2026 : économies, obligation et aides disponibles
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    -7 % par degré économisé, obligation légale reportée à 2030, CEE BAR-TH-173 encore actif : tout savoir sur la régulation du chauffage cette année.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/pompe-a-chaleur-air-air-reversible-aides-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/pompe-a-chaleur-air-air-reversible-aides-2026.jpg"
-                                    alt="Pompe à chaleur air/air réversible : aides 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Chauffage · 7 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    PAC air/air réversible : aides, prix et conditions en 2026
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Prime CEE jusqu'à 975 €, TVA à 5,5 % depuis juillet 2026 : tout ce que vous devez savoir sur le split réversible avant de vous lancer.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/chauffe-eau-solaire-individuel-cesi-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/chauffe-eau-solaire-individuel-cesi-2026.jpg"
-                                    alt="Chauffe-eau solaire individuel CESI : aides 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Eau chaude sanitaire · 6 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    CESI en 2026 : quelles aides après la réforme de septembre ?
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    MaPrimeRénov' par geste ne finance plus le chauffe-eau solaire depuis le 1er septembre 2026. CEE, TVA 5,5 %, Éco-PTZ : voici ce qui reste et si le CESI est encore rentable.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/passoire-thermique-vendre-ou-renover-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/passoire-thermique-vendre-ou-renover-2026.jpg"
-                                    alt="Passoire thermique : faut-il vendre ou rénover en 2026 ?"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Stratégie patrimoine · 5 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Passoire thermique : vendre ou rénover en 2026 ?
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Logement F ou G : décote à la vente, interdiction de louer, aides jusqu'à 40 000 €… On compare les deux options chiffres à l'appui pour vous aider à choisir.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/renovation-appartement-copropriete-travaux-privatifs-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/renovation-appartement-copropriete-travaux-privatifs-2026.jpg"
-                                    alt="Rénovation énergétique en appartement copropriété : travaux privatifs 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Copropriété · 4 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Appartement en copropriété : quels travaux sans vote en AG ?
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Isolation intérieure, chauffe-eau thermodynamique, VMC : ce que vous pouvez faire seul dans votre partie privative, les aides disponibles et ce qui nécessite un vote en assemblée générale.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/maprimerenov-proprietaire-bailleur-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/maprimerenov-proprietaire-bailleur-2026.jpg"
-                                    alt="MaPrimeRénov' propriétaire bailleur 2026 : aides, conditions et démarches"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides &amp; financement · 3 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    MaPrimeRénov' bailleur 2026 : toutes les aides pour votre logement locatif
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Interdiction de louer les passoires G depuis janvier 2025, fin du monogeste en septembre 2026 : ce que chaque propriétaire bailleur doit savoir pour rénover et maintenir son bien en location.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/pompe-a-chaleur-geothermique-sol-eau-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/pompe-a-chaleur-geothermique-sol-eau-2026.jpg"
-                                    alt="Pompe à chaleur géothermique sol/eau : fonctionnement, prix et aides en 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Chauffage · 2 sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    PAC géothermique sol/eau : fonctionnement, prix et aides en 2026
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    La pompe à chaleur géothermique affiche un COP de 3,5 à 5, sans unité extérieure et sans dépendance aux températures hivernales. Prix, capteurs horizontaux vs sondes verticales, et aides disponibles.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/dpe-collectif-copropriete-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/dpe-collectif-copropriete-2026.jpg"
-                                    alt="DPE collectif en copropriété : obligations 2026, coût et démarches"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Copropriété · 1er sept. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    DPE collectif en copropriété : obligations 2026, coût et démarches
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Obligatoire depuis janvier 2026 pour toutes les copropriétés, le DPE collectif conditionne l'accès aux aides : MaPrimeRénov' Copro, CEE, éco-PTZ. Qui est concerné, combien ça coûte, comment l'obtenir.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/preparer-logement-hiver-2026-checklist"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/preparer-logement-hiver-2026-checklist.jpg"
-                                    alt="Préparer son logement pour l'hiver 2026 : checklist travaux et entretiens"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Chauffage · 31 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Préparer son logement pour l'hiver 2026 : la checklist complète
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Entretien chaudière obligatoire, purge des radiateurs, VMC, joints de fenêtres, ramonage : la liste des gestes indispensables à réaliser avant novembre pour chauffer efficacement et sans mauvaise surprise.
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/isolation-combles-amenages-sarking-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/isolation-combles-amenages-sarking-2026.jpg"
-                                    alt="Isolation des combles aménagés par technique Sarking en 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Isolation · 30 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Combles aménagés : Sarking, prix et aides 2026
-                                </h3>
-                                <p className="text-gray-600 text-sm flex-grow">
-                                    Isolation des rampants de toiture, technique Sarking par l'extérieur ou isolation par l'intérieur : tout savoir sur les solutions, les prix et les aides disponibles (MaPrimeRénov', CEE, TVA 5,5 %).
-                                </p>
-                                <span className="mt-4 inline-flex items-center text-emerald-700 font-semibold text-sm">
-                                    Lire l'article <FiArrowRight className="ml-1.5 h-4 w-4" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/choisir-artisan-rge-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/choisir-artisan-rge-2026.jpg"
-                                    alt="Artisan RGE : comment trouver et vérifier un professionnel certifié en 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Démarches · 29 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Artisan RGE 2026 : comment le trouver, le vérifier et éviter les arnaques
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Sans artisan RGE, pas d'aide à la rénovation : ni MaPrimeRénov', ni CEE, ni Éco-PTZ. Comment identifier le bon professionnel, vérifier sa certification et ne pas tomber dans les pièges du démarchage abusif.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/attestation-dpe-ademe-2026-etiquette-gratuite"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/attestation-dpe-ademe-2026-etiquette-gratuite.jpg"
-                                    alt="Attestation DPE ADEME 2026 : nouvelle étiquette gratuite en ligne"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    DPE · 28 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Attestation DPE ADEME 2026 : nouvelle étiquette gratuite en 5 minutes
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    7 millions de logements gagnent une classe DPE depuis janvier 2026. Si votre diagnostic date de 2021 à 2025,
-                                    téléchargez gratuitement votre attestation officielle sur l'Observatoire ADEME — sans diagnostiqueur.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/rendez-vous-france-renov-maprimerenov-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/rendez-vous-france-renov-maprimerenov-2026.jpg"
-                                    alt="Rendez-vous France Rénov' obligatoire MaPrimeRénov' 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Démarches · 27 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    RDV France Rénov' obligatoire : l'étape clé avant MaPrimeRénov' rénovation d'ampleur
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Depuis février 2026, un entretien gratuit avec un conseiller France Rénov' est exigé avant tout
-                                    dépôt de dossier. Comment prendre RDV, quoi préparer et obtenir l'attestation indispensable.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/cee-renovation-ampleur-classes-efg-septembre-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/cee-renovation-ampleur-classes-efg-septembre-2026.jpg"
-                                    alt="CEE rénovation d'ampleur logements E F G éligibles septembre 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Prime CEE · 26 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    CEE rénovation d'ampleur : seuls les logements E, F, G éligibles dès le 1er septembre
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    L'arrêté du 17 août 2026 exclut les logements classés D de la prime CEE rénovation d'ampleur.
-                                    Ce qui change, la dérogation pour les dossiers déposés avant le 1er septembre, et les aides alternatives.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/poele-a-bois-insert-chemine-aides-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/poele-a-bois-insert-chemine-aides-2026.jpg"
-                                    alt="Poêle à bois et insert de cheminée : aides 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Chauffage · 25 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Poêle à bois et insert : les aides à saisir avant le 1er septembre 2026
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    MaPrimeRénov' pour les poêles à bois et inserts de cheminée s'arrête le 1er septembre.
-                                    Montants par revenus, label Flamme Verte, prime CEE et démarches urgentes.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/maprimeadapt-2026-aide-adaptation-logement-seniors"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/maprimeadapt-2026-aide-adaptation-logement-seniors.jpg"
-                                    alt="MaPrimeAdapt' 2026 : adapter son logement au vieillissement ou au handicap"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides · 24 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    MaPrimeAdapt' 2026 : jusqu'à 70 % des travaux pour adapter votre logement
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Seniors et personnes handicapées peuvent obtenir jusqu'à 15 400 € pour douche adaptée,
-                                    monte-escalier, élargissement de portes… Conditions, montants et démarches.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/chaudiere-granules-bois-aides-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/chaudiere-granules-bois-aides-2026.jpg"
-                                    alt="Chaudière à granulés de bois : aides disponibles en 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Chauffage · 23 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Chaudière à granulés 2026 : fin de MaPrimeRénov' par geste, quelles aides restent ?
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Depuis le 1er janvier 2026, la chaudière biomasse n'est plus éligible au parcours monogeste.
-                                    CEE, TVA 5,5 %, Éco-PTZ et rénovation d'ampleur : toutes les alternatives pour financer votre projet.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/maprimerenov-ampleur-fin-gaz-septembre-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/maprimerenov-ampleur-fin-gaz-septembre-2026.jpg"
-                                    alt="MaPrimeRénov' rénovation d'ampleur : fin du gaz au 1er septembre 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    MaPrimeRénov' · 22 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    MaPrimeRénov' rénovation d'ampleur : fin du chauffage au gaz dès le 1er septembre 2026
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    À partir du 1er septembre, une maison individuelle ne peut plus bénéficier
-                                    de la rénovation d'ampleur si elle conserve un chauffage gaz. Ce qui change,
-                                    les alternatives et comment anticiper.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/france-renov-compte-unique-aides-anah-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/france-renov-compte-unique-aides-anah-2026.jpg"
-                                    alt="Nouveau compte FranceRénov' — toutes les aides Anah centralisées"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides · 21 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Nouveau compte FranceRénov' : toutes les aides Anah en un seul endroit depuis août 2026
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    MaPrimeRénov', MaPrimeAdapt', Loc'Avantages… Depuis le 17 août, un compte unique
-                                    sécurisé par FranceConnect+ centralise toutes les démarches. Ce qui change pour votre dossier.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/isolation-thermique-interieure-iti-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/isolation-thermique-interieure-iti-2026.jpg"
-                                    alt="Isolation thermique par l'intérieur (ITI) en 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Isolation · 20 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Isolation par l'intérieur (ITI) 2026 : prix, aides CEE et quand la choisir
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Appartement, secteur protégé ou budget serré ? L'ITI reste finançable via
-                                    les CEE, la TVA à 5,5 % et l'éco-PTZ. Toutes les règles 2026 décryptées.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/cumul-aides-renovation-maprimerenov-cee-eco-ptz"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/cumul-aides-renovation-maprimerenov-cee-eco-ptz.jpg"
-                                    alt="Cumuler MaPrimeRénov', CEE et Éco-PTZ en 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Financement · 19 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Cumuler MaPrimeRénov', CEE et Éco-PTZ en 2026 : jusqu'à 90 % de vos travaux financés
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Règles de cumul, plafonds selon les revenus et ordre des démarches pour combiner
-                                    les trois grandes aides de la rénovation énergétique sans perdre une prime.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/isolation-plancher-bas-vide-sanitaire-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/isolation-plancher-bas-vide-sanitaire-2026.jpg"
-                                    alt="Isolation du plancher bas — vide sanitaire et aides 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Isolation · 18 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Isolation plancher bas 2026 : aides MaPrimeRénov' et CEE encore disponibles
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Vide sanitaire, sous-sol non chauffé : ce geste reste éligible au parcours par
-                                    geste MaPrimeRénov' et aux CEE 6e période. Prix, montants et démarches.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/maprimerenov-coproprietes-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/maprimerenov-coproprietes-2026.jpg"
-                                    alt="Immeuble en copropriété — rénovation énergétique collective 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Copropriétés · 17 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    MaPrimeRénov' Copropriétés 2026 : jusqu'à 25 000 € par logement
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    30 à 45 % de vos travaux collectifs financés par l'ANAH, plus bonus
-                                    copropriété fragile et cumul CEE. Conditions, barèmes et nouveauté 2026.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/nouveau-calcul-dpe-2026-reclassement"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/nouveau-calcul-dpe-2026-reclassement.jpg"
-                                    alt="Étiquette DPE — nouveau coefficient électricité 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    DPE · 16 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Nouveau calcul DPE 2026 : 850 000 logements changent de classe sans travaux
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Le coefficient électricité passe de 2,3 à 1,9 depuis janvier 2026 : découvrez
-                                    si votre logement a gagné une classe énergétique et comment obtenir
-                                    l'attestation actualisée sans nouvelle visite.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/fenetres-remplacement-aides-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/fenetres-remplacement-aides-2026.jpg"
-                                    alt="Remplacement de fenêtres double vitrage — aides 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Menuiseries · 15 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Remplacement des fenêtres en 2026 : toutes les aides disponibles
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    MaPrimeRénov', CEE, TVA à 5,5 %, Éco-PTZ : comment financer le remplacement
-                                    de vos fenêtres simple vitrage et réduire vos déperditions thermiques.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/panneaux-solaires-photovoltaiques-aides-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/panneaux-solaires-photovoltaiques-aides-2026.jpg"
-                                    alt="Maison avec panneaux solaires photovoltaïques — autoconsommation 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Énergie solaire · 14 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Panneaux solaires 2026 : quelles aides après la fin de la prime à l'autoconsommation ?
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    La prime à l'autoconsommation a été supprimée le 5 juin 2026. TVA à 5,5 %, CEE,
-                                    éco-PTZ : ce qui reste disponible et comment rentabiliser votre installation
-                                    photovoltaïque malgré ce changement.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/renovation-maison-ancienne-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/renovation-maison-ancienne-2026.jpg"
-                                    alt="Maison ancienne en pierre — rénovation énergétique 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Bâti ancien · 13 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Rénover une maison ancienne en 2026 : guide pratique, pièges et aides
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Isolation respirante, gestion de l'humidité, MaPrimeRénov'… Les maisons d'avant 1975
-                                    obéissent à des règles spécifiques. Découvrez les techniques adaptées au bâti ancien
-                                    et les aides pour financer votre rénovation en 2026.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/vmc-double-flux-aides-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/vmc-double-flux-aides-2026.jpg"
-                                    alt="Installation VMC double flux — ventilation mécanique contrôlée maison"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Ventilation · 12 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    VMC double flux 2026 : prix, aides et la règle du geste couplé à connaître
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Depuis janvier 2026, la VMC double flux n'est plus finançable seule par MaPrimeRénov'.
-                                    Jusqu'à 2 500 € d'aide si couplée à l'isolation, plus CEE et TVA à 5,5 %.
-                                    Prix, critères techniques et stratégie pour maximiser vos subventions.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/isolation-murs-exterieure-ite-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/isolation-murs-exterieure-ite-2026.jpg"
-                                    alt="Isolation thermique par l'extérieur — chantier ITE sur maison individuelle"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Isolation · 11 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    ITE 2026 : isolation des murs par l'extérieur — prix, aides et démarches
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Traiter jusqu'à 25 % des déperditions sans perdre de surface habitable. En 2026,
-                                    MaPrimeRénov' ITE passe uniquement par le Parcours accompagné. Coûts, CEE,
-                                    éco-PTZ et étapes clés du chantier expliqués.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/sortir-du-fioul-2026-alternatives-aides"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/sortir-du-fioul-2026-alternatives-aides.jpg"
-                                    alt="Remplacement chaudière fioul — transition chauffage propre"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Chauffage · 10 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Sortir du fioul en 2026 : alternatives, aides et démarches pour changer de chauffage
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Chaudière fioul interdite depuis 2022, jusqu'à 9 000 € d'aides cumulables (MaPrimeRénov'
-                                    + CEE Coup de pouce + éco-PTZ). PAC air/eau, granulés, hybride : toutes les alternatives
-                                    et les étapes pour agir.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-                        <Link
-                            to="/blog/isolation-combles-perdus-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/isolation-combles-perdus-2026.jpg"
-                                    alt="Isolation des combles perdus — laine soufflée dans des combles"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Urgence · 9 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Isolation des combles perdus : agissez avant septembre pour cumuler MaPrimeRénov' et CEE
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    MaPrimeRénov' monogeste pour les combles disparaît le 1er septembre 2026. Jusqu'à
-                                    75 €/m² d'aides pour les ménages modestes, CEE cumulables, TVA à 5,5 % : tout
-                                    ce qu'il faut savoir avant la date limite.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
+                        {ARTICLES.slice(0, HOME_ARTICLES_COUNT).map((article) => (
+                            <ArticleCard key={article.slug} article={article} />
+                        ))}
+                    </div>
 
+                    <div className="mt-10 md:mt-12 text-center">
                         <Link
-                            to="/blog/ordre-travaux-renovation-energetique-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
+                            to="/blog"
+                            className="group inline-flex items-center justify-center px-8 py-3 rounded-full border border-emerald-500 text-emerald-700 font-semibold bg-white hover:bg-emerald-50 shadow-soft transform-gpu hover:-translate-y-0.5 active:scale-[0.98] transition duration-200 ease-out"
                         >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/ordre-travaux-renovation-energetique-2026.jpg"
-                                    alt="Dans quel ordre faire ses travaux de rénovation énergétique en 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Guide pratique · 8 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Dans quel ordre faire ses travaux de rénovation énergétique en 2026 ?
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Isoler d'abord, changer le chauffage ensuite : suivez la bonne séquence de
-                                    travaux pour maximiser vos aides MaPrimeRénov', éviter les reprises et
-                                    atteindre le saut de classes DPE qui débloque les financements les plus élevés.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/chauffe-eau-thermodynamique-aides-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/chauffe-eau-thermodynamique-aides-2026.jpg"
-                                    alt="Chauffe-eau thermodynamique 2026 — aides et économies"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Équipement &amp; économies · 7 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Chauffe-eau thermodynamique 2026 : prix, aides et économies
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Le CET consomme 3 fois moins qu'un chauffe-eau classique. Découvrez les aides
-                                    cumulables en 2026 (MaPrimeRénov', CEE, TVA 5,5 %, Éco-PTZ) et comment choisir
-                                    le bon modèle pour votre logement.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/tva-5-5-renovation-energetique-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/tva-5-5-renovation-energetique-2026.jpg"
-                                    alt="TVA 5,5 % rénovation énergétique 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides &amp; financement · 6 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    TVA à 5,5 % rénovation 2026 : travaux éligibles et démarches simplifiées
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Sans condition de ressources, la TVA à 5,5 % s'applique à tous vos travaux
-                                    de rénovation énergétique. Depuis la suppression du Cerfa, une simple mention
-                                    sur le devis suffit — voici comment en profiter et combien vous économisez.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/aides-regionales-renovation-energetique-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/aides-regionales-renovation-energetique-2026.jpg"
-                                    alt="Aides régionales rénovation énergétique 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides &amp; financement · 5 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Aides régionales rénovation 2026 : les primes méconnues à cumuler avec MaPrimeRénov'
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Hauts-de-France, Nouvelle-Aquitaine, PACA, Grand Est… votre région propose peut-être
-                                    des subventions supplémentaires qui s'ajoutent aux aides nationales. Guide complet
-                                    du cumul pour 2026.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/renovation-ampleur-2026-accompagnateur-renov"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/renovation-ampleur-2026-accompagnateur-renov.jpg"
-                                    alt="Rénovation d'ampleur 2026 — jusqu'à 80 % de travaux financés"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides &amp; financement · 4 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Rénovation d'ampleur 2026 : jusqu'à 80 % de vos travaux financés
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Saut de 2 classes DPE, Accompagnateur Rénov' obligatoire, taux d'aide
-                                    de 80 à 10 % selon vos revenus : tout ce qu'il faut savoir avant de lancer
-                                    votre projet de rénovation globale.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/audit-energetique-obligatoire-vente-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/audit-energetique-obligatoire-vente-2026.jpg"
-                                    alt="Audit énergétique obligatoire à la vente en 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Réglementation · 3 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Audit énergétique obligatoire à la vente : ce que vous devez savoir en 2026
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Classes E, F et G : l'audit réglementaire est obligatoire avant de vendre votre
-                                    maison. Qui est concerné, quel prix, et comment en faire un levier d'aides.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/maprimerenov-septembre-2026-gestes-suppression"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/maprimerenov-septembre-2026-gestes-suppression.jpg"
-                                    alt="MaPrimeRénov' — ce qui disparaît au 1er septembre 2026"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides &amp; financement · 2 août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    MaPrimeRénov' : ce qui disparaît au 1er septembre 2026
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Combles, fenêtres, VMC, chauffe-eau thermodynamique : cinq gestes quittent le
-                                    parcours monogeste le 1er septembre. Ce qu'il faut faire avant la date limite.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/eco-ptz-2026-pret-taux-zero-renovation"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/eco-ptz-2026-pret-taux-zero-renovation.jpg"
-                                    alt="Éco-PTZ 2026 — prêt à taux zéro rénovation"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides &amp; financement · 1er août 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Éco-PTZ 2026 : financer sa rénovation sans payer d'intérêts
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Jusqu'à 50 000 € sans intérêts, sans conditions de revenus : l'éco-prêt à taux zéro
-                                    est le complément idéal de MaPrimeRénov'. Montants, conditions, démarches et exemple chiffré.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/cee-2026-prime-energie-comment-en-profiter"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/cee-2026-prime-energie-comment-en-profiter.jpg"
-                                    alt="Prime CEE 2026 — certificats d'économie d'énergie"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Aides &amp; financement · 31 juil. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Prime CEE 2026 : comment profiter des Certificats d'Économie d'Énergie
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    6ème période en vigueur, nouvelle doctrine juillet 2026 : tout ce qu'il faut savoir
-                                    pour obtenir votre prime énergie sans conditions de revenus et la cumuler avec MaPrimeRénov'.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/dpe-2026-passoires-thermiques-location"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/dpe-2026-passoires-thermiques-location.jpg"
-                                    alt="DPE 2026 — passoires thermiques et location"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    DPE &amp; réglementation · 30 juil. 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    DPE 2026 : 850 000 logements reclassés et nouvelles règles de location
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Coefficient électricité abaissé, projet de loi Lecornu sur les passoires F et G,
-                                    audit obligatoire à la vente : tout ce qui change pour les propriétaires en 2026.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/canicule-aides-climatisation-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/canicule-aides-climatisation-2026.jpg"
-                                    alt="Climatisation et confort d'été"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Confort d'été &amp; aides · 30 juin 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Canicule 2026 : quelles aides pour climatiser son logement ?
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    La clim de confort n'est pas subventionnée : on fait le point sur les CEE, la TVA
-                                    réduite, la PAC réversible et les vraies solutions pour un logement frais.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/pompe-a-chaleur-air-eau-prix-aides-2026"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/blog/pompe-a-chaleur-air-eau-prix-aides-2026.jpg"
-                                    alt="Pompe à chaleur air/eau devant une maison"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Chauffage &amp; aides · 30 juin 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Pompe à chaleur air/eau en 2026 : prix, aides et rentabilité
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    Combien coûte une PAC air/eau en 2026 ? Prix, MaPrimeRénov', CEE, TVA à 5,5 %
-                                    et reste à charge : le point pour calculer la rentabilité de votre projet.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        <Link
-                            to="/blog/valorisation-immobiliere-renovation-energetique"
-                            className="group flex flex-col bg-white rounded-2xl shadow-soft border border-gray-200/60 overflow-hidden transform-gpu hover:-translate-y-1 hover:shadow-card active:scale-[0.99] transition duration-200 ease-out"
-                        >
-                            <div className="overflow-hidden">
-                                <img
-                                    src="/DALL-E-2-maison.webp"
-                                    alt="Maison rénovée et valorisée"
-                                    loading="lazy"
-                                    className="w-full h-52 object-cover transform-gpu transition-transform duration-500 ease-out group-hover:scale-105"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="inline-flex items-center self-start rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 mb-3">
-                                    Conseils patrimoine · 18 juin 2026
-                                </span>
-                                <h3 className="text-xl font-semibold text-gray-900 font-display mb-3 leading-snug">
-                                    Valoriser son patrimoine immobilier en 2026 : la rénovation énergétique comme levier
-                                </h3>
-                                <p className="text-gray-600 leading-relaxed mb-5 flex-grow">
-                                    En 2026, la performance énergétique n'est plus un détail : c'est l'un des principaux
-                                    critères de valeur d'un logement. Tour d'horizon des leviers pour valoriser un bien.
-                                </p>
-                                <span className="inline-flex items-center text-emerald-700 font-semibold">
-                                    Lire l'article
-                                    <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
-                                </span>
-                            </div>
+                            Voir tous nos articles ({ARTICLES.length})
+                            <FiArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
                         </Link>
                     </div>
                  </motion.section>
@@ -2602,68 +1228,15 @@ console.log("✅ form_lead_sent envoyé à GA4");
                     <p className="mb-4">© {new Date().getFullYear()} RenoHab. Tous droits réservés. <br className="sm:hidden"/>Votre Accompagnateur Rénov' Agréé par l'État.</p>
                     {/* Optional: Add simple links */}
                     <div className="space-x-4">
+                        <Link to="/blog" className="hover:text-emerald-300 transition-colors">Tous nos articles</Link>
                         <a href="/blog/valorisation-immobiliere-renovation-energetique" className="hover:text-emerald-300 transition-colors">Valoriser son bien</a>
-                        <a href="/#" className="hover:text-emerald-300 transition-colors">Mentions Légales</a>
-                        <a href="/#" className="hover:text-emerald-300 transition-colors">Politique de Confidentialité</a>
+                        <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
+                        <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
                     </div>
                  </div>
              </footer>
 
-             {/* === Styles Globaux & Modernizations === */}
-             <style>{`
-                /* ... vos styles globaux ... */
-                body {
-                  scroll-behavior: smooth; /* Ensure smooth scrolling for anchors */
-                }
-
-                .font-body { font-family: 'Inter', sans-serif; } /* Apply base font */
-                .font-display { font-family: 'Poppins', sans-serif; } /* Apply display font for headings */
-
-                /* Titres : lignes équilibrées (évite les veuves/orphelines) */
-                h1, h2, h3 { text-wrap: balance; }
-
-                /* Accessibilité : respect de prefers-reduced-motion (cf. Emil Kowalski).
-                   On neutralise les mouvements tout en gardant les fondus de compréhension. */
-                @media (prefers-reduced-motion: reduce) {
-                  *, *::before, *::after {
-                    animation-duration: 0.01ms !important;
-                    animation-iteration-count: 1 !important;
-                    transition-duration: 0.01ms !important;
-                    scroll-behavior: auto !important;
-                  }
-                }
-
-                /* Modern Form Input Styles */
-                .form-select-modern {
-  @apply w-full px-4 py-3 border border-emerald-200/50 rounded-lg bg-white text-gray-900 placeholder-gray-400 text-base transition duration-200 ease-in-out;
-}
-
-                .form-input-modern:focus, .form-select-modern:focus {
-                     @apply outline-none ring-2 ring-offset-2 ring-offset-emerald-600 ring-white border-emerald-200/0; /* Adjusted focus */
-                }
-                .form-select-modern {
-                    @apply appearance-none bg-no-repeat;
-                    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%23a7f3d0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 8 4 4 4-4"/></svg>'); /* Lighter arrow */
-                    background-position: right 0.75rem center;
-                    background-size: 1.5em 1.5em;
-                    padding-right: 2.5rem;
-                }
-
-                /* Modern Prose Styles for details */
-                .prose-emerald h3 { @apply text-emerald-600 !font-semibold !mb-2 !mt-4 font-display; }
-                .prose-emerald p { @apply text-gray-700 !leading-relaxed !my-1.5; }
-                .prose-emerald strong { @apply text-emerald-700; }
-
-
-                /* Aspect Ratio (already present, good) */
-                .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
-                .aspect-h-9 { }
-                .aspect-w-16 > *, .aspect-h-9 > * { position: absolute; height: 100%; width: 100%; top: 0; right: 0; bottom: 0; left: 0; }
-
-                /* Ensure smooth scroll anchoring with sticky header */
-                [id] { scroll-margin-top: 100px; } /* Adjust value based on sticky header height + desired offset */
-
-             `}</style>
+             {/* Styles globaux : voir src/index.css (ancien bloc <style> inline retiré — il cassait l'hydratation après minification par react-snap). */}
 
         </div>
     );

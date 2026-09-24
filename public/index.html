@@ -18,13 +18,13 @@
 
   gtag('config', 'G-DVR164MNFT');
 </script>
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfdzeairsFcjagxlyykGtUe2dZoIKYAXw&libraries=places"
-  async
-  defer
-></script>
+<!-- Google Maps Places : chargé à la demande par src/AdresseAutocomplete.jsx (plus de script global ici). -->
 
-<link rel="preload" as="image" href="/DALL-E-2-maison.webp" fetchpriority="high" type="image/webp">
+<!-- Préchargement de l'image du hero de l'accueil (LCP) : la bonne taille selon l'écran -->
+<link rel="preload" as="image" fetchpriority="high" type="image/webp"
+      href="/hero-home-desktop.webp"
+      imagesrcset="/hero-home-mobile.webp 640w, /hero-home-tablet.webp 1024w, /hero-home-desktop.webp 1920w"
+      imagesizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px">
 <!-- Preconnect + Preload Fonts : Inter (texte) + Poppins (titres) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,12 +38,12 @@
     <link rel="shortcut icon" type="image/png" href="/logo192-renohab.png" />
     <link rel="apple-touch-icon" href="/logo192-renohab.png" />
 
-<title>Diagnostic de Performance Énergétique (DPE) Obligatoire pour MaPrimeRénov' - Audit & Rénovation | RenoHab</title>
-    <meta name="description" content="Obtenez votre Diagnostic de Performance Énergétique (DPE), passage clé pour accéder à jusqu'à 90 % d'aides à la rénovation (MaPrimeRénov’, CEE...). Accompagnement expert et travaux clé en main avec RenoHab." />
+<title>Rénovation énergétique & DPE : aides 2026 à jour (MaPrimeRénov', CEE, éco-PTZ) | RenoHab</title>
+    <meta name="description" content="Audit, DPE et montage de vos aides 2026 : MaPrimeRénov' (jusqu'à 80 % en rénovation d'ampleur), CEE, éco-PTZ, TVA 5,5 %. RenoHab, Accompagnateur Rénov' agréé, coordonne des artisans RGE partout en France." />
     <link rel="canonical" href="https://renohab.fr/" />
 
 <meta property="og:title" content="Diagnostic de Performance Énergétique (DPE) & Rénovation Énergétique | RenoHab" />
-<meta property="og:description" content="Obtenez votre Diagnostic de Performance Énergétique (DPE), indispensable pour accéder aux aides MaPrimeRénov' et CEE. RenoHab vous accompagne de l'audit à la réalisation de vos travaux d'isolation, chauffage et rénovation énergétique." />
+<meta property="og:description" content="Audit énergétique, DPE, MaPrimeRénov', CEE et éco-PTZ à jour des règles du 1er septembre 2026. RenoHab vous accompagne de l'audit à la réalisation de vos travaux d'isolation, chauffage et rénovation énergétique." />
     <meta property="og:image" content="https://renohab.fr/logo192-renohab.png" />
     <meta property="og:url" content="https://renohab.fr/" />
     <meta property="og:type" content="website" />
@@ -59,7 +59,6 @@
     
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6.11/dist/index.min.js"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,7 +69,7 @@
       "name": "Le Diagnostic de Performance Énergétique (DPE) est-il obligatoire pour obtenir MaPrimeRénov' ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, le DPE est indispensable pour bénéficier des aides MaPrimeRénov' et des autres subventions. Sans un DPE valide, il est impossible de constituer un dossier d'aides."
+        "text": "Cela dépend du parcours. Pour la rénovation d'ampleur MaPrimeRénov', le logement doit être classé E, F ou G et un audit énergétique est obligatoire. Pour les aides par geste (pompe à chaleur, réseau de chaleur), le DPE n'est pas exigé en 2026 : il le deviendra au 1er janvier 2028 (décret n° 2026-822 du 25 août 2026). Un DPE récent reste indispensable pour vendre, louer et calibrer vos travaux."
       }
     },
     {
@@ -110,7 +109,7 @@
       "name": "Quelles aides financières sont conditionnées par le DPE ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le DPE conditionne l'obtention de MaPrimeRénov', des Certificats d'Économie d'Énergie (CEE), de l'Éco-PTZ, et parfois d'aides locales ou régionales."
+        "text": "La rénovation d'ampleur MaPrimeRénov' (jusqu'à 80 % des travaux, réservée aux logements E, F ou G) repose sur un audit énergétique et un DPE. L'éco-PTZ « performance globale » (50 000 € sur 20 ans) exige un gain de deux classes. Les CEE et les aides par geste ne dépendent pas encore du DPE, obligatoire pour ces aides à partir de 2028."
       }
     },
     {
@@ -118,7 +117,7 @@
       "name": "Qui peut réaliser un DPE conforme et valable ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Le DPE doit être réalisé par un professionnel certifié, tel qu’un Accompagnateur Rénov’ agréé. RenoHab vous met en relation avec ces experts."
+        "text": "Le DPE doit être réalisé par un diagnostiqueur certifié, identifié par un QR code et enregistré à l'ADEME (fiabilisation renforcée depuis les décrets de juin 2025). L'audit énergétique et le plan de travaux sont ensuite pilotés par votre Accompagnateur Rénov' agréé : RenoHab vous met en relation avec ces experts."
       }
     },
     {
@@ -126,7 +125,7 @@
       "name": "Puis-je obtenir des aides si mon logement a une étiquette DPE F ou G ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, au contraire : les logements très énergivores (F ou G) peuvent bénéficier d'aides renforcées, à condition de s'engager dans un parcours de rénovation globale."
+        "text": "Oui : la rénovation d'ampleur MaPrimeRénov' est justement réservée aux logements classés E, F ou G, avec une prise en charge de 80 % (ménages très modestes) à 10 % (revenus supérieurs) du montant HT, plafonné à 30 000 ou 40 000 € selon le gain de classes. Les F/G gardent aussi l'accès aux aides par geste (pompe à chaleur) jusqu'au 31 décembre 2027."
       }
     }
   ]

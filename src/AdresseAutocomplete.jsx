@@ -84,6 +84,9 @@ const AdresseAutocomplete = ({ onPlaceSelected }) => {
       document.head.appendChild(script);
     };
 
+    // Pré-rendu react-snap : ne pas injecter le script Maps (il serait figé dans le HTML statique).
+    if (navigator.userAgent === 'ReactSnap') return;
+
     if (!window.google?.maps?.places) {
       loadScript();
     } else {

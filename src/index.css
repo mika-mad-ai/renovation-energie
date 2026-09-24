@@ -58,3 +58,50 @@
     scroll-behavior: auto;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Styles globaux de la page d'accueil (ex-bloc <style> inline de Home.jsx,
+   déplacé ici : un <style> dans le JSX était minifié par react-snap et
+   provoquait une erreur d'hydratation React sur chaque visite).          */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .font-body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+
+  /* Sélecteurs personnalisés du formulaire d'audit (flèche du <select>) */
+  .form-select-modern {
+    -webkit-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%23a7f3d0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 8 4 4 4-4"/></svg>');
+    background-position: right 0.75rem center;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+
+  /* Ratio 16/9 (vignettes de la section Travaux) */
+  .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
+  .aspect-w-16 > *, .aspect-h-9 > * { position: absolute; inset: 0; width: 100%; height: 100%; }
+}
+
+/* Titres : lignes équilibrées (évite les veuves/orphelines) */
+h1, h2, h3 { text-wrap: balance; }
+
+/* Ancres : laisse la place au header sticky */
+[id] { scroll-margin-top: 100px; }
+
+/* Accessibilité : respect de prefers-reduced-motion — on neutralise les
+   mouvements tout en gardant les fondus de compréhension. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Défilement des logos du hero (page /pompe-a-chaleur), ex-<style> inline */
+@keyframes heroLogoMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

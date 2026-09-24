@@ -138,7 +138,7 @@ export default function LandingPAC() {
               </div>
             </motion.div>
 
-            {/* Colonne droite : Encadré 14999€ + Form */}
+            {/* Colonne droite : Encadré 10 800 € + Form */}
             <motion.div variants={fadeIn} initial="hidden" animate="visible" className="relative">
 {/* ✅ ENCADRÉ FINANCEMENT — logos empilés + bleu républicain */}
 <div className="relative mb-4 rounded-3xl bg-sky-50 text-[#0055A4] shadow-soft p-5 md:p-6 border border-sky-200 overflow-hidden">
@@ -175,10 +175,10 @@ export default function LandingPAC() {
 
       <div className="mt-2 leading-none">
         <span className="block text-4xl md:text-5xl font-extrabold text-[#0055A4]">
-          Jusqu’à&nbsp;14 999&nbsp;€
+          Jusqu’à&nbsp;10 800&nbsp;€
         </span>
         <span className="block text-sm md:text-base text-[#0055A4]/90 mt-1">
-          MaPrimeRénov’ + CEE – potentiellement déduits du devis final selon votre situation
+          MaPrimeRénov’ + CEE (écrêtés à 90 % de 12 000 € pour les ménages très modestes) – potentiellement déduits du devis final selon votre situation
         </span>
         <span className="block text-xs md:text-sm text-[#00396F] mt-1 font-semibold">
           Remplissez le formulaire pour vérifier votre éligibilité à ces aides.
