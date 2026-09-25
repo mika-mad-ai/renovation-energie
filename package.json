@@ -16,9 +16,12 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
+    "prestart": "node scripts/make-blog-thumbs.mjs",
     "start": "react-scripts start",
+    "prebuild": "node scripts/make-blog-thumbs.mjs",
     "build": "react-scripts build",
     "postbuild": "react-snap",
+    "thumbs": "node scripts/make-blog-thumbs.mjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "optimize-images": "imagemin public/*.{jpg,png,webp} --plugin=mozjpeg --plugin=pngquant --plugin=webp --out-dir=public/"
@@ -26,6 +29,9 @@
   "reactSnap": {
     "include": [
       "/",
+      "/blog",
+      "/mentions-legales",
+      "/confidentialite",
       "/dpe-gratuit",
       "/pompe-a-chaleur",
       "/pompe-a-chaleur-classique",
@@ -33,6 +39,15 @@
     ],
     "skipThirdPartyRequests": true,
     "inlineCss": false,
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false,
+      "collapseBooleanAttributes": true,
+      "decodeEntities": true,
+      "keepClosingSlash": true,
+      "sortAttributes": true,
+      "sortClassName": false
+    },
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
@@ -68,6 +83,7 @@
     "imagemin-webp": "^8.0.0",
     "postcss": "^8.4.21",
     "react-snap": "^1.23.0",
+    "sharp": "^0.33.5",
     "tailwindcss": "^3.3.2",
     "vercel": "^48.4.1"
   }

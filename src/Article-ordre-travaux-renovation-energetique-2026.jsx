@@ -29,6 +29,11 @@ function ArticleFooter() {
         <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-28 w-auto mx-auto mb-3" loading="lazy" />
         <p className="text-gray-400">Votre Rénovation Énergétique, Simplifiée &amp; Financée.</p>
         <p className="mt-6 text-sm text-gray-500">© {new Date().getFullYear()} RenoHab. Tous droits réservés.</p>
+        <p className="mt-3 text-sm text-gray-500">
+          <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
+          <span className="mx-2 opacity-60">·</span>
+          <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
+        </p>
       </div>
     </footer>
   );
@@ -52,7 +57,7 @@ export default function ArticleOrdreTravauxRenovation2026() {
       description:
         "Isoler d'abord, changer le chauffage ensuite : découvrez le bon ordre des travaux de rénovation énergétique en 2026 pour maximiser vos aides et la performance finale de votre logement.",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -72,7 +77,7 @@ export default function ArticleOrdreTravauxRenovation2026() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 8 août 2026 · Guide pratique
+            Publié le 8 août 2026 · Mis à jour le 24 septembre 2026 · Guide pratique
           </p>
 
           <h1>Rénovation énergétique : dans quel ordre réaliser ses travaux en 2026 ?</h1>
@@ -91,6 +96,11 @@ export default function ArticleOrdreTravauxRenovation2026() {
             la séquence des travaux est plus stratégique que jamais. Voici la méthode pour
             réussir votre projet et décrocher les aides maximales.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Depuis le 1er septembre 2026 (décret n° 2026-822 du 25 août 2026), le parcours MaPrimeRénov’ « par geste » est limité au chauffage décarboné : pompe à chaleur air/eau ou géothermique, raccordement à un réseau de chaleur, dépose de cuve à fioul. Isolation, fenêtres, VMC, chauffe-eau et appareils bois se financent désormais via la rénovation d’ampleur (logements E, F ou G), les primes CEE (bonifiées jusqu’au 31 décembre 2026 pour le chauffe-eau thermodynamique et le solaire thermique) et l’éco-PTZ.</p>
+          </div>
 
           <h2>Pourquoi l'ordre des travaux est déterminant</h2>
           <p>

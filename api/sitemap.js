@@ -5,6 +5,7 @@ const STATIC_URLS = [
   { loc: 'https://renohab.fr/', priority: '1.0', changefreq: 'weekly' },
   { loc: 'https://renohab.fr/pompe-a-chaleur', priority: '0.9', changefreq: 'weekly' },
   { loc: 'https://renohab.fr/dpe-gratuit', priority: '0.8', changefreq: 'monthly' },
+  { loc: 'https://renohab.fr/blog', priority: '0.8', changefreq: 'daily' },
   { loc: 'https://renohab.fr/blog/valorisation-immobiliere-renovation-energetique', priority: '0.6', changefreq: 'monthly' },
 ];
 

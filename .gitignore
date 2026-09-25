@@ -31,3 +31,6 @@ yarn-error.log*
 .playwright-mcp/
 /*.jpeg
 skills-lock.json
+
+# vignettes d'articles générées au build (scripts/make-blog-thumbs.mjs)
+/public/blog/thumbs/

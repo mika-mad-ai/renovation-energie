@@ -28,6 +28,11 @@ function ArticleFooter() {
         <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-28 w-auto mx-auto mb-3" loading="lazy" />
         <p className="text-gray-400">Votre Rénovation Énergétique, Simplifiée &amp; Financée.</p>
         <p className="mt-6 text-sm text-gray-500">© {new Date().getFullYear()} RenoHab. Tous droits réservés.</p>
+        <p className="mt-3 text-sm text-gray-500">
+          <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
+          <span className="mx-2 opacity-60">·</span>
+          <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
+        </p>
       </div>
     </footer>
   );
@@ -52,7 +57,7 @@ export default function ArticleAttestationDpeAdeme2026() {
       description:
         "Votre DPE a été réalisé entre 2021 et 2025 ? Depuis le 1er janvier 2026, vous pouvez télécharger gratuitement une attestation de reclassement via l'ADEME, sans refaire le diagnostic. Mode d'emploi.",
       datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
+      dateModified: '2026-09-24',
       inLanguage: 'fr-FR',
       mainEntityOfPage: { '@type': 'WebPage', '@id': `https://renohab.fr${PATH}` },
       author: { '@type': 'Organization', name: 'RenoHab', url: 'https://renohab.fr/' },
@@ -72,7 +77,7 @@ export default function ArticleAttestationDpeAdeme2026() {
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg prose-emerald max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700 prose-a:font-semibold hover:prose-a:text-emerald-800">
           <p className="text-sm text-gray-500 !mb-2">
-            Publié le 28 août 2026 · DPE &amp; Réglementation
+            Publié le 28 août 2026 · Mis à jour le 24 septembre 2026 · DPE &amp; Réglementation
           </p>
 
           <h1>Attestation DPE ADEME 2026 : obtenez votre nouvelle étiquette gratuitement en 5 minutes</h1>
@@ -93,6 +98,11 @@ export default function ArticleAttestationDpeAdeme2026() {
             date de 2021 à 2025, vous pouvez obtenir gratuitement une attestation officielle de
             votre nouvelle étiquette via l'ADEME, en moins de cinq minutes.
           </p>
+
+          <div className="not-prose my-8 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm leading-relaxed text-amber-900">
+            <p className="font-semibold mb-1">Mise à jour du 24 septembre 2026</p>
+            <p>Un arrêté publié au Journal officiel le 26 août 2026 abaisse le coefficient de conversion de l’électricité de 1,9 à 1,7 au 1er janvier 2027 : environ 300 000 logements supplémentaires sortiront des classes F et G, avec une attestation ADEME gratuite sans nouveau diagnostic. Par ailleurs, le projet de loi « relance et décentralisation du logement », voté au Sénat le 8 juillet 2026, permettrait de louer un logement F ou G sous engagement de travaux avant 2030 ; tant qu’il n’est pas promulgué, le calendrier d’interdiction (G depuis 2025, F en 2028, E en 2034) reste en vigueur.</p>
+          </div>
 
           <h2>Pourquoi votre étiquette DPE a peut-être changé</h2>
           <p>

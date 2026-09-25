@@ -58,6 +58,43 @@ const app = (
   </React.StrictMode>
 );
 
+// --- Compatibilité react-snap ↔ hydratation React 18 ---------------------------
+// react-snap sérialise le DOM rendu côté client (UA "ReactSnap"). Deux nœuds texte
+// adjacents (ex. `© {année} RenoHab`) sont alors fusionnés en un seul dans le HTML,
+// et React 18 refuse ensuite d'hydrater (erreurs #418/#425/#423 → re-rendu complet
+// de la page, plus lent). Pendant le pré-rendu uniquement, on intercale un
+// commentaire vide entre nœuds texte adjacents : il est conservé dans le HTML et
+// ignoré par l'hydratation, qui retrouve ainsi exactement les nœuds attendus.
+const IS_PRERENDER = navigator.userAgent === 'ReactSnap';
+
+if (IS_PRERENDER) {
+  let scheduled = false;
+  let mutating = false;
+  const separateAdjacentTextNodes = () => {
+    mutating = true;
+    const walker = document.createTreeWalker(rootElement, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    let n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach((node) => {
+      const next = node.nextSibling;
+      if (next && next.nodeType === Node.TEXT_NODE) {
+        node.parentNode.insertBefore(document.createComment(''), next);
+      }
+    });
+    mutating = false;
+  };
+  const schedule = () => {
+    if (scheduled || mutating) return;
+    scheduled = true;
+    setTimeout(() => {
+      scheduled = false;
+      separateAdjacentTextNodes();
+    }, 50);
+  };
+  new MutationObserver(schedule).observe(rootElement, { childList: true, subtree: true, characterData: true });
+}
+
 // react-snap pré-rend chaque route en HTML statique au build.
 // Si le DOM est déjà rempli (page pré-rendue), on hydrate ; sinon on monte normalement.
 if (rootElement.hasChildNodes()) {
