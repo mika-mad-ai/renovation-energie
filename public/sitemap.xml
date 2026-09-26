@@ -441,6 +441,14 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Raccordement réseau de chaleur urbain 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/raccordement-reseau-chaleur-urbain-2026</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Article : Chaudière à gaz 2026 – remplacement et coût sans aide -->
   <url>
     <loc>https://renohab.fr/blog/chaudiere-gaz-2026-remplacement-cout</loc>

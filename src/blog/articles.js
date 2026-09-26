@@ -36,6 +36,15 @@ export const ARTICLES = [
     alt: "Chaudière à gaz murale dans un logement en cours de rénovation",
   },
   {
+    slug: "raccordement-reseau-chaleur-urbain-2026",
+    title: "Réseau de chaleur urbain : l'un des rares gestes encore aidés seuls en 2026",
+    excerpt: "Depuis la réforme du 1er septembre 2026, le raccordement à un réseau de chaleur urbain reste éligible à MaPrimeRénov' sans rénovation globale. Coûts, aides et comment vérifier votre adresse.",
+    tag: "Chauffage",
+    date: "22 sept. 2026",
+    image: "/blog/raccordement-reseau-chaleur-urbain-2026.jpg",
+    alt: "Canalisations de réseau de chaleur urbain",
+  },
+  {
     slug: "isolation-toiture-terrasse-2026",
     title: "Isolation de la toiture-terrasse en 2026 : techniques, aides et retour sur investissement",
     excerpt: "Toiture-terrasse inaccessible, accessible ou végétalisée : les techniques adaptées, les aides 2026 (MaPrimeRénov', CEE, TVA 5,5 %) et le financement.",
