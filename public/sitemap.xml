@@ -457,6 +457,14 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Pompe à chaleur hybride gaz – aides 2026 après septembre -->
+  <url>
+    <loc>https://renohab.fr/blog/pompe-a-chaleur-hybride-gaz-2026</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Pages légales -->
   <url>
     <loc>https://renohab.fr/mentions-legales</loc>

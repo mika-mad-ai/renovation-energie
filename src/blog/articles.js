@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "pompe-a-chaleur-hybride-gaz-2026",
+    title: "Pompe à chaleur hybride gaz : quelles aides après septembre 2026 ?",
+    excerpt: "La PAC hybride reste éligible à MaPrimeRénov' par geste, mais est exclue du parcours d'ampleur depuis septembre 2026. Ce qui change et les alternatives.",
+    tag: "Chauffage",
+    date: "26 sept. 2026",
+    image: "/blog/pompe-a-chaleur-hybride-gaz-2026.jpg",
+    alt: "Unité extérieure d'une pompe à chaleur hybride installée sur une maison individuelle",
+  },
+  {
     slug: "chaudiere-gaz-2026-remplacement-cout",
     title: "Chaudière à gaz en 2026 : encore légale mais sans aide — ce que ça coûte vraiment",
     excerpt: "Remplacer une chaudière à gaz reste autorisé, mais sans MaPrimeRénov', CEE ni TVA réduite. Le vrai coût, et les alternatives subventionnées.",
