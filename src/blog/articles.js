@@ -45,6 +45,15 @@ export const ARTICLES = [
     alt: "Toiture-terrasse d'une maison moderne avec isolation thermique",
   },
   {
+    slug: "batterie-stockage-solaire-autoconsommation-2026",
+    title: "Batterie de stockage solaire en 2026 : rentabilité et aides",
+    excerpt: "La chute du tarif de rachat change tout : stocker votre production solaire vaut désormais 18 fois plus que la revendre. Prix, aides disponibles et retour sur investissement.",
+    tag: "Énergie solaire",
+    date: "19 sept. 2026",
+    image: "/blog/batterie-stockage-solaire-autoconsommation-2026.jpg",
+    alt: "Maison équipée de panneaux solaires et d'une batterie de stockage pour l'autoconsommation",
+  },
+  {
     slug: "plancher-chauffant-pac-basse-temperature-2026",
     title: "Plancher chauffant + PAC : le duo gagnant pour réduire vos factures en 2026",
     excerpt: "Associer une pompe à chaleur à un plancher chauffant basse température maximise le confort et le rendement. Fonctionnement, coûts et aides disponibles.",
