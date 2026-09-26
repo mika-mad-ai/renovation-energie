@@ -36,6 +36,15 @@ export const ARTICLES = [
     alt: "Chaudière à gaz murale dans un logement en cours de rénovation",
   },
   {
+    slug: "loi-relance-logement-passoires-thermiques-bailleurs-2026",
+    title: "Passoires thermiques : la Loi Relance Logement change-t-elle vraiment les règles ?",
+    excerpt: "Le Sénat a adopté en juillet 2026 un texte pour assouplir l'interdiction de louer les logements F et G. Ce qu'il prévoit, ce qui reste incertain, et pourquoi rénover maintenant reste la meilleure stratégie.",
+    tag: "Bailleurs",
+    date: "21 sept. 2026",
+    image: "/blog/loi-relance-logement-passoires-thermiques-bailleurs-2026.jpg",
+    alt: "Étiquette DPE passoire thermique – loi relance logement 2026 et interdiction de location",
+  },
+  {
     slug: "isolation-toiture-terrasse-2026",
     title: "Isolation de la toiture-terrasse en 2026 : techniques, aides et retour sur investissement",
     excerpt: "Toiture-terrasse inaccessible, accessible ou végétalisée : les techniques adaptées, les aides 2026 (MaPrimeRénov', CEE, TVA 5,5 %) et le financement.",
