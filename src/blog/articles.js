@@ -45,6 +45,15 @@ export const ARTICLES = [
     alt: "Toiture-terrasse d'une maison moderne avec isolation thermique",
   },
   {
+    slug: "radiateurs-inertie-convecteurs-aides-2026",
+    title: "Radiateurs à inertie : remplacer ses vieux convecteurs et toucher la prime CEE",
+    excerpt: "Prime CEE, TVA réduite, éco-PTZ : tout ce qu'il faut savoir pour changer ses convecteurs électriques et réduire sa facture de chauffage en 2026.",
+    tag: "Chauffage",
+    date: "18 sept. 2026",
+    image: "/blog/radiateurs-inertie-convecteurs-aides-2026.jpg",
+    alt: "Radiateur à inertie moderne dans un salon rénové",
+  },
+  {
     slug: "plancher-chauffant-pac-basse-temperature-2026",
     title: "Plancher chauffant + PAC : le duo gagnant pour réduire vos factures en 2026",
     excerpt: "Associer une pompe à chaleur à un plancher chauffant basse température maximise le confort et le rendement. Fonctionnement, coûts et aides disponibles.",
