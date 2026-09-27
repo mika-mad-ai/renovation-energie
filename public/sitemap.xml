@@ -457,6 +457,14 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Réseau de chaleur urbain – raccordement, aides et démarches 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/raccordement-reseau-chaleur-urbain-2026</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Pages légales -->
   <url>
     <loc>https://renohab.fr/mentions-legales</loc>

@@ -61,6 +61,7 @@ import ArticleIsolationToitureTerrasse2026 from './Article-isolation-toiture-ter
 import ArticleChaudiereGaz2026 from './Article-chaudiere-gaz-2026-remplacement-cout';
 import ArticleResidenceSecondaire2026 from './Article-renovation-energetique-residence-secondaire-2026';
 import ArticlePACHybride2026 from './Article-pompe-a-chaleur-hybride-gaz-2026';
+import ArticleRaccordementReseauChaleurUrbain2026 from './Article-raccordement-reseau-chaleur-urbain-2026';
 import './App.css';
 
 function App() {
@@ -156,6 +157,7 @@ function App() {
       <Route path="/blog/chaudiere-gaz-2026-remplacement-cout" element={<ArticleChaudiereGaz2026 />} />
       <Route path="/blog/renovation-energetique-residence-secondaire-2026" element={<ArticleResidenceSecondaire2026 />} />
       <Route path="/blog/pompe-a-chaleur-hybride-gaz-2026" element={<ArticlePACHybride2026 />} />
+      <Route path="/blog/raccordement-reseau-chaleur-urbain-2026" element={<ArticleRaccordementReseauChaleurUrbain2026 />} />
     </Routes>
   );
 }
