@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "raccordement-reseau-chaleur-urbain-2026",
+    title: "Réseau de chaleur urbain en 2026 : raccordement, aides et démarches",
+    excerpt: "Le raccordement au réseau de chaleur reste l'un des 4 gestes éligibles à MaPrimeRénov' après septembre 2026. Jusqu'à 1 200 € d'aide, CEE cumulables, TVA 5,5 % et impact réel sur le DPE.",
+    tag: "Chauffage",
+    date: "27 sept. 2026",
+    image: "/blog/raccordement-reseau-chaleur-urbain-2026.jpg",
+    alt: "Réseau de chaleur urbain — chaufferie collective et réseau de distribution souterrain",
+  },
+  {
     slug: "pompe-a-chaleur-hybride-gaz-2026",
     title: "Pompe à chaleur hybride gaz : quelles aides après septembre 2026 ?",
     excerpt: "La PAC hybride reste éligible à MaPrimeRénov' par geste, mais est exclue du parcours d'ampleur depuis septembre 2026. Ce qui change et les alternatives.",
