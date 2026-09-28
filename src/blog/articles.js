@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "maprimerenov-par-geste-apres-septembre-2026",
+    title: "MaPrimeRénov' par geste après le 1er septembre 2026 : les 3 aides encore disponibles",
+    excerpt: "Depuis le 1er septembre 2026, seuls 3 gestes restent éligibles à MaPrimeRénov' par geste : PAC, réseau de chaleur et audit énergétique couplé. Montants, conditions et démarches.",
+    tag: "Aides",
+    date: "28 sept. 2026",
+    image: "/blog/maprimerenov-par-geste-apres-septembre-2026.jpg",
+    alt: "Pompe à chaleur installée devant une maison rénovée — MaPrimeRénov' par geste après septembre 2026",
+  },
+  {
     slug: "raccordement-reseau-chaleur-urbain-2026",
     title: "Réseau de chaleur urbain en 2026 : raccordement, aides et démarches",
     excerpt: "Le raccordement au réseau de chaleur reste l'un des 4 gestes éligibles à MaPrimeRénov' après septembre 2026. Jusqu'à 1 200 € d'aide, CEE cumulables, TVA 5,5 % et impact réel sur le DPE.",
