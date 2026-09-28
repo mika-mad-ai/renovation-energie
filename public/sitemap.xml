@@ -465,6 +465,14 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : MaPrimeRénov' par geste après le 1er septembre 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/maprimerenov-par-geste-apres-septembre-2026</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Article : Réseau de chaleur urbain – raccordement, aides et démarches 2026 -->
   <url>
     <loc>https://renohab.fr/blog/raccordement-reseau-chaleur-urbain-2026</loc>
