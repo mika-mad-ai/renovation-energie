@@ -441,6 +441,14 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Loi Relance Logement 2026 – passoires thermiques et propriétaires bailleurs -->
+  <url>
+    <loc>https://renohab.fr/blog/loi-relance-logement-passoires-thermiques-bailleurs-2026</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Article : Chaudière à gaz 2026 – remplacement et coût sans aide -->
   <url>
     <loc>https://renohab.fr/blog/chaudiere-gaz-2026-remplacement-cout</loc>
