@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "radiateurs-inertie-aides-2026",
+    title: "Radiateurs à inertie 2026 : prime CEE, TVA 5,5 % et guide pour bien choisir",
+    excerpt: "Remplacer vos vieux convecteurs : prime CEE (fiche BAR-TH-158) de 50 à 300 € par appareil, TVA à 5,5 %, conditions d'éligibilité et conseils pour choisir inertie sèche, fluide ou double cœur de chauffe.",
+    tag: "Chauffage",
+    date: "8 oct. 2026",
+    image: "/blog/radiateurs-inertie-aides-2026.jpg",
+    alt: "Radiateur à inertie électrique dans un salon — aides CEE 2026",
+  },
+  {
     slug: "maprimerenov-par-geste-apres-septembre-2026",
     title: "MaPrimeRénov' par geste après le 1er septembre 2026 : les 3 aides encore disponibles",
     excerpt: "Depuis le 1er septembre 2026, seuls 3 gestes restent éligibles à MaPrimeRénov' par geste : PAC, réseau de chaleur et audit énergétique couplé. Montants, conditions et démarches.",
