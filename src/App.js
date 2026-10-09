@@ -65,6 +65,7 @@ import ArticlePACHybride2026 from './Article-pompe-a-chaleur-hybride-gaz-2026';
 import ArticleRaccordementReseauChaleurUrbain2026 from './Article-raccordement-reseau-chaleur-urbain-2026';
 import ArticleMaPrimeRenovParGeste2026 from './Article-maprimerenov-par-geste-apres-septembre-2026';
 import ArticleRadiateursInertie2026 from './Article-radiateurs-inertie-aides-2026';
+import ArticleCETvsSolaire2026 from './Article-chauffe-eau-thermodynamique-vs-solaire-2026';
 import './App.css';
 
 function App() {
@@ -164,6 +165,7 @@ function App() {
       <Route path="/blog/raccordement-reseau-chaleur-urbain-2026" element={<ArticleRaccordementReseauChaleurUrbain2026 />} />
       <Route path="/blog/maprimerenov-par-geste-apres-septembre-2026" element={<ArticleMaPrimeRenovParGeste2026 />} />
       <Route path="/blog/radiateurs-inertie-aides-2026" element={<ArticleRadiateursInertie2026 />} />
+      <Route path="/blog/chauffe-eau-thermodynamique-vs-solaire-2026" element={<ArticleCETvsSolaire2026 />} />
     </Routes>
   );
 }

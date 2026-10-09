@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "chauffe-eau-thermodynamique-vs-solaire-2026",
+    title: "Chauffe-eau thermodynamique ou solaire : lequel choisir en 2026 ?",
+    excerpt: "CET ou CESI ? Comparatif complet des deux technologies, des prix d'installation, des aides MaPrimeRénov' et CEE, et des critères pour faire le bon choix selon votre logement.",
+    tag: "Eau chaude",
+    date: "9 oct. 2026",
+    image: "/blog/chauffe-eau-thermodynamique-vs-solaire-2026.jpg",
+    alt: "Chauffe-eau thermodynamique installé dans une buanderie moderne",
+  },
+  {
     slug: "radiateurs-inertie-aides-2026",
     title: "Radiateurs à inertie 2026 : prime CEE, TVA 5,5 % et guide pour bien choisir",
     excerpt: "Remplacer vos vieux convecteurs : prime CEE (fiche BAR-TH-158) de 50 à 300 € par appareil, TVA à 5,5 %, conditions d'éligibilité et conseils pour choisir inertie sèche, fluide ou double cœur de chauffe.",
