@@ -66,6 +66,7 @@ import ArticleRaccordementReseauChaleurUrbain2026 from './Article-raccordement-r
 import ArticleMaPrimeRenovParGeste2026 from './Article-maprimerenov-par-geste-apres-septembre-2026';
 import ArticleRadiateursInertie2026 from './Article-radiateurs-inertie-aides-2026';
 import ArticleCETvsSolaire2026 from './Article-chauffe-eau-thermodynamique-vs-solaire-2026';
+import ArticlePontsThermiques2026 from './Article-ponts-thermiques-detection-solutions-2026';
 import './App.css';
 
 function App() {
@@ -166,6 +167,7 @@ function App() {
       <Route path="/blog/maprimerenov-par-geste-apres-septembre-2026" element={<ArticleMaPrimeRenovParGeste2026 />} />
       <Route path="/blog/radiateurs-inertie-aides-2026" element={<ArticleRadiateursInertie2026 />} />
       <Route path="/blog/chauffe-eau-thermodynamique-vs-solaire-2026" element={<ArticleCETvsSolaire2026 />} />
+      <Route path="/blog/ponts-thermiques-detection-solutions-2026" element={<ArticlePontsThermiques2026 />} />
     </Routes>
   );
 }

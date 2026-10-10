@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "ponts-thermiques-detection-solutions-2026",
+    title: "Ponts thermiques 2026 : comment les détecter et les traiter pour réduire vos factures",
+    excerpt: "Les ponts thermiques représentent jusqu'à 30 % des déperditions de chaleur. Découvrez comment les repérer (thermographie, signes visuels) et quelles solutions existent en rénovation.",
+    tag: "Isolation",
+    date: "10 oct. 2026",
+    image: "/blog/ponts-thermiques-detection-solutions-2026.jpg",
+    alt: "Thermographie infrarouge d'une maison révélant des ponts thermiques",
+  },
+  {
     slug: "chauffe-eau-thermodynamique-vs-solaire-2026",
     title: "Chauffe-eau thermodynamique ou solaire : lequel choisir en 2026 ?",
     excerpt: "CET ou CESI ? Comparatif complet des deux technologies, des prix d'installation, des aides MaPrimeRénov' et CEE, et des critères pour faire le bon choix selon votre logement.",
