@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "budget-anah-2027-maprimerenov-baisse",
+    title: "Budget 2027 : l'Anah perd 200 M€ — ce qui change pour MaPrimeRénov'",
+    excerpt: "Le PLF 2027 réduit la dotation de l'Anah de 200 millions d'euros. Les gestes isolés basculent vers les CEE, la rénovation d'ampleur reste prioritaire. Dossiers existants : aucun risque.",
+    tag: "Aides",
+    date: "11 oct. 2026",
+    image: "/DALL-E-2-maison.webp",
+    alt: "Maison individuelle rénovée avec panneau solaire — budget MaPrimeRénov' 2027",
+  },
+  {
     slug: "ponts-thermiques-detection-solutions-2026",
     title: "Ponts thermiques 2026 : comment les détecter et les traiter pour réduire vos factures",
     excerpt: "Les ponts thermiques représentent jusqu'à 30 % des déperditions de chaleur. Découvrez comment les repérer (thermographie, signes visuels) et quelles solutions existent en rénovation.",
