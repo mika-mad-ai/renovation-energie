@@ -33,6 +33,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Article : Budget 2027 ANAH MaPrimeRénov' baisse -->
+  <url>
+    <loc>https://renohab.fr/blog/budget-anah-2027-maprimerenov-baisse</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Article : valorisation immobilière & rénovation énergétique -->
   <url>
     <loc>https://renohab.fr/blog/valorisation-immobiliere-renovation-energetique</loc>
