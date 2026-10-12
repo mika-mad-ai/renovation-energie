@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "dpe-coefficient-electricite-2027-impact-maprimerenov",
+    title: "DPE 2027 : le coefficient électricité passe à 1,7 — votre logement gagne peut-être une classe",
+    excerpt: "Au 1er janvier 2027, le coefficient de conversion de l'électricité baisse de 1,9 à 1,7. Certains logements gagnent une classe DPE sans travaux — et risquent de perdre jusqu'à 8 000 € d'aides MaPrimeRénov'. Ce qu'il faut faire avant le 31 décembre.",
+    tag: "DPE",
+    date: "12 oct. 2026",
+    image: "/blog/dpe-coefficient-electricite-2027-impact-maprimerenov.jpg",
+    alt: "Étiquette DPE affichée sur une maison individuelle — coefficient électricité 2027",
+  },
+  {
     slug: "budget-anah-2027-maprimerenov-baisse",
     title: "Budget 2027 : l'Anah perd 200 M€ — ce qui change pour MaPrimeRénov'",
     excerpt: "Le PLF 2027 réduit la dotation de l'Anah de 200 millions d'euros. Les gestes isolés basculent vers les CEE, la rénovation d'ampleur reste prioritaire. Dossiers existants : aucun risque.",
