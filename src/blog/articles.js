@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "plan-pluriannuel-travaux-copropriete-2026",
+    title: "PPT en copropriété : obligations et financement en 2026",
+    excerpt: "Le Plan Pluriannuel de Travaux est désormais obligatoire pour toutes les copropriétés françaises. Découvrez comment l'établir, le financer et en faire un levier de rénovation énergétique.",
+    tag: "Copropriété",
+    date: "13 oct. 2026",
+    image: "/blog/plan-pluriannuel-travaux-copropriete-2026.jpg",
+    alt: "Immeuble en copropriété faisant l'objet d'un plan pluriannuel de travaux de rénovation énergétique",
+  },
+  {
     slug: "budget-anah-2027-maprimerenov-baisse",
     title: "Budget 2027 : l'Anah perd 200 M€ — ce qui change pour MaPrimeRénov'",
     excerpt: "Le PLF 2027 réduit la dotation de l'Anah de 200 millions d'euros. Les gestes isolés basculent vers les CEE, la rénovation d'ampleur reste prioritaire. Dossiers existants : aucun risque.",

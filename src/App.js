@@ -67,6 +67,7 @@ import ArticleRadiateursInertie2026 from './Article-radiateurs-inertie-aides-202
 import ArticleCETvsSolaire2026 from './Article-chauffe-eau-thermodynamique-vs-solaire-2026';
 import ArticlePontsThermiques2026 from './Article-ponts-thermiques-detection-solutions-2026';
 import ArticleBudgetAnah2027 from './Article-budget-anah-2027-maprimerenov-baisse';
+import ArticlePptCopropriete2026 from './Article-plan-pluriannuel-travaux-copropriete-2026';
 import './App.css';
 
 function App() {
@@ -168,6 +169,7 @@ function App() {
       <Route path="/blog/chauffe-eau-thermodynamique-vs-solaire-2026" element={<ArticleCETvsSolaire2026 />} />
       <Route path="/blog/ponts-thermiques-detection-solutions-2026" element={<ArticlePontsThermiques2026 />} />
       <Route path="/blog/budget-anah-2027-maprimerenov-baisse" element={<ArticleBudgetAnah2027 />} />
+      <Route path="/blog/plan-pluriannuel-travaux-copropriete-2026" element={<ArticlePptCopropriete2026 />} />
     </Routes>
   );
 }
