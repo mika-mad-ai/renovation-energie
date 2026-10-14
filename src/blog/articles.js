@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "vmc-hygroreglable-type-a-b-aides-2026",
+    title: "VMC hygroréglable type A et B : fonctionnement, prix et aides CEE en 2026",
+    excerpt: "Type A ou type B ? Comprendre les différences, les prix posés (1 000 à 3 500 €) et la prime CEE (fiche BAR-TH-127) pour financer votre VMC hygroréglable.",
+    tag: "Ventilation",
+    date: "14 oct. 2026",
+    image: "/ventilation.webp",
+    alt: "VMC hygroréglable installée dans une salle de bain — ventilation adaptée à l'humidité",
+  },
+  {
     slug: "budget-anah-2027-maprimerenov-baisse",
     title: "Budget 2027 : l'Anah perd 200 M€ — ce qui change pour MaPrimeRénov'",
     excerpt: "Le PLF 2027 réduit la dotation de l'Anah de 200 millions d'euros. Les gestes isolés basculent vers les CEE, la rénovation d'ampleur reste prioritaire. Dossiers existants : aucun risque.",
@@ -155,7 +164,7 @@ export const ARTICLES = [
   {
     slug: "thermostat-programmable-regulation-chauffage-2026",
     title: "Thermostat programmable en 2026 : économies, obligation et aides disponibles",
-    excerpt: "-7 % par degré économisé, obligation légale reportée à 2030, CEE BAR-TH-173 encore actif : tout savoir sur la régulation du chauffage cette année.",
+    excerpt: "-7 % par degré économé, obligation légale reportée à 2030, CEE BAR-TH-173 encore actif : tout savoir sur la régulation du chauffage cette année.",
     tag: "Régulation",
     date: "8 sept. 2026",
     image: "/blog/thermostat-programmable-regulation-chauffage-2026.jpg",
@@ -514,7 +523,7 @@ export const ARTICLES = [
   },
   {
     slug: "dpe-2026-passoires-thermiques-location",
-    title: "DPE 2026 : 850 000 logements reclassés et nouvelles règles de location",
+    title: "DPE 2026 : 850 000 logements reclasssés et nouvelles règles de location",
     excerpt: "Coefficient électricité abaissé, projet de loi Lecornu sur les passoires F et G, audit obligatoire à la vente : tout ce qui change pour les propriétaires en 2026.",
     tag: "DPE & réglementation",
     date: "30 juil. 2026",
