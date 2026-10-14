@@ -61,6 +61,14 @@ import ArticleBatterieStockageSolaire2026 from './Article-batterie-stockage-sola
 import ArticleIsolationToitureTerrasse2026 from './Article-isolation-toiture-terrasse-2026';
 import ArticleChaudiereGaz2026 from './Article-chaudiere-gaz-2026-remplacement-cout';
 import ArticleResidenceSecondaire2026 from './Article-renovation-energetique-residence-secondaire-2026';
+import ArticlePACHybride2026 from './Article-pompe-a-chaleur-hybride-gaz-2026';
+import ArticleRaccordementReseauChaleurUrbain2026 from './Article-raccordement-reseau-chaleur-urbain-2026';
+import ArticleMaPrimeRenovParGeste2026 from './Article-maprimerenov-par-geste-apres-septembre-2026';
+import ArticleRadiateursInertie2026 from './Article-radiateurs-inertie-aides-2026';
+import ArticleCETvsSolaire2026 from './Article-chauffe-eau-thermodynamique-vs-solaire-2026';
+import ArticlePontsThermiques2026 from './Article-ponts-thermiques-detection-solutions-2026';
+import ArticleBudgetAnah2027 from './Article-budget-anah-2027-maprimerenov-baisse';
+import ArticleVmcHygroreglable2026 from './Article-vmc-hygroreglable-type-a-b-aides-2026';
 import './App.css';
 
 function App() {
@@ -156,6 +164,14 @@ function App() {
       <Route path="/blog/isolation-toiture-terrasse-2026" element={<ArticleIsolationToitureTerrasse2026 />} />
       <Route path="/blog/chaudiere-gaz-2026-remplacement-cout" element={<ArticleChaudiereGaz2026 />} />
       <Route path="/blog/renovation-energetique-residence-secondaire-2026" element={<ArticleResidenceSecondaire2026 />} />
+      <Route path="/blog/pompe-a-chaleur-hybride-gaz-2026" element={<ArticlePACHybride2026 />} />
+      <Route path="/blog/raccordement-reseau-chaleur-urbain-2026" element={<ArticleRaccordementReseauChaleurUrbain2026 />} />
+      <Route path="/blog/maprimerenov-par-geste-apres-septembre-2026" element={<ArticleMaPrimeRenovParGeste2026 />} />
+      <Route path="/blog/radiateurs-inertie-aides-2026" element={<ArticleRadiateursInertie2026 />} />
+      <Route path="/blog/chauffe-eau-thermodynamique-vs-solaire-2026" element={<ArticleCETvsSolaire2026 />} />
+      <Route path="/blog/ponts-thermiques-detection-solutions-2026" element={<ArticlePontsThermiques2026 />} />
+      <Route path="/blog/budget-anah-2027-maprimerenov-baisse" element={<ArticleBudgetAnah2027 />} />
+      <Route path="/blog/vmc-hygroreglable-type-a-b-aides-2026" element={<ArticleVmcHygroreglable2026 />} />
     </Routes>
   );
 }
