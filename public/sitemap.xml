@@ -33,6 +33,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Article : VMC hygroréglable type A et B -->
+  <url>
+    <loc>https://renohab.fr/blog/vmc-hygroreglable-type-a-b-aides-2026</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Article : Budget 2027 ANAH MaPrimeRénov' baisse -->
   <url>
     <loc>https://renohab.fr/blog/budget-anah-2027-maprimerenov-baisse</loc>
@@ -185,7 +193,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Panneaux solaires photovoltaïques 2026 — aides après suppression de la prime à l'autoconsommation -->
+  <!-- Article : Panneaux solaires photovoltaïques 2026 -->
   <url>
     <loc>https://renohab.fr/blog/panneaux-solaires-photovoltaiques-aides-2026</loc>
     <lastmod>2026-08-14</lastmod>
@@ -193,7 +201,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Remplacement des fenêtres en 2026 — aides MaPrimeRénov, CEE, TVA 5,5 % -->
+  <!-- Article : Remplacement des fenêtres en 2026 -->
   <url>
     <loc>https://renohab.fr/blog/fenetres-remplacement-aides-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -201,7 +209,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Nouveau calcul DPE 2026 — 850 000 logements changent de classe sans travaux -->
+  <!-- Article : Nouveau calcul DPE 2026 -->
   <url>
     <loc>https://renohab.fr/blog/nouveau-calcul-dpe-2026-reclassement</loc>
     <lastmod>2026-09-24</lastmod>
@@ -209,7 +217,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : MaPrimeRénov' Copropriétés 2026 — jusqu'à 25 000 € par logement pour rénover votre immeuble -->
+  <!-- Article : MaPrimeRénov' Copropriétés 2026 -->
   <url>
     <loc>https://renohab.fr/blog/maprimerenov-coproprietes-2026</loc>
     <lastmod>2026-08-17</lastmod>
@@ -217,7 +225,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Isolation plancher bas et vide sanitaire en 2026 — aides MaPrimeRénov' et CEE -->
+  <!-- Article : Isolation plancher bas et vide sanitaire en 2026 -->
   <url>
     <loc>https://renohab.fr/blog/isolation-plancher-bas-vide-sanitaire-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -225,7 +233,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Cumuler MaPrimeRénov', CEE et Éco-PTZ en 2026 — mode d'emploi complet -->
+  <!-- Article : Cumuler MaPrimeRénov', CEE et Éco-PTZ en 2026 -->
   <url>
     <loc>https://renohab.fr/blog/cumul-aides-renovation-maprimerenov-cee-eco-ptz</loc>
     <lastmod>2026-08-19</lastmod>
@@ -233,7 +241,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Isolation thermique par l'intérieur (ITI) en 2026 : quand la choisir, prix et aides -->
+  <!-- Article : Isolation thermique par l'intérieur (ITI) en 2026 -->
   <url>
     <loc>https://renohab.fr/blog/isolation-thermique-interieure-iti-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -241,7 +249,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Nouveau compte FranceRénov' : toutes les aides Anah centralisées depuis août 2026 -->
+  <!-- Article : Nouveau compte FranceRénov' -->
   <url>
     <loc>https://renohab.fr/blog/france-renov-compte-unique-aides-anah-2026</loc>
     <lastmod>2026-08-21</lastmod>
@@ -249,7 +257,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : MaPrimeRénov' rénovation d'ampleur : fin du chauffage au gaz au 1er septembre 2026 -->
+  <!-- Article : MaPrimeRénov' rénovation d'ampleur : fin du chauffage au gaz -->
   <url>
     <loc>https://renohab.fr/blog/maprimerenov-ampleur-fin-gaz-septembre-2026</loc>
     <lastmod>2026-08-22</lastmod>
@@ -257,7 +265,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Chaudière à granulés de bois 2026 : fin de MaPrimeRénov' par geste, quelles aides restent ? -->
+  <!-- Article : Chaudière à granulés de bois 2026 -->
   <url>
     <loc>https://renohab.fr/blog/chaudiere-granules-bois-aides-2026</loc>
     <lastmod>2026-08-23</lastmod>
@@ -265,7 +273,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : MaPrimeAdapt' 2026 : adapter son logement au vieillissement ou au handicap -->
+  <!-- Article : MaPrimeAdapt' 2026 -->
   <url>
     <loc>https://renohab.fr/blog/maprimeadapt-2026-aide-adaptation-logement-seniors</loc>
     <lastmod>2026-08-24</lastmod>
@@ -273,7 +281,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Poêle à bois et insert de cheminée : les aides à saisir avant le 1er septembre 2026 -->
+  <!-- Article : Poêle à bois et insert de cheminée -->
   <url>
     <loc>https://renohab.fr/blog/poele-a-bois-insert-chemine-aides-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -281,7 +289,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : CEE rénovation d'ampleur : seuls les logements E, F, G éligibles dès le 1er septembre 2026 -->
+  <!-- Article : CEE rénovation d'ampleur -->
   <url>
     <loc>https://renohab.fr/blog/cee-renovation-ampleur-classes-efg-septembre-2026</loc>
     <lastmod>2026-08-26</lastmod>
@@ -289,7 +297,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Rendez-vous France Rénov' obligatoire en 2026 : l'étape clé avant MaPrimeRénov' rénovation d'ampleur -->
+  <!-- Article : Rendez-vous France Rénov' obligatoire -->
   <url>
     <loc>https://renohab.fr/blog/rendez-vous-france-renov-maprimerenov-2026</loc>
     <lastmod>2026-08-27</lastmod>
@@ -297,7 +305,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Attestation DPE ADEME 2026 : obtenez votre nouvelle étiquette gratuitement en 5 minutes -->
+  <!-- Article : Attestation DPE ADEME 2026 -->
   <url>
     <loc>https://renohab.fr/blog/attestation-dpe-ademe-2026-etiquette-gratuite</loc>
     <lastmod>2026-09-24</lastmod>
@@ -305,7 +313,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Artisan RGE 2026 : comment le trouver, le vérifier et éviter les arnaques -->
+  <!-- Article : Artisan RGE 2026 -->
   <url>
     <loc>https://renohab.fr/blog/choisir-artisan-rge-2026</loc>
     <lastmod>2026-08-29</lastmod>
@@ -313,7 +321,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Isolation des combles aménagés 2026 : Sarking, technique et aides -->
+  <!-- Article : Isolation des combles aménagés 2026 -->
   <url>
     <loc>https://renohab.fr/blog/isolation-combles-amenages-sarking-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -321,7 +329,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Préparer son logement pour l'hiver 2026 : checklist complète -->
+  <!-- Article : Préparer son logement pour l'hiver 2026 -->
   <url>
     <loc>https://renohab.fr/blog/preparer-logement-hiver-2026-checklist</loc>
     <lastmod>2026-09-24</lastmod>
@@ -329,7 +337,7 @@
     <priority>0.6</priority>
   </url>
 
-<!-- Article : DPE collectif en copropriété : obligations 2026, coût et démarches -->
+  <!-- Article : DPE collectif en copropriété -->
   <url>
     <loc>https://renohab.fr/blog/dpe-collectif-copropriete-2026</loc>
     <lastmod>2026-09-01</lastmod>
@@ -337,7 +345,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Pompe à chaleur géothermique (sol/eau) : fonctionnement, prix et aides en 2026 -->
+  <!-- Article : Pompe à chaleur géothermique -->
   <url>
     <loc>https://renohab.fr/blog/pompe-a-chaleur-geothermique-sol-eau-2026</loc>
     <lastmod>2026-09-02</lastmod>
@@ -345,7 +353,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : MaPrimeRénov' propriétaire bailleur 2026 : aides, conditions et démarches -->
+  <!-- Article : MaPrimeRénov' propriétaire bailleur 2026 -->
   <url>
     <loc>https://renohab.fr/blog/maprimerenov-proprietaire-bailleur-2026</loc>
     <lastmod>2026-09-03</lastmod>
@@ -353,7 +361,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Rénovation énergétique en appartement copropriété : travaux privatifs 2026 -->
+  <!-- Article : Rénovation énergétique en appartement copropriété -->
   <url>
     <loc>https://renohab.fr/blog/renovation-appartement-copropriete-travaux-privatifs-2026</loc>
     <lastmod>2026-09-04</lastmod>
@@ -361,7 +369,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Passoire thermique : faut-il vendre ou rénover en 2026 ? -->
+  <!-- Article : Passoire thermique : faut-il vendre ou rénover -->
   <url>
     <loc>https://renohab.fr/blog/passoire-thermique-vendre-ou-renover-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -369,7 +377,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Chauffe-eau solaire individuel (CESI) : aides disponibles en 2026 -->
+  <!-- Article : Chauffe-eau solaire individuel (CESI) -->
   <url>
     <loc>https://renohab.fr/blog/chauffe-eau-solaire-individuel-cesi-2026</loc>
     <lastmod>2026-09-06</lastmod>
@@ -377,7 +385,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Pompe à chaleur air/air réversible : aides, prix et conditions en 2026 -->
+  <!-- Article : Pompe à chaleur air/air réversible -->
   <url>
     <loc>https://renohab.fr/blog/pompe-a-chaleur-air-air-reversible-aides-2026</loc>
     <lastmod>2026-09-07</lastmod>
@@ -385,7 +393,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Thermostat programmable en 2026 : économies, obligation et aides CEE -->
+  <!-- Article : Thermostat programmable en 2026 -->
   <url>
     <loc>https://renohab.fr/blog/thermostat-programmable-regulation-chauffage-2026</loc>
     <lastmod>2026-09-08</lastmod>
@@ -401,7 +409,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Entretien pompe à chaleur 2026 : obligations, fréquence et prix -->
+  <!-- Article : Entretien pompe à chaleur 2026 -->
   <url>
     <loc>https://renohab.fr/blog/entretien-pompe-a-chaleur-pac-2026</loc>
     <lastmod>2026-09-10</lastmod>
@@ -409,7 +417,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Prime CEE pompe à chaleur : l'agrément obligatoire depuis le 1er septembre 2026 -->
+  <!-- Article : Prime CEE pompe à chaleur : l'agrément obligatoire -->
   <url>
     <loc>https://renohab.fr/blog/agrement-pac-prime-cee-bonifiee-septembre-2026</loc>
     <lastmod>2026-09-11</lastmod>
@@ -417,7 +425,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Maisons DPE F ou G – ce qui change avec MaPrimeRénov' au 1er janvier 2027 -->
+  <!-- Article : Maisons DPE F ou G – MaPrimeRénov' 2027 -->
   <url>
     <loc>https://renohab.fr/blog/maprimerenov-2027-maisons-dpe-fg-ce-qui-change</loc>
     <lastmod>2026-09-24</lastmod>
@@ -425,7 +433,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Résidence secondaire – quelles aides à la rénovation énergétique en 2026 -->
+  <!-- Article : Résidence secondaire -->
   <url>
     <loc>https://renohab.fr/blog/renovation-energetique-residence-secondaire-2026</loc>
     <lastmod>2026-09-13</lastmod>
@@ -433,7 +441,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Plancher chauffant basse température et pompe à chaleur en 2026 -->
+  <!-- Article : Plancher chauffant basse température -->
   <url>
     <loc>https://renohab.fr/blog/plancher-chauffant-pac-basse-temperature-2026</loc>
     <lastmod>2026-09-15</lastmod>
@@ -449,7 +457,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Isolation de la toiture-terrasse en 2026 -->
+  <!-- Article : Isolation de la toiture-terrasse -->
   <url>
     <loc>https://renohab.fr/blog/isolation-toiture-terrasse-2026</loc>
     <lastmod>2026-09-20</lastmod>
@@ -457,7 +465,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Chaudière à gaz 2026 – remplacement et coût sans aide -->
+  <!-- Article : Chaudière à gaz 2026 -->
   <url>
     <loc>https://renohab.fr/blog/chaudiere-gaz-2026-remplacement-cout</loc>
     <lastmod>2026-09-23</lastmod>
@@ -465,7 +473,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Pompe à chaleur hybride gaz – aides 2026 après septembre -->
+  <!-- Article : Pompe à chaleur hybride gaz -->
   <url>
     <loc>https://renohab.fr/blog/pompe-a-chaleur-hybride-gaz-2026</loc>
     <lastmod>2026-09-26</lastmod>
@@ -473,7 +481,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : MaPrimeRénov' par geste après le 1er septembre 2026 -->
+  <!-- Article : MaPrimeRénov' par geste après septembre 2026 -->
   <url>
     <loc>https://renohab.fr/blog/maprimerenov-par-geste-apres-septembre-2026</loc>
     <lastmod>2026-09-28</lastmod>
@@ -481,7 +489,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Réseau de chaleur urbain – raccordement, aides et démarches 2026 -->
+  <!-- Article : Réseau de chaleur urbain -->
   <url>
     <loc>https://renohab.fr/blog/raccordement-reseau-chaleur-urbain-2026</loc>
     <lastmod>2026-09-27</lastmod>
