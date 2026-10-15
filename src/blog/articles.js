@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "ite-ou-iti-isolation-murs-comment-choisir-2026",
+    title: "ITE ou ITI : comment choisir l'isolation de vos murs en 2026 ?",
+    excerpt: "Extérieure ou intérieure ? Comparatif complet des deux techniques, des coûts réels et des aides disponibles (CEE, éco-PTZ, TVA 5,5 %) après la suppression de MaPrimeRénov' par geste.",
+    tag: "Isolation",
+    date: "15 oct. 2026",
+    image: "/blog/ite-ou-iti-isolation-murs-comment-choisir-2026.jpg",
+    alt: "Chantier d'isolation de façade extérieure — ITE ou ITI, comment choisir en 2026",
+  },
+  {
     slug: "vmc-hygroreglable-type-a-b-aides-2026",
     title: "VMC hygroréglable type A et B : fonctionnement, prix et aides CEE en 2026",
     excerpt: "Type A ou type B ? Comprendre les différences, les prix posés (1 000 à 3 500 €) et la prime CEE (fiche BAR-TH-127) pour financer votre VMC hygroréglable.",
