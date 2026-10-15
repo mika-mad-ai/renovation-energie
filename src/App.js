@@ -69,6 +69,7 @@ import ArticleCETvsSolaire2026 from './Article-chauffe-eau-thermodynamique-vs-so
 import ArticlePontsThermiques2026 from './Article-ponts-thermiques-detection-solutions-2026';
 import ArticleBudgetAnah2027 from './Article-budget-anah-2027-maprimerenov-baisse';
 import ArticleVmcHygroreglable2026 from './Article-vmc-hygroreglable-type-a-b-aides-2026';
+import ArticleIteOuIti2026 from './Article-ite-ou-iti-isolation-murs-comment-choisir-2026';
 import './App.css';
 
 function App() {
@@ -172,6 +173,7 @@ function App() {
       <Route path="/blog/ponts-thermiques-detection-solutions-2026" element={<ArticlePontsThermiques2026 />} />
       <Route path="/blog/budget-anah-2027-maprimerenov-baisse" element={<ArticleBudgetAnah2027 />} />
       <Route path="/blog/vmc-hygroreglable-type-a-b-aides-2026" element={<ArticleVmcHygroreglable2026 />} />
+      <Route path="/blog/ite-ou-iti-isolation-murs-comment-choisir-2026" element={<ArticleIteOuIti2026 />} />
     </Routes>
   );
 }
