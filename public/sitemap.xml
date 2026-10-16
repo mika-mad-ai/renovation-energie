@@ -33,6 +33,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Article : mention France Rénov' obligatoire sur vos devis -->
+  <url>
+    <loc>https://renohab.fr/blog/mention-france-renov-obligatoire-devis-2026</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Article : ITE ou ITI — comment choisir l'isolation des murs en 2026 -->
   <url>
     <loc>https://renohab.fr/blog/ite-ou-iti-isolation-murs-comment-choisir-2026</loc>
@@ -161,7 +169,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Isolation des combles perdus 2026 — aides, prix et urgence avant septembre -->
+  <!-- Article : Isolation des combles perdus 2026 -->
   <url>
     <loc>https://renohab.fr/blog/isolation-combles-perdus-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -169,7 +177,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Sortir du fioul en 2026 — alternatives, aides et démarches -->
+  <!-- Article : Sortir du fioul en 2026 -->
   <url>
     <loc>https://renohab.fr/blog/sortir-du-fioul-2026-alternatives-aides</loc>
     <lastmod>2026-09-24</lastmod>
@@ -177,7 +185,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Isolation des murs par l'extérieur (ITE) 2026 — prix, aides et démarches -->
+  <!-- Article : Isolation des murs par l'extérieur (ITE) 2026 -->
   <url>
     <loc>https://renohab.fr/blog/isolation-murs-exterieure-ite-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -185,7 +193,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : VMC double flux en 2026 — prix, aides MaPrimeRénov' et règle du geste couplé -->
+  <!-- Article : VMC double flux en 2026 -->
   <url>
     <loc>https://renohab.fr/blog/vmc-double-flux-aides-2026</loc>
     <lastmod>2026-09-24</lastmod>
@@ -193,7 +201,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Article : Rénover une maison ancienne en 2026 — guide pratique, pièges et aides -->
+  <!-- Article : Rénover une maison ancienne en 2026 -->
   <url>
     <loc>https://renohab.fr/blog/renovation-maison-ancienne-2026</loc>
     <lastmod>2026-09-24</lastmod>
