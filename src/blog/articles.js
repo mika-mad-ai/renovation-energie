@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "mention-france-renov-obligatoire-devis-2026",
+    title: "Mention France Rénov' obligatoire sur vos devis : votre protection anti-arnaques depuis octobre 2026",
+    excerpt: "Depuis le 1er octobre 2026, tout artisan doit afficher la mention France Rénov' sur ses publicités et devis. Ce que ça change pour vous, les sanctions encourues et comment en faire un critère de choix.",
+    tag: "Aides",
+    date: "16 oct. 2026",
+    image: "/blog/mention-france-renov-obligatoire-devis-2026.jpg",
+    alt: "Particulier examinant un devis de rénovation énergétique avec la mention France Rénov'",
+  },
+  {
     slug: "ite-ou-iti-isolation-murs-comment-choisir-2026",
     title: "ITE ou ITI : comment choisir l'isolation de vos murs en 2026 ?",
     excerpt: "Extérieure ou intérieure ? Comparatif complet des deux techniques, des coûts réels et des aides disponibles (CEE, éco-PTZ, TVA 5,5 %) après la suppression de MaPrimeRénov' par geste.",
