@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "dpe-coefficient-electrique-2027-reclassement",
+    title: "Coefficient électrique DPE 2027 : 300 000 logements changent de classe au 1er janvier",
+    excerpt: "Au 1er janvier 2027, le coefficient de conversion de l'électricité passe de 1,9 à 1,7. Environ 300 000 logements pourraient changer de classe sans travaux — dont des passoires thermiques.",
+    tag: "DPE",
+    date: "17 oct. 2026",
+    image: "/blog/dpe-coefficient-electrique-2027-reclassement.jpg",
+    alt: "Étiquette DPE — réforme du coefficient électrique 2027, logements qui changent de classe",
+  },
+  {
     slug: "mention-france-renov-obligatoire-devis-2026",
     title: "Mention France Rénov' obligatoire sur vos devis : votre protection anti-arnaques depuis octobre 2026",
     excerpt: "Depuis le 1er octobre 2026, tout artisan doit afficher la mention France Rénov' sur ses publicités et devis. Ce que ça change pour vous, les sanctions encourues et comment en faire un critère de choix.",

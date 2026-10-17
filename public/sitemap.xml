@@ -33,6 +33,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Article : coefficient électrique DPE 2027 — reclassement logements -->
+  <url>
+    <loc>https://renohab.fr/blog/dpe-coefficient-electrique-2027-reclassement</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Article : mention France Rénov' obligatoire sur vos devis -->
   <url>
     <loc>https://renohab.fr/blog/mention-france-renov-obligatoire-devis-2026</loc>
