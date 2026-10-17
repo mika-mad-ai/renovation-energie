@@ -70,6 +70,7 @@ import ArticleBudgetAnah2027 from './Article-budget-anah-2027-maprimerenov-baiss
 import ArticleVmcHygroreglable2026 from './Article-vmc-hygroreglable-type-a-b-aides-2026';
 import ArticleIteOuIti2026 from './Article-ite-ou-iti-isolation-murs-comment-choisir-2026';
 import ArticleMentionFranceRenovObligatoire2026 from './Article-mention-france-renov-obligatoire-devis-2026';
+import ArticleDpeCoefficient2027 from './Article-dpe-coefficient-electrique-2027-reclassement';
 import './App.css';
 
 function App() {
@@ -129,7 +130,7 @@ function App() {
       <Route path="/blog/sortir-du-fioul-2026-alternatives-aides" element={<ArticleSortirDuFioul2026 />} />
       <Route path="/blog/isolation-murs-exterieure-ite-2026" element={<ArticleIsolationMursExterieure2026 />} />
       <Route path="/blog/vmc-double-flux-aides-2026" element={<ArticleVmcDoubleFlux2026 />} />
-      <Route path="/blog/renovation-maison-ancienne-2026" element={<ArticleRenovationMaisonAncienne />} />
+      <Route path="/blog/renovation-maison-ancienne-2026" element={<ArticleRenovationMaisonAncienne2026 />} />
       <Route path="/blog/panneaux-solaires-photovoltaiques-aides-2026" element={<ArticlePanneauxSolaires2026 />} />
       <Route path="/blog/fenetres-remplacement-aides-2026" element={<ArticleFenetresRemplacement2026 />} />
       <Route path="/blog/nouveau-calcul-dpe-2026-reclassement" element={<ArticleNouveauCalculDpe2026 />} />
@@ -174,6 +175,7 @@ function App() {
       <Route path="/blog/vmc-hygroreglable-type-a-b-aides-2026" element={<ArticleVmcHygroreglable2026 />} />
       <Route path="/blog/ite-ou-iti-isolation-murs-comment-choisir-2026" element={<ArticleIteOuIti2026 />} />
       <Route path="/blog/mention-france-renov-obligatoire-devis-2026" element={<ArticleMentionFranceRenovObligatoire2026 />} />
+      <Route path="/blog/dpe-coefficient-electrique-2027-reclassement" element={<ArticleDpeCoefficient2027 />} />
     </Routes>
   );
 }
