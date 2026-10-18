@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "garantie-decennale-renovation-energetique-2026",
+    title: "Garantie décennale et rénovation énergétique : les 3 protections légales en 2026",
+    excerpt: "Garantie de parfait achèvement, biennale ou décennale : quels travaux de rénovation énergétique sont couverts et comment vérifier l'assurance de votre artisan avant de signer.",
+    tag: "Travaux",
+    date: "18 oct. 2026",
+    image: "/blog/garantie-decennale-renovation-energetique-2026.jpg",
+    alt: "Artisan présentant une attestation d'assurance décennale pour des travaux de rénovation énergétique",
+  },
+  {
     slug: "dpe-coefficient-electrique-2027-reclassement",
     title: "Coefficient électrique DPE 2027 : 300 000 logements changent de classe au 1er janvier",
     excerpt: "Au 1er janvier 2027, le coefficient de conversion de l'électricité passe de 1,9 à 1,7. Environ 300 000 logements pourraient changer de classe sans travaux — dont des passoires thermiques.",

@@ -71,6 +71,7 @@ import ArticleVmcHygroreglable2026 from './Article-vmc-hygroreglable-type-a-b-ai
 import ArticleIteOuIti2026 from './Article-ite-ou-iti-isolation-murs-comment-choisir-2026';
 import ArticleMentionFranceRenovObligatoire2026 from './Article-mention-france-renov-obligatoire-devis-2026';
 import ArticleDpeCoefficient2027 from './Article-dpe-coefficient-electrique-2027-reclassement';
+import ArticleGarantieDecennale2026 from './Article-garantie-decennale-renovation-energetique-2026';
 import './App.css';
 
 function App() {
@@ -176,6 +177,7 @@ function App() {
       <Route path="/blog/ite-ou-iti-isolation-murs-comment-choisir-2026" element={<ArticleIteOuIti2026 />} />
       <Route path="/blog/mention-france-renov-obligatoire-devis-2026" element={<ArticleMentionFranceRenovObligatoire2026 />} />
       <Route path="/blog/dpe-coefficient-electrique-2027-reclassement" element={<ArticleDpeCoefficient2027 />} />
+      <Route path="/blog/garantie-decennale-renovation-energetique-2026" element={<ArticleGarantieDecennale2026 />} />
     </Routes>
   );
 }
