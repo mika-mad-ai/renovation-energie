@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "maprimerenov-delais-dossier-2026",
+    title: "MaPrimeRénov' 2026 : délais jusqu'à 6 mois — comment préparer un dossier solide",
+    excerpt: "83 000 dossiers en attente, guichet rouvert le 23 février : les délais d'instruction dépassent 6 mois. Guide pratique pour constituer un dossier complet et éviter les blocages.",
+    tag: "Aides",
+    date: "19 oct. 2026",
+    image: "/blog/maprimerenov-delais-dossier-2026.jpg",
+    alt: "Propriétaire remplissant un dossier de demande MaPrimeRénov' sur ordinateur",
+  },
+  {
     slug: "garantie-decennale-renovation-energetique-2026",
     title: "Garantie décennale et rénovation énergétique : les 3 protections légales en 2026",
     excerpt: "Garantie de parfait achèvement, biennale ou décennale : quels travaux de rénovation énergétique sont couverts et comment vérifier l'assurance de votre artisan avant de signer.",
