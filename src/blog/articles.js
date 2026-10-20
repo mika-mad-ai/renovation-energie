@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "pompe-a-chaleur-haute-temperature-radiateurs-2026",
+    title: "PAC haute température : remplacer sa chaudière sans changer ses radiateurs",
+    excerpt: "Vos radiateurs en fonte sont prévus pour 70–80 °C ? La PAC haute température s'y adapte parfaitement, sans remplacer le réseau existant. Prix, aides CEE et MaPrimeRénov' en 2026.",
+    tag: "Chauffage",
+    date: "20 oct. 2026",
+    image: "/blog/pompe-a-chaleur-haute-temperature-radiateurs-2026.jpg",
+    alt: "Unité extérieure de pompe à chaleur haute température installée sur une maison avec radiateurs anciens",
+  },
+  {
     slug: "maprimerenov-delais-dossier-2026",
     title: "MaPrimeRénov' 2026 : délais jusqu'à 6 mois — comment préparer un dossier solide",
     excerpt: "83 000 dossiers en attente, guichet rouvert le 23 février : les délais d'instruction dépassent 6 mois. Guide pratique pour constituer un dossier complet et éviter les blocages.",
