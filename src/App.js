@@ -73,6 +73,7 @@ import ArticleMentionFranceRenovObligatoire2026 from './Article-mention-france-r
 import ArticleDpeCoefficient2027 from './Article-dpe-coefficient-electrique-2027-reclassement';
 import ArticleGarantieDecennale2026 from './Article-garantie-decennale-renovation-energetique-2026';
 import ArticleMaPrimeRenovDelais2026 from './Article-maprimerenov-delais-dossier-2026';
+import ArticlePACHauteTemperature2026 from './Article-pompe-a-chaleur-haute-temperature-radiateurs-2026';
 import './App.css';
 
 function App() {
@@ -179,6 +180,7 @@ function App() {
       <Route path="/blog/mention-france-renov-obligatoire-devis-2026" element={<ArticleMentionFranceRenovObligatoire2026 />} />
       <Route path="/blog/dpe-coefficient-electrique-2027-reclassement" element={<ArticleDpeCoefficient2027 />} />
       <Route path="/blog/garantie-decennale-renovation-energetique-2026" element={<ArticleGarantieDecennale2026 />} />
+      <Route path="/blog/pompe-a-chaleur-haute-temperature-radiateurs-2026" element={<ArticlePACHauteTemperature2026 />} />
       <Route path="/blog/maprimerenov-delais-dossier-2026" element={<ArticleMaPrimeRenovDelais2026 />} />
     </Routes>
   );
