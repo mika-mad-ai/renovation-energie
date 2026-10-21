@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "plan-pluriannuel-travaux-copropriete-2026",
+    title: "Plan Pluriannuel de Travaux (PPT) en copropriété : obligations, étapes et aides 2026",
+    excerpt: "Depuis 2025, toutes les copropriétés de plus de 15 ans doivent se doter d'un PPT. Découvrez ce qu'il contient, comment le faire élaborer et quelles aides mobiliser pour financer les travaux.",
+    tag: "Copropriété",
+    date: "21 oct. 2026",
+    image: "/blog/plan-pluriannuel-travaux-copropriete-2026.jpg",
+    alt: "Immeuble en copropriété avec travaux de rénovation énergétique en cours",
+  },
+  {
     slug: "pompe-a-chaleur-haute-temperature-radiateurs-2026",
     title: "PAC haute température : remplacer sa chaudière sans changer ses radiateurs",
     excerpt: "Vos radiateurs en fonte sont prévus pour 70–80 °C ? La PAC haute température s'y adapte parfaitement, sans remplacer le réseau existant. Prix, aides CEE et MaPrimeRénov' en 2026.",
