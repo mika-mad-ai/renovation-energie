@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "declaration-prealable-travaux-renovation-energetique-2026",
+    title: "Déclaration préalable et permis de construire pour la rénovation énergétique en 2026",
+    excerpt: "PAC, ITE, fenêtres, solaire : quel type d'autorisation faut-il en mairie avant vos travaux ? Le guide complet avec le nouveau décret PAC de mars 2026 qui supprime la DP.",
+    tag: "Démarches",
+    date: "22 oct. 2026",
+    image: "/blog/declaration-prealable-travaux-renovation-energetique-2026.jpg",
+    alt: "Maison individuelle en cours de rénovation énergétique — démarches administratives en mairie",
+  },
+  {
     slug: "plan-pluriannuel-travaux-copropriete-2026",
     title: "Plan Pluriannuel de Travaux (PPT) en copropriété : obligations, étapes et aides 2026",
     excerpt: "Depuis 2025, toutes les copropriétés de plus de 15 ans doivent se doter d'un PPT. Découvrez ce qu'il contient, comment le faire élaborer et quelles aides mobiliser pour financer les travaux.",
