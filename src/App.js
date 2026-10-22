@@ -76,6 +76,7 @@ import ArticleGarantieDecennale2026 from './Article-garantie-decennale-renovatio
 import ArticleMaPrimeRenovDelais2026 from './Article-maprimerenov-delais-dossier-2026';
 import ArticlePACHauteTemperature2026 from './Article-pompe-a-chaleur-haute-temperature-radiateurs-2026';
 import ArticlePlanPlurannuelTravauxCopropriete2026 from './Article-plan-pluriannuel-travaux-copropriete-2026';
+import ArticleDeclarationPrealableRenovation2026 from './Article-declaration-prealable-travaux-renovation-energetique-2026';
 import './App.css';
 
 function App() {
@@ -186,6 +187,7 @@ function App() {
       <Route path="/blog/pompe-a-chaleur-haute-temperature-radiateurs-2026" element={<ArticlePACHauteTemperature2026 />} />
       <Route path="/blog/maprimerenov-delais-dossier-2026" element={<ArticleMaPrimeRenovDelais2026 />} />
       <Route path="/blog/plan-pluriannuel-travaux-copropriete-2026" element={<ArticlePlanPlurannuelTravauxCopropriete2026 />} />
+      <Route path="/blog/declaration-prealable-travaux-renovation-energetique-2026" element={<ArticleDeclarationPrealableRenovation2026 />} />
     </Routes>
   );
 }
