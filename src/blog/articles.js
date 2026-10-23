@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "pac-maprimerenov-fin-janvier-2027",
+    title: "Pompe à chaleur et MaPrimeRénov' : pourquoi agir avant le 1er janvier 2027",
+    excerpt: "Le PLF 2027 prévoit de retirer les PAC de MaPrimeRénov' par geste. Jusqu'à 5 000 € d'aide en jeu : montants actuels, alternatives CEE et démarches pour sécuriser votre dossier avant la fin d'année.",
+    tag: "Aides",
+    date: "23 oct. 2026",
+    image: "/blog/pac-maprimerenov-fin-janvier-2027.jpg",
+    alt: "Unité extérieure de pompe à chaleur installée en façade d'une maison individuelle",
+  },
+  {
     slug: "declaration-prealable-travaux-renovation-energetique-2026",
     title: "Déclaration préalable et permis de construire pour la rénovation énergétique en 2026",
     excerpt: "PAC, ITE, fenêtres, solaire : quel type d'autorisation faut-il en mairie avant vos travaux ? Le guide complet avec le nouveau décret PAC de mars 2026 qui supprime la DP.",
