@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "isolation-biosourcee-ouate-chanvre-liege-2026",
+    title: "Isolation biosourcée en 2026 : ouate de cellulose, laine de chanvre et liège — guide et aides",
+    excerpt: "Ouate de cellulose, laine de chanvre, liège : performances, prix au m² et aides disponibles (CEE, TVA 5,5 %, éco-PTZ) pour ces isolants écologiques en 2026.",
+    tag: "Isolation",
+    date: "24 oct. 2026",
+    image: "/blog/isolation-biosourcee-ouate-chanvre-liege-2026.jpg",
+    alt: "Matériaux d'isolation biosourcés : ouate de cellulose, laine de chanvre et liège pour la rénovation énergétique",
+  },
+  {
     slug: "pac-maprimerenov-fin-janvier-2027",
     title: "Pompe à chaleur et MaPrimeRénov' : pourquoi agir avant le 1er janvier 2027",
     excerpt: "Le PLF 2027 prévoit de retirer les PAC de MaPrimeRénov' par geste. Jusqu'à 5 000 € d'aide en jeu : montants actuels, alternatives CEE et démarches pour sécuriser votre dossier avant la fin d'année.",
