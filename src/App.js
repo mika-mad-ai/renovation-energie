@@ -77,6 +77,7 @@ import ArticlePACHauteTemperature2026 from './Article-pompe-a-chaleur-haute-temp
 import ArticlePlanPlurannuelTravauxCopropriete2026 from './Article-plan-pluriannuel-travaux-copropriete-2026';
 import ArticleDeclarationPrealableRenovation2026 from './Article-declaration-prealable-travaux-renovation-energetique-2026';
 import ArticlePacMaPrimeRenovFin2027 from './Article-pac-maprimerenov-fin-janvier-2027';
+import ArticleIsolationBiosourcee2026 from './Article-isolation-biosourcee-ouate-chanvre-liege-2026';
 import './App.css';
 
 function App() {
@@ -188,6 +189,7 @@ function App() {
       <Route path="/blog/plan-pluriannuel-travaux-copropriete-2026" element={<ArticlePlanPlurannuelTravauxCopropriete2026 />} />
       <Route path="/blog/declaration-prealable-travaux-renovation-energetique-2026" element={<ArticleDeclarationPrealableRenovation2026 />} />
       <Route path="/blog/pac-maprimerenov-fin-janvier-2027" element={<ArticlePacMaPrimeRenovFin2027 />} />
+      <Route path="/blog/isolation-biosourcee-ouate-chanvre-liege-2026" element={<ArticleIsolationBiosourcee2026 />} />
     </Routes>
   );
 }
