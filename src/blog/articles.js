@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "label-rge-artisan-reforme-2026",
+    title: "Label RGE 2026 : réforme, comment vérifier un artisan et éviter les arnaques",
+    excerpt: "L'arrêté du 23 juin 2026 renforce les contrôles et les sanctions du label RGE. Sans artisan certifié RGE dans la bonne spécialité, aucune aide n'est accessible. Guide pratique pour vérifier et comprendre ce qui change.",
+    tag: "Artisans",
+    date: "25 oct. 2026",
+    image: "/blog/label-rge-artisan-reforme-2026.jpg",
+    alt: "Artisan certifié RGE sur un chantier de rénovation énergétique — qualification Reconnu Garant de l'Environnement",
+  },
+  {
     slug: "isolation-biosourcee-ouate-chanvre-liege-2026",
     title: "Isolation biosourcée en 2026 : ouate de cellulose, laine de chanvre et liège — guide et aides",
     excerpt: "Ouate de cellulose, laine de chanvre, liège : performances, prix au m² et aides disponibles (CEE, TVA 5,5 %, éco-PTZ) pour ces isolants écologiques en 2026.",
