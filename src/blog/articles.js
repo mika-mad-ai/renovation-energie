@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "leasing-social-pompe-a-chaleur-2026",
+    title: "Leasing social pompe à chaleur 2026 : conditions, reste à charge et démarches",
+    excerpt: "Ouvert depuis le 1er octobre 2026, ce dispositif permet aux ménages modestes d'installer une PAC avec un reste à charge de 1 000 à 1 500 € seulement. Éligibilité, fonctionnement et étapes.",
+    tag: "Aides",
+    date: "26 oct. 2026",
+    image: "/blog/leasing-social-pompe-a-chaleur-2026.jpg",
+    alt: "Unité extérieure de pompe à chaleur installée sur une maison individuelle — leasing social PAC 2026",
+  },
+  {
     slug: "label-rge-artisan-reforme-2026",
     title: "Label RGE 2026 : réforme, comment vérifier un artisan et éviter les arnaques",
     excerpt: "L'arrêté du 23 juin 2026 renforce les contrôles et les sanctions du label RGE. Sans artisan certifié RGE dans la bonne spécialité, aucune aide n'est accessible. Guide pratique pour vérifier et comprendre ce qui change.",
