@@ -80,6 +80,7 @@ import ArticlePacMaPrimeRenovFin2027 from './Article-pac-maprimerenov-fin-janvie
 import ArticleIsolationBiosourcee2026 from './Article-isolation-biosourcee-ouate-chanvre-liege-2026';
 import ArticleLabelRgeArtisanReforme2026 from './Article-label-rge-artisan-reforme-2026';
 import ArticleLeasingSocialPompeAChaleur2026 from './Article-leasing-social-pompe-a-chaleur-2026';
+import ArticleArnaquesRenovation2026 from './Article-arnaques-renovation-energetique-comment-se-proteger-2026';
 import './App.css';
 
 function App() {
@@ -194,6 +195,7 @@ function App() {
       <Route path="/blog/isolation-biosourcee-ouate-chanvre-liege-2026" element={<ArticleIsolationBiosourcee2026 />} />
       <Route path="/blog/label-rge-artisan-reforme-2026" element={<ArticleLabelRgeArtisanReforme2026 />} />
       <Route path="/blog/leasing-social-pompe-a-chaleur-2026" element={<ArticleLeasingSocialPompeAChaleur2026 />} />
+      <Route path="/blog/arnaques-renovation-energetique-comment-se-proteger-2026" element={<ArticleArnaquesRenovation2026 />} />
     </Routes>
   );
 }
