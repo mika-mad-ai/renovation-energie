@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "arnaques-renovation-energetique-comment-se-proteger-2026",
+    title: "Arnaques en rénovation énergétique : comment les reconnaître et se protéger en 2026",
+    excerpt: "52 000 signalements en 2025, des ménages endettés de dizaines de milliers d'euros : les escroqueries explosent. Apprenez à repérer les signaux d'alerte et à vous protéger.",
+    tag: "Conseils",
+    date: "27 oct. 2026",
+    image: "/blog/arnaques-renovation-energetique-comment-se-proteger-2026.jpg",
+    alt: "Particulier qui examine attentivement un devis de rénovation énergétique pour détecter une arnaque",
+  },
+  {
     slug: "leasing-social-pompe-a-chaleur-2026",
     title: "Leasing social pompe à chaleur 2026 : conditions, reste à charge et démarches",
     excerpt: "Ouvert depuis le 1er octobre 2026, ce dispositif permet aux ménages modestes d'installer une PAC avec un reste à charge de 1 000 à 1 500 € seulement. Éligibilité, fonctionnement et étapes.",
