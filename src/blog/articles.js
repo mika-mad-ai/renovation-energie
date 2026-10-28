@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "deficit-foncier-renovation-energetique-2026",
+    title: "Déficit foncier et rénovation énergétique 2026 : plafond doublé à 21 400 €",
+    excerpt: "Propriétaires bailleurs : déduisez jusqu'à 21 400 €/an de votre revenu global en faisant sortir votre logement du statut de passoire thermique. Conditions, calcul et démarches.",
+    tag: "Fiscalité",
+    date: "28 oct. 2026",
+    image: "/blog/deficit-foncier-renovation-energetique-2026.jpg",
+    alt: "Propriétaire bailleur calculant les avantages fiscaux du déficit foncier pour sa rénovation énergétique",
+  },
+  {
     slug: "arnaques-renovation-energetique-comment-se-proteger-2026",
     title: "Arnaques en rénovation énergétique : comment les reconnaître et se protéger en 2026",
     excerpt: "52 000 signalements en 2025, des ménages endettés de dizaines de milliers d'euros : les escroqueries explosent. Apprenez à repérer les signaux d'alerte et à vous protéger.",
