@@ -83,6 +83,7 @@ import ArticleLabelRgeArtisanReforme2026 from './Article-label-rge-artisan-refor
 import ArticleLeasingSocialPompeAChaleur2026 from './Article-leasing-social-pompe-a-chaleur-2026';
 import ArticleArnaquesRenovation2026 from './Article-arnaques-renovation-energetique-comment-se-proteger-2026';
 import ArticleDeficitFoncierRenovation2026 from './Article-deficit-foncier-renovation-energetique-2026';
+import ArticleInterdictionLocationClasseF2028 from './Article-interdiction-location-classe-f-2028';
 import './App.css';
 
 function App() {
@@ -200,6 +201,7 @@ function App() {
       <Route path="/blog/leasing-social-pompe-a-chaleur-2026" element={<ArticleLeasingSocialPompeAChaleur2026 />} />
       <Route path="/blog/arnaques-renovation-energetique-comment-se-proteger-2026" element={<ArticleArnaquesRenovation2026 />} />
       <Route path="/blog/deficit-foncier-renovation-energetique-2026" element={<ArticleDeficitFoncierRenovation2026 />} />
+      <Route path="/blog/interdiction-location-classe-f-2028" element={<ArticleInterdictionLocationClasseF2028 />} />
     </Routes>
   );
 }
