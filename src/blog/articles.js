@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "interdiction-location-classe-f-2028",
+    title: "Interdiction de louer les logements classés F en 2028 : ce que doit faire le propriétaire bailleur",
+    excerpt: "Au 1er janvier 2028, les logements classés F seront interdits à la location. Plus d'un million de bailleurs ont 15 mois pour rénover. Plan de travaux, aides et calendrier à respecter.",
+    tag: "DPE",
+    date: "29 oct. 2026",
+    image: "/blog/interdiction-location-classe-f-2028.jpg",
+    alt: "Logement classé F sur le DPE : propriétaire bailleur face à l'obligation de rénover avant 2028",
+  },
+  {
     slug: "deficit-foncier-renovation-energetique-2026",
     title: "Déficit foncier et rénovation énergétique 2026 : plafond doublé à 21 400 €",
     excerpt: "Propriétaires bailleurs : déduisez jusqu'à 21 400 €/an de votre revenu global en faisant sortir votre logement du statut de passoire thermique. Conditions, calcul et démarches.",
