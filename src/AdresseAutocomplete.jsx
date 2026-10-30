@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 // Le composant accepte maintenant une propriété "onPlaceSelected" pour communiquer avec la page Home.
-const AdresseAutocomplete = ({ onPlaceSelected }) => {
+const AdresseAutocomplete = ({ onPlaceSelected, className }) => {
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -53,8 +53,6 @@ const AdresseAutocomplete = ({ onPlaceSelected }) => {
         const addressName = place.name;
         const fullAddress = `${addressName}, ${postalCode} ${city}`;
 
-        console.log("🏡 Adresse reconstruite et complète :", fullAddress);
-        
         // On met à jour la valeur de l'input pour que l'utilisateur voie l'adresse complète
         if(input) {
           input.value = fullAddress;
@@ -102,8 +100,9 @@ const AdresseAutocomplete = ({ onPlaceSelected }) => {
       name="adresse_bien"
       type="text"
       placeholder="1 rue de Paris, 75000 Paris"
+      autoComplete="street-address"
       required
-      className="block w-full bg-white text-gray-900 border border-gray-300 rounded-md px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+      className={className || "block w-full bg-white text-gray-900 border border-gray-300 rounded-md px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"}
     />
   );
 };

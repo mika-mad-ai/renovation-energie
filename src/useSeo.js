@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const SITE_URL = 'https://renohab.fr';
 const SITE_NAME = 'RenoHab';
-const DEFAULT_IMAGE = `${SITE_URL}/logo192-renohab.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/og-renohab-1200x630.jpg`;
 
 /**
  * Met à jour dynamiquement les balises SEO de la page courante (SPA).

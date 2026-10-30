@@ -1,57 +1,13 @@
 import React from 'react';
 import useSeo from './useSeo';
 import ArticleCard from './ArticleCard';
+import { SiteHeader, SiteFooter } from './SiteChrome';
 import { ARTICLES, articlePath } from './blog/articles';
 
 const PATH = '/blog';
 const TITLE = "Blog rénovation énergétique : aides, DPE, chauffage, isolation | RenoHab";
 const DESCRIPTION =
   "Tous les guides RenoHab pour réussir votre rénovation énergétique en 2026 : MaPrimeRénov', CEE, éco-PTZ, DPE, pompe à chaleur, isolation. Conseils clairs et à jour.";
-
-function BlogHeader() {
-  return (
-    <header className="w-full bg-white shadow-soft sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 md:h-24">
-          <a href="/" aria-label="Accueil RenoHab">
-            <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-24 md:h-28 w-auto" width="112" height="112" />
-          </a>
-          <nav className="flex items-center gap-3">
-            <a
-              href="/pompe-a-chaleur"
-              className="hidden sm:inline-flex px-5 py-2 rounded-full border border-emerald-500 text-emerald-700 font-semibold hover:bg-emerald-50 transition-all"
-            >
-              Devis PAC
-            </a>
-            <a
-              href="/"
-              className="px-5 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-soft hover:shadow-glow transition-all"
-            >
-              ← Accueil
-            </a>
-          </nav>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-function BlogFooter() {
-  return (
-    <footer className="w-full bg-gray-900 text-white">
-      <div className="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center">
-        <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-28 w-auto mx-auto mb-3" loading="lazy" width="112" height="112" />
-        <p className="text-gray-400">Votre Rénovation Énergétique, Simplifiée &amp; Financée.</p>
-        <p className="mt-6 text-sm text-gray-500">© {new Date().getFullYear()} RenoHab. Tous droits réservés.</p>
-        <p className="mt-3 text-sm text-gray-500">
-          <a href="/mentions-legales" className="hover:text-emerald-300 transition-colors">Mentions légales</a>
-          <span className="mx-2 opacity-60">·</span>
-          <a href="/confidentialite" className="hover:text-emerald-300 transition-colors">Politique de confidentialité</a>
-        </p>
-      </div>
-    </footer>
-  );
-}
 
 export default function Blog() {
   useSeo({
@@ -83,8 +39,8 @@ export default function Blog() {
   const [latest, ...others] = ARTICLES;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800 antialiased flex flex-col">
-      <BlogHeader />
+    <div className="min-h-screen bg-gray-50 text-gray-800 antialiased flex flex-col">
+      <SiteHeader />
 
       <main className="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
@@ -132,7 +88,7 @@ export default function Blog() {
         </div>
       </main>
 
-      <BlogFooter />
+      <SiteFooter />
     </div>
   );
 }

@@ -1,31 +1,12 @@
 import React from 'react';
 import useSeo from './useSeo';
+import { SiteHeader, SiteFooter } from './SiteChrome';
 
 // Pages légales : Mentions légales et Politique de confidentialité.
 // ⚠️ Les champs entre crochets « [à compléter] » doivent être renseignés avec les
 //    informations officielles de la société (raison sociale, SIREN, siège, contact).
 
 const LAST_UPDATE = '24 septembre 2026';
-
-function LegalHeader() {
-  return (
-    <header className="w-full bg-white shadow-soft sticky top-0 z-50">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 md:h-24">
-          <a href="/" aria-label="Accueil RenoHab">
-            <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-24 md:h-28 w-auto" width="112" height="112" />
-          </a>
-          <a
-            href="/"
-            className="px-5 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shadow-soft hover:shadow-glow transition-all"
-          >
-            ← Accueil
-          </a>
-        </div>
-      </div>
-    </header>
-  );
-}
 
 export function LegalLinks({ className = '' }) {
   return (
@@ -37,23 +18,10 @@ export function LegalLinks({ className = '' }) {
   );
 }
 
-function LegalFooter() {
-  return (
-    <footer className="w-full bg-gray-900 text-white">
-      <div className="max-w-5xl mx-auto py-10 px-4 sm:px-6 lg:px-8 text-center">
-        <img src="/RenoHabLogo.webp" alt="RenoHab" className="h-28 w-auto mx-auto mb-3" loading="lazy" width="112" height="112" />
-        <p className="text-gray-400">Votre Rénovation Énergétique, Simplifiée &amp; Financée.</p>
-        <LegalLinks className="mt-4 text-gray-400" />
-        <p className="mt-6 text-sm text-gray-500">© {new Date().getFullYear()} RenoHab. Tous droits réservés.</p>
-      </div>
-    </footer>
-  );
-}
-
 function LegalLayout({ title, intro, children }) {
   return (
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800 flex flex-col">
-      <LegalHeader />
+      <SiteHeader />
       <main className="flex-grow max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <article className="prose prose-lg max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-emerald-700">
           <h1>{title}</h1>
@@ -62,7 +30,7 @@ function LegalLayout({ title, intro, children }) {
           {children}
         </article>
       </main>
-      <LegalFooter />
+      <SiteFooter />
     </div>
   );
 }
