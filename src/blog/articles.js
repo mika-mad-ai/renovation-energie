@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "tarif-tempo-edf-pompe-a-chaleur-hiver-2026",
+    title: "Tarif Tempo EDF et pompe à chaleur : 5 stratégies pour passer l'hiver 2026-2027 sans facture salée",
+    excerpt: "Avec 22 jours rouges dès novembre 2026, le tarif Tempo EDF peut faire exploser la facture d'une PAC mal pilotée. Découvrez 5 stratégies concrètes pour limiter la note cet hiver.",
+    tag: "Chauffage",
+    date: "30 oct. 2026",
+    image: "/blog/tarif-tempo-edf-pompe-a-chaleur-hiver-2026.jpg",
+    alt: "Unité extérieure de pompe à chaleur en hiver sous la neige avec givre",
+  },
+  {
     slug: "interdiction-location-classe-f-2028",
     title: "Interdiction de louer les logements classés F en 2028 : ce que doit faire le propriétaire bailleur",
     excerpt: "Au 1er janvier 2028, les logements classés F seront interdits à la location. Plus d'un million de bailleurs ont 15 mois pour rénover. Plan de travaux, aides et calendrier à respecter.",
