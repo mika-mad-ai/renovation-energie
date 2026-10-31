@@ -84,6 +84,7 @@ import ArticleArnaquesRenovation2026 from './Article-arnaques-renovation-energet
 import ArticleDeficitFoncierRenovation2026 from './Article-deficit-foncier-renovation-energetique-2026';
 import ArticleInterdictionLocationClasseF2028 from './Article-interdiction-location-classe-f-2028';
 import ArticleTempoEdfPompeAChaleur2026 from './Article-tarif-tempo-edf-pompe-a-chaleur-hiver-2026';
+import ArticleCalculerEconomiesRenovation2026 from './Article-calculer-economies-renovation-energetique-2026';
 import './App.css';
 
 function App() {
@@ -202,6 +203,7 @@ function App() {
       <Route path="/blog/deficit-foncier-renovation-energetique-2026" element={<ArticleDeficitFoncierRenovation2026 />} />
       <Route path="/blog/interdiction-location-classe-f-2028" element={<ArticleInterdictionLocationClasseF2028 />} />
       <Route path="/blog/tarif-tempo-edf-pompe-a-chaleur-hiver-2026" element={<ArticleTempoEdfPompeAChaleur2026 />} />
+      <Route path="/blog/calculer-economies-renovation-energetique-2026" element={<ArticleCalculerEconomiesRenovation2026 />} />
     </Routes>
   );
 }
