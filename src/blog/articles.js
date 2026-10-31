@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "calculer-economies-renovation-energetique-2026",
+    title: "Calculer ses économies d'énergie après rénovation : méthode et exemples concrets 2026",
+    excerpt: "Combien va-t-on vraiment économiser sur sa facture d'énergie après une rénovation ? Méthode en 3 étapes, exemples chiffrés et retour sur investissement pour une maison F passant en classe B.",
+    tag: "Conseils",
+    date: "31 oct. 2026",
+    image: "/blog/calculer-economies-renovation-energetique-2026.jpg",
+    alt: "Maison rénovée avec étiquette DPE affichant une classe B, symbole d'économies d'énergie",
+  },
+  {
     slug: "tarif-tempo-edf-pompe-a-chaleur-hiver-2026",
     title: "Tarif Tempo EDF et pompe à chaleur : 5 stratégies pour passer l'hiver 2026-2027 sans facture salée",
     excerpt: "Avec 22 jours rouges dès novembre 2026, le tarif Tempo EDF peut faire exploser la facture d'une PAC mal pilotée. Découvrez 5 stratégies concrètes pour limiter la note cet hiver.",
