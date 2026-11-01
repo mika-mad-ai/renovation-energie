@@ -217,6 +217,14 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Article : Autoconsommation solaire + pompe à chaleur 2026 -->
+  <url>
+    <loc>https://renohab.fr/blog/autoconsommation-solaire-pompe-a-chaleur-2026</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Article : Panneaux solaires photovoltaïques 2026 -->
   <url>
     <loc>https://renohab.fr/blog/panneaux-solaires-photovoltaiques-aides-2026</loc>
