@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "autoconsommation-solaire-pompe-a-chaleur-2026",
+    title: "Panneaux solaires et pompe à chaleur : la combinaison gagnante pour l'autoconsommation en 2026",
+    excerpt: "Associer des panneaux photovoltaïques à une pompe à chaleur air/eau permet de réduire sa facture d'énergie de 30 à 50 %. Guide pratique, aides disponibles et conseils de pilotage.",
+    tag: "Chauffage",
+    date: "1er nov. 2026",
+    image: "/blog/autoconsommation-solaire-pompe-a-chaleur-2026.jpg",
+    alt: "Maison avec panneaux solaires en toiture et pompe à chaleur extérieure",
+  },
+  {
     slug: "calculer-economies-renovation-energetique-2026",
     title: "Calculer ses économies d'énergie après rénovation : méthode et exemples concrets 2026",
     excerpt: "Combien va-t-on vraiment économiser sur sa facture d'énergie après une rénovation ? Méthode en 3 étapes, exemples chiffrés et retour sur investissement pour une maison F passant en classe B.",

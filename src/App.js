@@ -27,6 +27,7 @@ import ArticleIsolationMursExterieure2026 from './Article-isolation-murs-exterie
 import ArticleVmcDoubleFlux2026 from './Article-vmc-double-flux-aides-2026';
 import ArticleRenovationMaisonAncienne2026 from './Article-renovation-maison-ancienne-2026';
 import ArticlePanneauxSolaires2026 from './Article-panneaux-solaires-photovoltaiques-aides-2026';
+import ArticleAutoconsommationSolairePAC from './Article-autoconsommation-solaire-pompe-a-chaleur-2026';
 import ArticleFenetresRemplacement2026 from './Article-fenetres-remplacement-aides-2026';
 import ArticleNouveauCalculDpe2026 from './Article-nouveau-calcul-dpe-2026-reclassement';
 import ArticleMaPrimeRenovCoproprietes2026 from './Article-maprimerenov-coproprietes-2026';
@@ -146,6 +147,7 @@ function App() {
       <Route path="/blog/vmc-double-flux-aides-2026" element={<ArticleVmcDoubleFlux2026 />} />
       <Route path="/blog/renovation-maison-ancienne-2026" element={<ArticleRenovationMaisonAncienne2026 />} />
       <Route path="/blog/panneaux-solaires-photovoltaiques-aides-2026" element={<ArticlePanneauxSolaires2026 />} />
+      <Route path="/blog/autoconsommation-solaire-pompe-a-chaleur-2026" element={<ArticleAutoconsommationSolairePAC />} />
       <Route path="/blog/fenetres-remplacement-aides-2026" element={<ArticleFenetresRemplacement2026 />} />
       <Route path="/blog/nouveau-calcul-dpe-2026-reclassement" element={<ArticleNouveauCalculDpe2026 />} />
       <Route path="/blog/maprimerenov-coproprietes-2026" element={<ArticleMaPrimeRenovCoproprietes2026 />} />
