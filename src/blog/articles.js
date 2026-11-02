@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "triple-vitrage-double-vitrage-guide-2026",
+    title: "Triple vitrage ou double vitrage : lequel choisir et financer en 2026 ?",
+    excerpt: "Ug 0,5 vs 1,0 W/m²K, zones climatiques, prix posés et aides CEE 2026 : le guide complet pour choisir entre double et triple vitrage après la suppression de MaPrimeRénov' par geste.",
+    tag: "Isolation",
+    date: "2 nov. 2026",
+    image: "/blog/triple-vitrage-double-vitrage-guide-2026.jpg",
+    alt: "Fenêtre à triple vitrage installée dans une maison rénovée — isolation thermique performante",
+  },
+  {
     slug: "autoconsommation-solaire-pompe-a-chaleur-2026",
     title: "Panneaux solaires et pompe à chaleur : la combinaison gagnante pour l'autoconsommation en 2026",
     excerpt: "Associer des panneaux photovoltaïques à une pompe à chaleur air/eau permet de réduire sa facture d'énergie de 30 à 50 %. Guide pratique, aides disponibles et conseils de pilotage.",
