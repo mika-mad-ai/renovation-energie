@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "interdiction-location-classe-e-2034-bailleurs",
+    title: "Logement classé E en 2026 : anticiper l'interdiction de louer en 2034",
+    excerpt: "Au 1er janvier 2034, les logements classés E seront interdits à la location. DPE actualisé, travaux prioritaires, CEE, éco-PTZ et déficit foncier : le guide complet pour agir maintenant.",
+    tag: "DPE",
+    date: "3 nov. 2026",
+    image: "/blog/interdiction-location-classe-e-2034-bailleurs.jpg",
+    alt: "Propriétaire bailleur devant un logement classé E sur le DPE — calendrier d'interdiction de location 2034",
+  },
+  {
     slug: "triple-vitrage-double-vitrage-guide-2026",
     title: "Triple vitrage ou double vitrage : lequel choisir et financer en 2026 ?",
     excerpt: "Ug 0,5 vs 1,0 W/m²K, zones climatiques, prix posés et aides CEE 2026 : le guide complet pour choisir entre double et triple vitrage après la suppression de MaPrimeRénov' par geste.",
