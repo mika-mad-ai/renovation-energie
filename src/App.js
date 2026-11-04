@@ -89,6 +89,7 @@ import ArticleInterdictionLocationClasseE2034 from './Article-interdiction-locat
 import ArticleTempoEdfPompeAChaleur2026 from './Article-tarif-tempo-edf-pompe-a-chaleur-hiver-2026';
 import ArticleCalculerEconomiesRenovation2026 from './Article-calculer-economies-renovation-energetique-2026';
 import ArticleTripleVitrageDoubleVitrageGuide2026 from './Article-triple-vitrage-double-vitrage-guide-2026';
+import ArticleExonerationTaxeFonciere2026 from './Article-exoneration-taxe-fonciere-renovation-energetique-2026';
 import './App.css';
 
 function App() {
@@ -212,6 +213,7 @@ function App() {
       <Route path="/blog/tarif-tempo-edf-pompe-a-chaleur-hiver-2026" element={<ArticleTempoEdfPompeAChaleur2026 />} />
       <Route path="/blog/calculer-economies-renovation-energetique-2026" element={<ArticleCalculerEconomiesRenovation2026 />} />
       <Route path="/blog/triple-vitrage-double-vitrage-guide-2026" element={<ArticleTripleVitrageDoubleVitrageGuide2026 />} />
+      <Route path="/blog/exoneration-taxe-fonciere-renovation-energetique-2026" element={<ArticleExonerationTaxeFonciere2026 />} />
     </Routes>
   );
 }
