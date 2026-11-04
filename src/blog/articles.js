@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "exoneration-taxe-fonciere-renovation-energetique-2026",
+    title: "Exonération de taxe foncière après rénovation énergétique : dernière chance avant 2027",
+    excerpt: "L'article 1383-0 B du CGI permet d'obtenir 50 à 100 % d'exonération de taxe foncière pendant 3 ans après travaux. Ce dispositif risque d'être abrogé le 1er janvier 2027 : comment en profiter avant la date limite.",
+    tag: "Fiscalité",
+    date: "4 nov. 2026",
+    image: "/blog/exoneration-taxe-fonciere-renovation-energetique-2026.jpg",
+    alt: "Maison rénovée avec panneau solaire et étiquette fiscale symbolisant une exonération de taxe foncière",
+  },
+  {
     slug: "interdiction-location-classe-e-2034-bailleurs",
     title: "Logement classé E en 2026 : anticiper l'interdiction de louer en 2034",
     excerpt: "Au 1er janvier 2034, les logements classés E seront interdits à la location. DPE actualisé, travaux prioritaires, CEE, éco-PTZ et déficit foncier : le guide complet pour agir maintenant.",
