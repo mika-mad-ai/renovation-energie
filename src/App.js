@@ -79,6 +79,7 @@ import ArticlePACHauteTemperature2026 from './Article-pompe-a-chaleur-haute-temp
 import ArticlePlanPlurannuelTravauxCopropriete2026 from './Article-plan-pluriannuel-travaux-copropriete-2026';
 import ArticleDeclarationPrealableRenovation2026 from './Article-declaration-prealable-travaux-renovation-energetique-2026';
 import ArticlePacMaPrimeRenovFin2027 from './Article-pac-maprimerenov-fin-janvier-2027';
+import ArticleBarTh168SolaireThermiqueFin2026 from './Article-prime-cee-bar-th-168-solaire-thermique-fin-novembre-2026';
 import ArticleIsolationBiosourcee2026 from './Article-isolation-biosourcee-ouate-chanvre-liege-2026';
 import ArticleLabelRgeArtisanReforme2026 from './Article-label-rge-artisan-reforme-2026';
 import ArticleLeasingSocialPompeAChaleur2026 from './Article-leasing-social-pompe-a-chaleur-2026';
@@ -214,6 +215,7 @@ function App() {
       <Route path="/blog/calculer-economies-renovation-energetique-2026" element={<ArticleCalculerEconomiesRenovation2026 />} />
       <Route path="/blog/triple-vitrage-double-vitrage-guide-2026" element={<ArticleTripleVitrageDoubleVitrageGuide2026 />} />
       <Route path="/blog/exoneration-taxe-fonciere-renovation-energetique-2026" element={<ArticleExonerationTaxeFonciere2026 />} />
+      <Route path="/blog/prime-cee-bar-th-168-solaire-thermique-fin-novembre-2026" element={<ArticleBarTh168SolaireThermiqueFin2026 />} />
     </Routes>
   );
 }

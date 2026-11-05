@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "prime-cee-bar-th-168-solaire-thermique-fin-novembre-2026",
+    title: "Fin de la prime CEE BAR-TH-168 au 4 novembre 2026 : chauffe-eau solaire thermique, ce qui change",
+    excerpt: "L'arrêté du 28 octobre 2026 supprime la fiche CEE BAR-TH-168 « Dispositif solaire thermique » dès le 4 novembre. MaPrimeRénov' déjà absente depuis septembre : que reste-t-il pour financer votre CESI ?",
+    tag: "Eau chaude",
+    date: "5 nov. 2026",
+    image: "/blog/prime-cee-bar-th-168-solaire-thermique-fin-novembre-2026.jpg",
+    alt: "Capteurs solaires thermiques sur toiture d'une maison individuelle pour production d'eau chaude sanitaire",
+  },
+  {
     slug: "exoneration-taxe-fonciere-renovation-energetique-2026",
     title: "Exonération de taxe foncière après rénovation énergétique : dernière chance avant 2027",
     excerpt: "L'article 1383-0 B du CGI permet d'obtenir 50 à 100 % d'exonération de taxe foncière pendant 3 ans après travaux. Ce dispositif risque d'être abrogé le 1er janvier 2027 : comment en profiter avant la date limite.",
