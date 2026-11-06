@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "erreurs-dossier-maprimerenov-refuse-2026",
+    title: "7 erreurs qui font rejeter votre dossier MaPrimeRénov' (et comment les éviter en 2026)",
+    excerpt: "Devis signé trop tôt, artisan non-RGE, logement trop récent, RDV France Rénov' oublié… Les 7 pièges procéduraux qui entraînent le rejet d'une demande MaPrimeRénov' et la checklist pour les éviter.",
+    tag: "Aides",
+    date: "6 nov. 2026",
+    image: "/blog/erreurs-dossier-maprimerenov-refuse-2026.jpg",
+    alt: "Documents de demande MaPrimeRénov' sur un bureau avec devis et attestation RGE",
+  },
+  {
     slug: "prime-cee-bar-th-168-solaire-thermique-fin-novembre-2026",
     title: "Fin de la prime CEE BAR-TH-168 au 4 novembre 2026 : chauffe-eau solaire thermique, ce qui change",
     excerpt: "L'arrêté du 28 octobre 2026 supprime la fiche CEE BAR-TH-168 « Dispositif solaire thermique » dès le 4 novembre. MaPrimeRénov' déjà absente depuis septembre : que reste-t-il pour financer votre CESI ?",
