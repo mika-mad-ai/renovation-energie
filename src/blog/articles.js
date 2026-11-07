@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "cheque-energie-2026-montant-beneficiaires-travaux",
+    title: "Chèque énergie 2026 : montant, bénéficiaires et comment financer vos travaux",
+    excerpt: "Barème de 48 € à 277 €, 4,5 millions de foyers éligibles, envoi automatique et recours jusqu'au 31 décembre : tout ce qu'il faut savoir sur le chèque énergie 2026 et comment l'utiliser pour vos travaux de rénovation.",
+    tag: "Aides",
+    date: "7 nov. 2026",
+    image: "/blog/cheque-energie-2026-montant-beneficiaires-travaux.jpg",
+    alt: "Famille devant leur maison rénovée — chèque énergie 2026 pour financer travaux et factures",
+  },
+  {
     slug: "erreurs-dossier-maprimerenov-refuse-2026",
     title: "7 erreurs qui font rejeter votre dossier MaPrimeRénov' (et comment les éviter en 2026)",
     excerpt: "Devis signé trop tôt, artisan non-RGE, logement trop récent, RDV France Rénov' oublié… Les 7 pièges procéduraux qui entraînent le rejet d'une demande MaPrimeRénov' et la checklist pour les éviter.",
