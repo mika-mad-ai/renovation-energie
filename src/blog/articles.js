@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "agir-avant-fin-2026-aides-renovation",
+    title: "Agir avant fin 2026 : les aides à la rénovation qui changent ou disparaissent en 2027",
+    excerpt: "PAC monogeste, passoires F/G par geste, budget ANAH réduit… Plusieurs dispositifs se referment dès janvier 2027. Le guide d'action pour en profiter avant la date limite.",
+    tag: "Aides",
+    date: "8 nov. 2026",
+    image: "/blog/agir-avant-fin-2026-aides-renovation.jpg",
+    alt: "Propriétaire planifiant ses travaux de rénovation énergétique avant fin 2026 pour profiter des aides",
+  },
+  {
     slug: "cheque-energie-2026-montant-beneficiaires-travaux",
     title: "Chèque énergie 2026 : montant, bénéficiaires et comment financer vos travaux",
     excerpt: "Barème de 48 € à 277 €, 4,5 millions de foyers éligibles, envoi automatique et recours jusqu'au 31 décembre : tout ce qu'il faut savoir sur le chèque énergie 2026 et comment l'utiliser pour vos travaux de rénovation.",
