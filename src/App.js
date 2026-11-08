@@ -92,6 +92,7 @@ import ArticleTripleVitrageDoubleVitrageGuide2026 from './Article-triple-vitrage
 import ArticleExonerationTaxeFonciere2026 from './Article-exoneration-taxe-fonciere-renovation-energetique-2026';
 import ArticleErreursDossierMaPrimeRenov2026 from './Article-erreurs-dossier-maprimerenov-refuse-2026';
 import ArticleChequenergie2026 from './Article-cheque-energie-2026-montant-beneficiaires-travaux';
+import ArticleAgirAvantFin2026 from './Article-agir-avant-fin-2026-aides-renovation';
 import './App.css';
 
 function App() {
@@ -218,6 +219,7 @@ function App() {
       <Route path="/blog/prime-cee-bar-th-168-solaire-thermique-fin-novembre-2026" element={<ArticleBarTh168SolaireThermiqueFin2026 />} />
       <Route path="/blog/erreurs-dossier-maprimerenov-refuse-2026" element={<ArticleErreursDossierMaPrimeRenov2026 />} />
       <Route path="/blog/cheque-energie-2026-montant-beneficiaires-travaux" element={<ArticleChequenergie2026 />} />
+      <Route path="/blog/agir-avant-fin-2026-aides-renovation" element={<ArticleAgirAvantFin2026 />} />
     </Routes>
   );
 }
