@@ -93,6 +93,7 @@ import ArticleExonerationTaxeFonciere2026 from './Article-exoneration-taxe-fonci
 import ArticleErreursDossierMaPrimeRenov2026 from './Article-erreurs-dossier-maprimerenov-refuse-2026';
 import ArticleChequenergie2026 from './Article-cheque-energie-2026-montant-beneficiaires-travaux';
 import ArticleAgirAvantFin2026 from './Article-agir-avant-fin-2026-aides-renovation';
+import ArticleIsolationFinancerCeeEcoPtz2026 from './Article-isolation-financer-cee-eco-ptz-apres-septembre-2026';
 import './App.css';
 
 function App() {
@@ -220,6 +221,7 @@ function App() {
       <Route path="/blog/erreurs-dossier-maprimerenov-refuse-2026" element={<ArticleErreursDossierMaPrimeRenov2026 />} />
       <Route path="/blog/cheque-energie-2026-montant-beneficiaires-travaux" element={<ArticleChequenergie2026 />} />
       <Route path="/blog/agir-avant-fin-2026-aides-renovation" element={<ArticleAgirAvantFin2026 />} />
+      <Route path="/blog/isolation-financer-cee-eco-ptz-apres-septembre-2026" element={<ArticleIsolationFinancerCeeEcoPtz2026 />} />
     </Routes>
   );
 }
