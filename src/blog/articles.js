@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "isolation-financer-cee-eco-ptz-apres-septembre-2026",
+    title: "Financer l'isolation de sa maison après septembre 2026 : CEE, éco-PTZ et TVA à 5,5 %",
+    excerpt: "MaPrimeRénov' par geste ne couvre plus l'isolation depuis le 1er septembre 2026. Découvrez les trois alternatives — prime CEE, éco-PTZ jusqu'à 50 000 € et TVA à 5,5 % — pour financer vos travaux sans MaPrimeRénov'.",
+    tag: "Isolation",
+    date: "9 nov. 2026",
+    image: "/blog/isolation-financer-cee-eco-ptz-apres-septembre-2026.jpg",
+    alt: "Travaux d'isolation thermique par l'extérieur sur une maison individuelle",
+  },
+  {
     slug: "agir-avant-fin-2026-aides-renovation",
     title: "Agir avant fin 2026 : les aides à la rénovation qui changent ou disparaissent en 2027",
     excerpt: "PAC monogeste, passoires F/G par geste, budget ANAH réduit… Plusieurs dispositifs se referment dès janvier 2027. Le guide d'action pour en profiter avant la date limite.",
