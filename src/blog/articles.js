@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "credit-impot-renovation-energetique-2026",
+    title: "Crédit d'impôt rénovation énergétique en 2026 : ce qui a remplacé le CITE",
+    excerpt: "Le CITE a disparu en 2021, remplacé par des aides souvent plus généreuses. TVA à 5,5 %, MaPrimeRénov', déficit foncier, Loc'Avantages : tour complet des avantages fiscaux réels pour financer vos travaux.",
+    tag: "Fiscalité",
+    date: "10 nov. 2026",
+    image: "/blog/credit-impot-renovation-energetique-2026.jpg",
+    alt: "Propriétaire consultant ses documents fiscaux pour financer ses travaux de rénovation énergétique",
+  },
+  {
     slug: "isolation-financer-cee-eco-ptz-apres-septembre-2026",
     title: "Financer l'isolation de sa maison après septembre 2026 : CEE, éco-PTZ et TVA à 5,5 %",
     excerpt: "MaPrimeRénov' par geste ne couvre plus l'isolation depuis le 1er septembre 2026. Découvrez les trois alternatives — prime CEE, éco-PTZ jusqu'à 50 000 € et TVA à 5,5 % — pour financer vos travaux sans MaPrimeRénov'.",
