@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "passoire-thermique-calendrier-renovation-avant-2028",
+    title: "Passoire thermique F ou G : combien de temps pour rénover avant l'interdiction de 2028 ?",
+    excerpt: "L'interdiction de louer un logement classé F arrive le 1er janvier 2028. Audit énergétique, dossier MaPrimeRénov', travaux, DPE post-chantier : le calendrier réaliste étape par étape.",
+    tag: "DPE",
+    date: "11 nov. 2026",
+    image: "/blog/passoire-thermique-calendrier-renovation-avant-2028.jpg",
+    alt: "Façade d'une maison ancienne à rénover pour améliorer sa classe DPE avant l'interdiction de location en 2028",
+  },
+  {
     slug: "credit-impot-renovation-energetique-2026",
     title: "Crédit d'impôt rénovation énergétique en 2026 : ce qui a remplacé le CITE",
     excerpt: "Le CITE a disparu en 2021, remplacé par des aides souvent plus généreuses. TVA à 5,5 %, MaPrimeRénov', déficit foncier, Loc'Avantages : tour complet des avantages fiscaux réels pour financer vos travaux.",
