@@ -97,6 +97,7 @@ import ArticleAgirAvantFin2026 from './Article-agir-avant-fin-2026-aides-renovat
 import ArticleIsolationFinancerCeeEcoPtz2026 from './Article-isolation-financer-cee-eco-ptz-apres-septembre-2026';
 import ArticleCreditImpotRenovation2026 from './Article-credit-impot-renovation-energetique-2026';
 import ArticlePassoireCalendrier2028 from './Article-passoire-thermique-calendrier-renovation-avant-2028';
+import ArticlePompeAChaleurAppartement2026 from './Article-pompe-a-chaleur-appartement-copropriete-2026';
 import './App.css';
 
 function App() {
@@ -228,6 +229,7 @@ function App() {
       <Route path="/blog/isolation-financer-cee-eco-ptz-apres-septembre-2026" element={<ArticleIsolationFinancerCeeEcoPtz2026 />} />
       <Route path="/blog/credit-impot-renovation-energetique-2026" element={<ArticleCreditImpotRenovation2026 />} />
       <Route path="/blog/passoire-thermique-calendrier-renovation-avant-2028" element={<ArticlePassoireCalendrier2028 />} />
+      <Route path="/blog/pompe-a-chaleur-appartement-copropriete-2026" element={<ArticlePompeAChaleurAppartement2026 />} />
     </Routes>
   );
 }
