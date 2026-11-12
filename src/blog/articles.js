@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "pompe-a-chaleur-appartement-copropriete-2026",
+    title: "Pompe à chaleur en appartement : autorisations, démarches et aides en copropriété (2026)",
+    excerpt: "PAC air/air ou air/eau, vote en assemblée générale, contraintes acoustiques, MaPrimeRénov', éco-PTZ et prime CEE : tout ce qu'il faut savoir pour installer une pompe à chaleur dans un appartement en copropriété.",
+    tag: "Chauffage",
+    date: "12 nov. 2026",
+    image: "/blog/pompe-a-chaleur-appartement-copropriete-2026.jpg",
+    alt: "Unité extérieure de pompe à chaleur installée sur un balcon d'appartement en copropriété",
+  },
+  {
     slug: "passoire-thermique-calendrier-renovation-avant-2028",
     title: "Passoire thermique F ou G : combien de temps pour rénover avant l'interdiction de 2028 ?",
     excerpt: "L'interdiction de louer un logement classé F arrive le 1er janvier 2028. Audit énergétique, dossier MaPrimeRénov', travaux, DPE post-chantier : le calendrier réaliste étape par étape.",
