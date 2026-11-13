@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "locataire-passoire-thermique-droits-recours-2026",
+    title: "Locataire en passoire thermique : vos droits et recours en 2026",
+    excerpt: "Logement classé F ou G, loyer gelé depuis 2022, droit à des travaux, préavis réduit en zone tendue, chèque énergie : le guide complet des droits du locataire face à une passoire thermique.",
+    tag: "DPE",
+    date: "13 nov. 2026",
+    image: "/blog/locataire-passoire-thermique-droits-recours-2026.jpg",
+    alt: "Étiquette DPE d'un logement classé F ou G — passoire thermique en location",
+  },
+  {
     slug: "pompe-a-chaleur-appartement-copropriete-2026",
     title: "Pompe à chaleur en appartement : autorisations, démarches et aides en copropriété (2026)",
     excerpt: "PAC air/air ou air/eau, vote en assemblée générale, contraintes acoustiques, MaPrimeRénov', éco-PTZ et prime CEE : tout ce qu'il faut savoir pour installer une pompe à chaleur dans un appartement en copropriété.",
