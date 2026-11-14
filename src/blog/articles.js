@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "presidentielle-2027-renovation-energetique-proprietaires",
+    title: "Présidentielle 2027 et rénovation énergétique : faut-il attendre les élections pour rénover ?",
+    excerpt: "MaPrimeRénov', DPE, éco-PTZ : les aides actuelles sont connues et applicables maintenant. Pourquoi les propriétaires ne doivent pas attendre le résultat des urnes de 2027 pour lancer leurs travaux.",
+    tag: "Aides",
+    date: "14 nov. 2026",
+    image: "/blog/presidentielle-2027-renovation-energetique-proprietaires.jpg",
+    alt: "Maison rénovée avec panneau solaire — enjeux de la présidentielle 2027 pour la rénovation énergétique",
+  },
+  {
     slug: "locataire-passoire-thermique-droits-recours-2026",
     title: "Locataire en passoire thermique : vos droits et recours en 2026",
     excerpt: "Logement classé F ou G, loyer gelé depuis 2022, droit à des travaux, préavis réduit en zone tendue, chèque énergie : le guide complet des droits du locataire face à une passoire thermique.",
