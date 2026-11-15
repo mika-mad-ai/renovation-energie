@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "renovation-maison-annees-1970-par-ou-commencer",
+    title: "Rénover une maison des années 1970 : par où commencer et quelles aides en 2026 ?",
+    excerpt: "Parpaing, béton, zéro isolation : les maisons des années 1970 sont les plus énergivores de France. Découvrez l'ordre logique des travaux et toutes les aides pour financer votre rénovation.",
+    tag: "Rénovation",
+    date: "15 nov. 2026",
+    image: "/blog/renovation-maison-annees-1970-par-ou-commencer.jpg",
+    alt: "Façade d'une maison individuelle des années 1970 en parpaing avant travaux d'isolation",
+  },
+  {
     slug: "presidentielle-2027-renovation-energetique-proprietaires",
     title: "Présidentielle 2027 et rénovation énergétique : faut-il attendre les élections pour rénover ?",
     excerpt: "MaPrimeRénov', DPE, éco-PTZ : les aides actuelles sont connues et applicables maintenant. Pourquoi les propriétaires ne doivent pas attendre le résultat des urnes de 2027 pour lancer leurs travaux.",

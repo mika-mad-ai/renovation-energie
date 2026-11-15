@@ -30,6 +30,7 @@ import ArticlePanneauxSolaires2026 from './Article-panneaux-solaires-photovoltai
 import ArticleAutoconsommationSolairePAC from './Article-autoconsommation-solaire-pompe-a-chaleur-2026';
 import ArticleLocatairePassoireThermique2026 from './Article-locataire-passoire-thermique-droits-recours-2026';
 import ArticlePresidentielle2027Renovation from './Article-presidentielle-2027-renovation-energetique-proprietaires';
+import ArticleRenovationMaisonAnnees1970 from './Article-renovation-maison-annees-1970-par-ou-commencer';
 import ArticleFenetresRemplacement2026 from './Article-fenetres-remplacement-aides-2026';
 import ArticleNouveauCalculDpe2026 from './Article-nouveau-calcul-dpe-2026-reclassement';
 import ArticleMaPrimeRenovCoproprietes2026 from './Article-maprimerenov-coproprietes-2026';
@@ -232,6 +233,7 @@ function App() {
       <Route path="/blog/pompe-a-chaleur-appartement-copropriete-2026" element={<ArticlePompeAChaleurAppartement2026 />} />
       <Route path="/blog/locataire-passoire-thermique-droits-recours-2026" element={<ArticleLocatairePassoireThermique2026 />} />
       <Route path="/blog/presidentielle-2027-renovation-energetique-proprietaires" element={<ArticlePresidentielle2027Renovation />} />
+      <Route path="/blog/renovation-maison-annees-1970-par-ou-commencer" element={<ArticleRenovationMaisonAnnees1970 />} />
     </Routes>
   );
 }
