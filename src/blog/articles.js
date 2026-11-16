@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "pompe-a-chaleur-bruit-voisinage-regles-recours-2026",
+    title: "Pompe à chaleur et bruit de voisinage : règles, distances et recours en 2026",
+    excerpt: "Seuils d'émergence sonore, distances recommandées, solutions techniques et recours juridiques : tout ce qu'il faut savoir si votre PAC génère des nuisances (ou si c'est celle du voisin).",
+    tag: "Chauffage",
+    date: "16 nov. 2026",
+    image: "/blog/pompe-a-chaleur-bruit-voisinage-regles-recours-2026.jpg",
+    alt: "Unité extérieure de pompe à chaleur installée dans un jardin, proche d'une clôture",
+  },
+  {
     slug: "renovation-maison-annees-1970-par-ou-commencer",
     title: "Rénover une maison des années 1970 : par où commencer et quelles aides en 2026 ?",
     excerpt: "Parpaing, béton, zéro isolation : les maisons des années 1970 sont les plus énergivores de France. Découvrez l'ordre logique des travaux et toutes les aides pour financer votre rénovation.",
