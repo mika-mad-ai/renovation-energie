@@ -102,6 +102,7 @@ import ArticleIsolationFinancerCeeEcoPtz2026 from './Article-isolation-financer-
 import ArticleCreditImpotRenovation2026 from './Article-credit-impot-renovation-energetique-2026';
 import ArticlePassoireCalendrier2028 from './Article-passoire-thermique-calendrier-renovation-avant-2028';
 import ArticlePompeAChaleurAppartement2026 from './Article-pompe-a-chaleur-appartement-copropriete-2026';
+import ArticleThermographieInfrarouge2026 from './Article-thermographie-infrarouge-detection-deperditions-2026';
 import './App.css';
 
 function App() {
@@ -238,6 +239,7 @@ function App() {
       <Route path="/blog/presidentielle-2027-renovation-energetique-proprietaires" element={<ArticlePresidentielle2027Renovation />} />
       <Route path="/blog/renovation-maison-annees-1970-par-ou-commencer" element={<ArticleRenovationMaisonAnnees1970 />} />
       <Route path="/blog/pompe-a-chaleur-bruit-voisinage-regles-recours-2026" element={<ArticlePacBruitVoisinage2026 />} />
+      <Route path="/blog/thermographie-infrarouge-detection-deperditions-2026" element={<ArticleThermographieInfrarouge2026 />} />
     </Routes>
   );
 }
