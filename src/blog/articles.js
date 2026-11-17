@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "thermographie-infrarouge-detection-deperditions-2026",
+    title: "Thermographie infrarouge : détecter les déperditions thermiques de sa maison en hiver",
+    excerpt: "Caméra thermique, ponts thermiques, fuites d'air, humidité : comment fonctionne un diagnostic par thermographie infrarouge, quand le réaliser (novembre à février), combien ça coûte (200–600 €) et que faire des résultats.",
+    tag: "Diagnostic",
+    date: "17 nov. 2026",
+    image: "/blog/thermographie-infrarouge-detection-deperditions-2026.jpg",
+    alt: "Façade d'une maison vue en thermographie infrarouge révélant des zones de déperditions thermiques",
+  },
+  {
     slug: "pompe-a-chaleur-bruit-voisinage-regles-recours-2026",
     title: "Pompe à chaleur et bruit de voisinage : règles, distances et recours en 2026",
     excerpt: "Seuils d'émergence sonore, distances recommandées, solutions techniques et recours juridiques : tout ce qu'il faut savoir si votre PAC génère des nuisances (ou si c'est celle du voisin).",
