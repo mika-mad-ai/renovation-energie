@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "bonifications-cee-pac-offres-integrees-novembre-2026",
+    title: "Nouvelles bonifications CEE pompes à chaleur : ce qui change depuis le 17 novembre 2026",
+    excerpt: "Deux arrêtés publiés début novembre 2026 renforcent les primes CEE pour les PAC air/eau via les offres intégrées ADEME. Jusqu'à 875 000 kWh cumac pour les ménages modestes.",
+    tag: "Aides",
+    date: "18 nov. 2026",
+    image: "/blog/bonifications-cee-pac-offres-integrees-novembre-2026.jpg",
+    alt: "Pompe à chaleur air/eau installée sur la façade d'une maison individuelle rénovée",
+  },
+  {
     slug: "thermographie-infrarouge-detection-deperditions-2026",
     title: "Thermographie infrarouge : détecter les déperditions thermiques de sa maison en hiver",
     excerpt: "Caméra thermique, ponts thermiques, fuites d'air, humidité : comment fonctionne un diagnostic par thermographie infrarouge, quand le réaliser (novembre à février), combien ça coûte (200–600 €) et que faire des résultats.",
