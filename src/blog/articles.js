@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "vote-assemblee-fin-interdiction-location-passoires-2026",
+    title: "Vote de l'Assemblée : la fin des interdictions de louer des passoires thermiques ?",
+    excerpt: "Le 17 novembre 2026, les députés ont adopté par 108 voix contre 102 un amendement supprimant le calendrier d'interdiction de location des logements classés G, F et E. Ce que cela change — et ne change pas — pour les propriétaires bailleurs.",
+    tag: "DPE",
+    date: "19 nov. 2026",
+    image: "/blog/vote-assemblee-fin-interdiction-location-passoires-2026.jpg",
+    alt: "Étiquette DPE d'un logement classé G ou F — vote de l'Assemblée nationale sur les interdictions de location 2026",
+  },
+  {
     slug: "bonifications-cee-pac-offres-integrees-novembre-2026",
     title: "Nouvelles bonifications CEE pompes à chaleur : ce qui change depuis le 17 novembre 2026",
     excerpt: "Deux arrêtés publiés début novembre 2026 renforcent les primes CEE pour les PAC air/eau via les offres intégrées ADEME. Jusqu'à 875 000 kWh cumac pour les ménages modestes.",
