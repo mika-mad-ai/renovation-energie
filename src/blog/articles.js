@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "precarite-energetique-aides-menages-modestes-novembre-2026",
+    title: "Précarité énergétique en 2026 : 3,9 millions de passoires thermiques — ce que les ménages modestes peuvent encore obtenir",
+    excerpt: "Après la fermeture de MaPrimeRénov' et une chute de 41 % des rénovations Anah, que reste-t-il comme aides pour les ménages modestes ? Le point complet suite à la Journée nationale contre la précarité énergétique du 18 novembre 2026.",
+    tag: "Aides",
+    date: "20 nov. 2026",
+    image: "/blog/precarite-energetique-aides-menages-modestes-novembre-2026.jpg",
+    alt: "Logement passoire thermique classé F ou G — précarité énergétique en France 2026",
+  },
+  {
     slug: "vote-assemblee-fin-interdiction-location-passoires-2026",
     title: "Vote de l'Assemblée : la fin des interdictions de louer des passoires thermiques ?",
     excerpt: "Le 17 novembre 2026, les députés ont adopté par 108 voix contre 102 un amendement supprimant le calendrier d'interdiction de location des logements classés G, F et E. Ce que cela change — et ne change pas — pour les propriétaires bailleurs.",
