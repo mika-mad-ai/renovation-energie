@@ -106,6 +106,7 @@ import ArticleThermographieInfrarouge2026 from './Article-thermographie-infrarou
 import ArticleBonificationsCeePacNovembre2026 from './Article-bonifications-cee-pac-offres-integrees-novembre-2026';
 import ArticleVoteAssembleePassoires2026 from './Article-vote-assemblee-fin-interdiction-location-passoires-2026';
 import ArticlePrecariteEnergetiqueAides2026 from './Article-precarite-energetique-aides-menages-modestes-novembre-2026';
+import ArticleGranulesBoisVsPompeAChaleur2026 from './Article-granules-bois-vs-pompe-chaleur-comparatif-2026';
 import './App.css';
 
 function App() {
@@ -246,6 +247,7 @@ function App() {
       <Route path="/blog/bonifications-cee-pac-offres-integrees-novembre-2026" element={<ArticleBonificationsCeePacNovembre2026 />} />
       <Route path="/blog/vote-assemblee-fin-interdiction-location-passoires-2026" element={<ArticleVoteAssembleePassoires2026 />} />
       <Route path="/blog/precarite-energetique-aides-menages-modestes-novembre-2026" element={<ArticlePrecariteEnergetiqueAides2026 />} />
+      <Route path="/blog/granules-bois-vs-pompe-chaleur-comparatif-2026" element={<ArticleGranulesBoisVsPompeAChaleur2026 />} />
     </Routes>
   );
 }

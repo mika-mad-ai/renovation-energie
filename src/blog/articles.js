@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "granules-bois-vs-pompe-chaleur-comparatif-2026",
+    title: "Chaudière à granulés ou pompe à chaleur air/eau : comment choisir en 2026 ?",
+    excerpt: "Coûts d'installation, dépenses énergétiques, aides CEE et éco-PTZ disponibles : le comparatif complet entre chaudière à granulés de bois et PAC air/eau pour remplacer votre chauffage.",
+    tag: "Chauffage",
+    date: "21 nov. 2026",
+    image: "/blog/granules-bois-vs-pompe-chaleur-comparatif-2026.jpg",
+    alt: "Comparatif chaudière à granulés de bois et pompe à chaleur air/eau pour le chauffage résidentiel",
+  },
+  {
     slug: "precarite-energetique-aides-menages-modestes-novembre-2026",
     title: "Précarité énergétique en 2026 : 3,9 millions de passoires thermiques — ce que les ménages modestes peuvent encore obtenir",
     excerpt: "Après la fermeture de MaPrimeRénov' et une chute de 41 % des rénovations Anah, que reste-t-il comme aides pour les ménages modestes ? Le point complet suite à la Journée nationale contre la précarité énergétique du 18 novembre 2026.",
