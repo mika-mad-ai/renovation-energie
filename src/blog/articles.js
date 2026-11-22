@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "renovation-energetique-zone-abf-contraintes-solutions-2026",
+    title: "Rénovation énergétique en zone ABF : contraintes, solutions et aides pour les logements protégés en 2026",
+    excerpt: "Votre logement est situé à moins de 500 m d'un monument historique ? Découvrez quels travaux d'économies d'énergie sont possibles sans accord de l'ABF, comment obtenir cet accord pour les façades, et toutes les aides mobilisables.",
+    tag: "Patrimoine",
+    date: "22 nov. 2026",
+    image: "/blog/renovation-energetique-zone-abf-contraintes-solutions-2026.jpg",
+    alt: "Façade d'une maison ancienne en pierre dans un périmètre de protection patrimoniale — zone ABF",
+  },
+  {
     slug: "granules-bois-vs-pompe-chaleur-comparatif-2026",
     title: "Chaudière à granulés ou pompe à chaleur air/eau : comment choisir en 2026 ?",
     excerpt: "Coûts d'installation, dépenses énergétiques, aides CEE et éco-PTZ disponibles : le comparatif complet entre chaudière à granulés de bois et PAC air/eau pour remplacer votre chauffage.",
