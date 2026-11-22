@@ -106,6 +106,7 @@ import ArticleBonificationsCeePacNovembre2026 from './Article-bonifications-cee-
 import ArticleVoteAssembleePassoires2026 from './Article-vote-assemblee-fin-interdiction-location-passoires-2026';
 import ArticlePrecariteEnergetiqueAides2026 from './Article-precarite-energetique-aides-menages-modestes-novembre-2026';
 import ArticleGranulesBoisVsPompeAChaleur2026 from './Article-granules-bois-vs-pompe-chaleur-comparatif-2026';
+import ArticleRenovationZoneABF2026 from './Article-renovation-energetique-zone-abf-contraintes-solutions-2026';
 import './App.css';
 
 function App() {
@@ -246,6 +247,7 @@ function App() {
       <Route path="/blog/vote-assemblee-fin-interdiction-location-passoires-2026" element={<ArticleVoteAssembleePassoires2026 />} />
       <Route path="/blog/precarite-energetique-aides-menages-modestes-novembre-2026" element={<ArticlePrecariteEnergetiqueAides2026 />} />
       <Route path="/blog/granules-bois-vs-pompe-chaleur-comparatif-2026" element={<ArticleGranulesBoisVsPompeAChaleur2026 />} />
+      <Route path="/blog/renovation-energetique-zone-abf-contraintes-solutions-2026" element={<ArticleRenovationZoneABF2026 />} />
     </Routes>
   );
 }
