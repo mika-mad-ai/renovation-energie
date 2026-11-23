@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "humidite-moisissures-logement-causes-solutions-2026",
+    title: "Humidité et moisissures dans son logement : causes, risques et solutions durables en 2026",
+    excerpt: "Condensation sur les vitres, taches noires au plafond, odeur de renfermé : comprendre les causes de l'humidité excessive, ses risques pour la santé et comment y remédier durablement grâce à la VMC et à l'isolation.",
+    tag: "Confort & santé",
+    date: "23 nov. 2026",
+    image: "/blog/humidite-moisissures-logement-causes-solutions-2026.jpg",
+    alt: "Condensation sur une fenêtre et traces de moisissures dans un logement mal isolé",
+  },
+  {
     slug: "renovation-energetique-zone-abf-contraintes-solutions-2026",
     title: "Rénovation énergétique en zone ABF : contraintes, solutions et aides pour les logements protégés en 2026",
     excerpt: "Votre logement est situé à moins de 500 m d'un monument historique ? Découvrez quels travaux d'économies d'énergie sont possibles sans accord de l'ABF, comment obtenir cet accord pour les façades, et toutes les aides mobilisables.",
