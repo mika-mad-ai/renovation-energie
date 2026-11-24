@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "batterie-stockage-solaire-residentiel-2026",
+    title: "Batterie de stockage solaire résidentielle en 2026 : prix, rentabilité et aides disponibles",
+    excerpt: "Les prix des batteries LFP ont chuté de 30 à 40 % en trois ans, mais les aides nationales restent quasi inexistantes. Prix, technologies, rentabilité réelle et leviers de financement en 2026.",
+    tag: "Solaire",
+    date: "24 nov. 2026",
+    image: "/blog/batterie-stockage-solaire-residentiel-2026.jpg",
+    alt: "Maison individuelle avec panneaux solaires et batterie de stockage résidentielle",
+  },
+  {
     slug: "humidite-moisissures-logement-causes-solutions-2026",
     title: "Humidité et moisissures dans son logement : causes, risques et solutions durables en 2026",
     excerpt: "Condensation sur les vitres, taches noires au plafond, odeur de renfermé : comprendre les causes de l'humidité excessive, ses risques pour la santé et comment y remédier durablement grâce à la VMC et à l'isolation.",
