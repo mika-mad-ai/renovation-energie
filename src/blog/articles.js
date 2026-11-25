@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "renovation-hiver-travaux-precautions-2026",
+    title: "Travaux de rénovation énergétique en hiver : ce qui est possible, ce qu'il faut éviter et comment bien planifier",
+    excerpt: "PAC, isolation intérieure, VMC : certains chantiers se font très bien en hiver — et coûtent moins cher. ITE, enduits, étanchéité de terrasse : mieux vaut attendre le printemps. Le guide complet pour planifier intelligemment.",
+    tag: "Guide pratique",
+    date: "25 nov. 2026",
+    image: "/blog/renovation-hiver-travaux-precautions-2026.jpg",
+    alt: "Chantier de rénovation énergétique en hiver : installation d'une pompe à chaleur sur une maison enneigée",
+  },
+  {
     slug: "batterie-stockage-solaire-residentiel-2026",
     title: "Batterie de stockage solaire résidentielle en 2026 : prix, rentabilité et aides disponibles",
     excerpt: "Les prix des batteries LFP ont chuté de 30 à 40 % en trois ans, mais les aides nationales restent quasi inexistantes. Prix, technologies, rentabilité réelle et leviers de financement en 2026.",
