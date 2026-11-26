@@ -111,6 +111,7 @@ import ArticleRenovationZoneABF2026 from './Article-renovation-energetique-zone-
 import ArticleHumiditeMoisissures2026 from './Article-humidite-moisissures-logement-causes-solutions-2026';
 import ArticleBatterieStockageSolaire2026 from './Article-batterie-stockage-solaire-residentiel-2026';
 import ArticleRenovationHiverTravaux2026 from './Article-renovation-hiver-travaux-precautions-2026';
+import ArticleRenovationIndivision2026 from './Article-renovation-energetique-indivision-aides-2026';
 import './App.css';
 
 function App() {
@@ -256,6 +257,7 @@ function App() {
       <Route path="/blog/humidite-moisissures-logement-causes-solutions-2026" element={<ArticleHumiditeMoisissures2026 />} />
       <Route path="/blog/batterie-stockage-solaire-residentiel-2026" element={<ArticleBatterieStockageSolaire2026 />} />
       <Route path="/blog/renovation-hiver-travaux-precautions-2026" element={<ArticleRenovationHiverTravaux2026 />} />
+      <Route path="/blog/renovation-energetique-indivision-aides-2026" element={<ArticleRenovationIndivision2026 />} />
     </Routes>
   );
 }

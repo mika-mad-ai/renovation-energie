@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "renovation-energetique-indivision-aides-2026",
+    title: "Rénovation énergétique d'un bien en indivision : comment bénéficier des aides en 2026",
+    excerpt: "Héritage, achat en commun, divorce non finalisé : un logement en indivision peut bénéficier de MaPrimeRénov', des primes CEE et de l'éco-PTZ. Conditions, documents et étapes pour débloquer les aides sans accroc.",
+    tag: "Aides",
+    date: "26 nov. 2026",
+    image: "/blog/renovation-energetique-indivision-aides-2026.jpg",
+    alt: "Maison familiale détenue en indivision — succession et rénovation énergétique",
+  },
+  {
     slug: "renovation-hiver-travaux-precautions-2026",
     title: "Travaux de rénovation énergétique en hiver : ce qui est possible, ce qu'il faut éviter et comment bien planifier",
     excerpt: "PAC, isolation intérieure, VMC : certains chantiers se font très bien en hiver — et coûtent moins cher. ITE, enduits, étanchéité de terrasse : mieux vaut attendre le printemps. Le guide complet pour planifier intelligemment.",
