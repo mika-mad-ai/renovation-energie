@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "contester-dpe-errone-recours-contre-expertise-2026",
+    title: "DPE erroné : comment le contester, obtenir une contre-expertise et être indemnisé en 2026",
+    excerpt: "Surface mal mesurée, classe énergétique incorrecte, données absentes : comment identifier une erreur dans votre DPE, quelles démarches suivre et comment engager la responsabilité du diagnostiqueur.",
+    tag: "DPE",
+    date: "27 nov. 2026",
+    image: "/blog/contester-dpe-errone-recours-contre-expertise-2026.jpg",
+    alt: "Diagnostiqueur immobilier vérifiant les données d'un DPE sur un logement résidentiel",
+  },
+  {
     slug: "renovation-energetique-indivision-aides-2026",
     title: "Rénovation énergétique d'un bien en indivision : comment bénéficier des aides en 2026",
     excerpt: "Héritage, achat en commun, divorce non finalisé : un logement en indivision peut bénéficier de MaPrimeRénov', des primes CEE et de l'éco-PTZ. Conditions, documents et étapes pour débloquer les aides sans accroc.",
