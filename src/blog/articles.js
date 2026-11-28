@@ -18,6 +18,15 @@
 
 export const ARTICLES = [
   {
+    slug: "heritage-passoire-thermique-succession-aides-2026",
+    title: "Hériter d'une passoire thermique : obligations, options et aides disponibles en 2026",
+    excerpt: "Vous héritez d'un logement classé F ou G ? Découvrez vos obligations réelles, les délais à respecter, et comment bénéficier de MaPrimeRénov', des CEE et de l'éco-PTZ en tant qu'héritier en 2026.",
+    tag: "Succession",
+    date: "28 nov. 2026",
+    image: "/blog/heritage-passoire-thermique-succession-aides-2026.jpg",
+    alt: "Maison héritée en succession avec un mauvais DPE — passoire thermique à rénover",
+  },
+  {
     slug: "contester-dpe-errone-recours-contre-expertise-2026",
     title: "DPE erroné : comment le contester, obtenir une contre-expertise et être indemnisé en 2026",
     excerpt: "Surface mal mesurée, classe énergétique incorrecte, données absentes : comment identifier une erreur dans votre DPE, quelles démarches suivre et comment engager la responsabilité du diagnostiqueur.",
